@@ -1,0 +1,24 @@
+{
+  "originHash" : "4ffc3e5d926e55861bb4cf3bda0942a6b5ec74a0dba953e885ca38855716adfb",
+  "pins" : [
+    {
+      "identity" : "mammut",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simon-zwicker/Mammut",
+      "state" : {
+        "branch" : "main",
+        "revision" : "493dfad156c26d4ca8da98917110a918efdb0bc7"
+      }
+    },
+    {
+      "identity" : "swiftchameleon",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simon-zwicker/SwiftChameleon",
+      "state" : {
+        "branch" : "main",
+        "revision" : "32f60c2209ec2e59f454ca8cc378a49b4096e3dd"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F61ED1D2C43E66800092522 /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED1C2C43E66800092522 /* Mammut */; };
+		4F61ED202C43E67700092522 /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED1F2C43E67700092522 /* SwiftChameleon */; };
+		4F61ED282C43E6BD00092522 /* ErrorObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED272C43E6BD00092522 /* ErrorObj.swift */; };
+		4F61ED2A2C43E6F600092522 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED292C43E6F600092522 /* Environment.swift */; };
+		4F61ED2D2C43E79400092522 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED2C2C43E79400092522 /* Network.swift */; };
+		4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED2E2C43E9D500092522 /* WeatherAPI.swift */; };
+		4F61ED312C43EAC700092522 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED302C43EAC700092522 /* Weather.swift */; };
+		4F61ED332C43EB6D00092522 /* Hourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED322C43EB6D00092522 /* Hourly.swift */; };
 		A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */; };
 		A6DFF80F2C43E443002FD86A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80E2C43E443002FD86A /* ContentView.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
@@ -14,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F61ED272C43E6BD00092522 /* ErrorObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorObj.swift; sourceTree = "<group>"; };
+		4F61ED292C43E6F600092522 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		4F61ED2C2C43E79400092522 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		4F61ED2E2C43E9D500092522 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		4F61ED302C43EAC700092522 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		4F61ED322C43EB6D00092522 /* Hourly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourly.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* HackathonProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
 		A6DFF80E2C43E443002FD86A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,12 +41,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F61ED1D2C43E66800092522 /* Mammut in Frameworks */,
+				4F61ED202C43E67700092522 /* SwiftChameleon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F61ED212C43E67B00092522 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6DFF8102C43E445002FD86A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4F61ED222C43E68100092522 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F61ED252C43E69700092522 /* Network */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4F61ED232C43E68500092522 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4F61ED242C43E68B00092522 /* Main */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4F61ED242C43E68B00092522 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */,
+				A6DFF80E2C43E443002FD86A /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4F61ED252C43E69700092522 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4F61ED262C43E69B00092522 /* Response */,
+				4F61ED292C43E6F600092522 /* Environment.swift */,
+				4F61ED2C2C43E79400092522 /* Network.swift */,
+				4F61ED2E2C43E9D500092522 /* WeatherAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4F61ED262C43E69B00092522 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				4F61ED272C43E6BD00092522 /* ErrorObj.swift */,
+				4F61ED302C43EAC700092522 /* Weather.swift */,
+				4F61ED322C43EB6D00092522 /* Hourly.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		A6DFF8002C43E443002FD86A = {
 			isa = PBXGroup;
 			children = (
@@ -52,9 +122,9 @@
 		A6DFF80B2C43E443002FD86A /* HackathonProject1 */ = {
 			isa = PBXGroup;
 			children = (
-				A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */,
-				A6DFF80E2C43E443002FD86A /* ContentView.swift */,
-				A6DFF8102C43E445002FD86A /* Assets.xcassets */,
+				4F61ED232C43E68500092522 /* App */,
+				4F61ED222C43E68100092522 /* Common */,
+				4F61ED212C43E67B00092522 /* Resources */,
 				A6DFF8122C43E445002FD86A /* HackathonProject1.entitlements */,
 				A6DFF8132C43E445002FD86A /* Preview Content */,
 			);
@@ -85,6 +155,10 @@
 			dependencies = (
 			);
 			name = HackathonProject1;
+			packageProductDependencies = (
+				4F61ED1C2C43E66800092522 /* Mammut */,
+				4F61ED1F2C43E67700092522 /* SwiftChameleon */,
+			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* HackathonProject1.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +187,10 @@
 				Base,
 			);
 			mainGroup = A6DFF8002C43E443002FD86A;
+			packageReferences = (
+				4F61ED1B2C43E66800092522 /* XCRemoteSwiftPackageReference "Mammut" */,
+				4F61ED1E2C43E67700092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
+			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F61ED2D2C43E79400092522 /* Network.swift in Sources */,
 				A6DFF80F2C43E443002FD86A /* ContentView.swift in Sources */,
+				4F61ED332C43EB6D00092522 /* Hourly.swift in Sources */,
+				4F61ED2A2C43E6F600092522 /* Environment.swift in Sources */,
+				4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */,
+				4F61ED282C43E6BD00092522 /* ErrorObj.swift in Sources */,
 				A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */,
+				4F61ED312C43EAC700092522 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,10 +376,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.hackathon1.HackathonProject1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,10 +415,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.hackathon1.HackathonProject1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -359,6 +445,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F61ED1B2C43E66800092522 /* XCRemoteSwiftPackageReference "Mammut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simon-zwicker/Mammut";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		4F61ED1E2C43E67700092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simon-zwicker/SwiftChameleon";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F61ED1C2C43E66800092522 /* Mammut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F61ED1B2C43E66800092522 /* XCRemoteSwiftPackageReference "Mammut" */;
+			productName = Mammut;
+		};
+		4F61ED1F2C43E67700092522 /* SwiftChameleon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F61ED1E2C43E67700092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
+			productName = SwiftChameleon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6DFF8012C43E443002FD86A /* Project object */;
 }

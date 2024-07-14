@@ -16,6 +16,14 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            do {
+                let data = try await Network.request(Weather.self, environment: .weather, endpoint: WeatherAPI.forecast(48.8, 8.3333))
+                print(data)
+            } catch {
+                print("Error \(error.localizedDescription)")
+            }
+        }
     }
 }
 
