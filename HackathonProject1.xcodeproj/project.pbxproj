@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F61ED1D2C43E66800092522 /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED1C2C43E66800092522 /* Mammut */; };
-		4F61ED202C43E67700092522 /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED1F2C43E67700092522 /* SwiftChameleon */; };
 		4F61ED282C43E6BD00092522 /* ErrorObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED272C43E6BD00092522 /* ErrorObj.swift */; };
 		4F61ED2A2C43E6F600092522 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED292C43E6F600092522 /* Environment.swift */; };
 		4F61ED2D2C43E79400092522 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED2C2C43E79400092522 /* Network.swift */; };
 		4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED2E2C43E9D500092522 /* WeatherAPI.swift */; };
 		4F61ED312C43EAC700092522 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED302C43EAC700092522 /* Weather.swift */; };
 		4F61ED332C43EB6D00092522 /* Hourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED322C43EB6D00092522 /* Hourly.swift */; };
+		4F61ED362C43EF2300092522 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED352C43EF2300092522 /* WeatherType.swift */; };
+		4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED382C43EFB900092522 /* WeatherCardView.swift */; };
+		4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3A2C43F10600092522 /* ForecastView.swift */; };
+		4F61ED3D2C43F13600092522 /* WeatherIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3C2C43F13600092522 /* WeatherIconView.swift */; };
+		4F61ED402C43F17A00092522 /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED3F2C43F17A00092522 /* SwiftChameleon */; };
+		4F61ED432C43F18200092522 /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED422C43F18200092522 /* Mammut */; };
 		A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */; };
-		A6DFF80F2C43E443002FD86A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80E2C43E443002FD86A /* ContentView.swift */; };
+		A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80E2C43E443002FD86A /* MainView.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
 		A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -28,9 +32,13 @@
 		4F61ED2E2C43E9D500092522 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		4F61ED302C43EAC700092522 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		4F61ED322C43EB6D00092522 /* Hourly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourly.swift; sourceTree = "<group>"; };
+		4F61ED352C43EF2300092522 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
+		4F61ED382C43EFB900092522 /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
+		4F61ED3A2C43F10600092522 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		4F61ED3C2C43F13600092522 /* WeatherIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconView.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* HackathonProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
-		A6DFF80E2C43E443002FD86A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A6DFF80E2C43E443002FD86A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A6DFF8102C43E445002FD86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6DFF8122C43E445002FD86A /* HackathonProject1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HackathonProject1.entitlements; sourceTree = "<group>"; };
 		A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -41,8 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F61ED1D2C43E66800092522 /* Mammut in Frameworks */,
-				4F61ED202C43E67700092522 /* SwiftChameleon in Frameworks */,
+				4F61ED402C43F17A00092522 /* SwiftChameleon in Frameworks */,
+				4F61ED432C43F18200092522 /* Mammut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +68,7 @@
 		4F61ED222C43E68100092522 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4F61ED342C43EF1800092522 /* Enumerations */,
 				4F61ED252C43E69700092522 /* Network */,
 			);
 			path = Common;
@@ -68,6 +77,7 @@
 		4F61ED232C43E68500092522 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4F61ED372C43EFA400092522 /* WeatherCard */,
 				4F61ED242C43E68B00092522 /* Main */,
 			);
 			path = App;
@@ -77,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */,
-				A6DFF80E2C43E443002FD86A /* ContentView.swift */,
+				A6DFF80E2C43E443002FD86A /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -101,6 +111,24 @@
 				4F61ED322C43EB6D00092522 /* Hourly.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		4F61ED342C43EF1800092522 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				4F61ED352C43EF2300092522 /* WeatherType.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		4F61ED372C43EFA400092522 /* WeatherCard */ = {
+			isa = PBXGroup;
+			children = (
+				4F61ED382C43EFB900092522 /* WeatherCardView.swift */,
+				4F61ED3A2C43F10600092522 /* ForecastView.swift */,
+				4F61ED3C2C43F13600092522 /* WeatherIconView.swift */,
+			);
+			path = WeatherCard;
 			sourceTree = "<group>";
 		};
 		A6DFF8002C43E443002FD86A = {
@@ -156,8 +184,8 @@
 			);
 			name = HackathonProject1;
 			packageProductDependencies = (
-				4F61ED1C2C43E66800092522 /* Mammut */,
-				4F61ED1F2C43E67700092522 /* SwiftChameleon */,
+				4F61ED3F2C43F17A00092522 /* SwiftChameleon */,
+				4F61ED422C43F18200092522 /* Mammut */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* HackathonProject1.app */;
@@ -188,8 +216,8 @@
 			);
 			mainGroup = A6DFF8002C43E443002FD86A;
 			packageReferences = (
-				4F61ED1B2C43E66800092522 /* XCRemoteSwiftPackageReference "Mammut" */,
-				4F61ED1E2C43E67700092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
+				4F61ED3E2C43F17A00092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
+				4F61ED412C43F18200092522 /* XCRemoteSwiftPackageReference "Mammut" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -217,13 +245,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F61ED3D2C43F13600092522 /* WeatherIconView.swift in Sources */,
 				4F61ED2D2C43E79400092522 /* Network.swift in Sources */,
-				A6DFF80F2C43E443002FD86A /* ContentView.swift in Sources */,
+				A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */,
+				4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */,
 				4F61ED332C43EB6D00092522 /* Hourly.swift in Sources */,
 				4F61ED2A2C43E6F600092522 /* Environment.swift in Sources */,
 				4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */,
+				4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */,
 				4F61ED282C43E6BD00092522 /* ErrorObj.swift in Sources */,
 				A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */,
+				4F61ED362C43EF2300092522 /* WeatherType.swift in Sources */,
 				4F61ED312C43EAC700092522 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,17 +479,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4F61ED1B2C43E66800092522 /* XCRemoteSwiftPackageReference "Mammut" */ = {
+		4F61ED3E2C43F17A00092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simon-zwicker/Mammut";
+			repositoryURL = "https://github.com/simon-zwicker/SwiftChameleon";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		4F61ED1E2C43E67700092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */ = {
+		4F61ED412C43F18200092522 /* XCRemoteSwiftPackageReference "Mammut" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simon-zwicker/SwiftChameleon";
+			repositoryURL = "https://github.com/simon-zwicker/Mammut";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -466,15 +498,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4F61ED1C2C43E66800092522 /* Mammut */ = {
+		4F61ED3F2C43F17A00092522 /* SwiftChameleon */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4F61ED1B2C43E66800092522 /* XCRemoteSwiftPackageReference "Mammut" */;
-			productName = Mammut;
-		};
-		4F61ED1F2C43E67700092522 /* SwiftChameleon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4F61ED1E2C43E67700092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
+			package = 4F61ED3E2C43F17A00092522 /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
 			productName = SwiftChameleon;
+		};
+		4F61ED422C43F18200092522 /* Mammut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F61ED412C43F18200092522 /* XCRemoteSwiftPackageReference "Mammut" */;
+			productName = Mammut;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
