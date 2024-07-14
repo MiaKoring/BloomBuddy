@@ -10,7 +10,7 @@ import Charts
 import SwiftChameleon
 
 struct WeatherCardView: View {
-
+    @State var data: [HourlyWeatherData] = []
     @Binding var weather: Weather?
 
     var body: some View {
@@ -28,28 +28,80 @@ struct WeatherCardView: View {
                     Spacer()
                 }
 
-                ForecastView()
+                ForecastView(data: $data)
             }
-
-            WeatherIconView()
-                .offset(x: 180, y: -80)
+            .background(alignment: .topTrailing) {
+                if let first = data.first {
+                    if [WeatherType.sunny, WeatherType.cloudySunny].contains(first.weather) {
+                        SunBackgroundView()
+                            .offset(x: 80, y: -80)
+                            .if(first.weather == .cloudySunny) { view in
+                                view.overlay {
+                                    Image(systemName: "cloud.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundStyle(LinearGradient(colors: [.gray, .blue], startPoint: .top, endPoint: .bottom))
+                                        .offset(x: 20, y: -30)
+                                }
+                            }
+                    }
+                } else {
+                    SunBackgroundView()
+                        .offset(x: 80, y: -80)
+                }
+            }
         }
         .padding()
         .background {
+            if let first = data.first {
+                switch first.weather {
+                case .sunny:
+                    LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .cloudySunny:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .cloudy:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .rain:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .snow:
+                    LinearGradient(colors: [.white, .white, .gray], startPoint: .bottomLeading, endPoint: .topLeading)
+                case .thunderstorm:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .windy:
+                    LinearGradient(colors: [.gray, .gray, .white], startPoint: .leading, endPoint: .trailing)
+                }
+            }
+            else {
+                LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+            }
             LinearGradient(
                 gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]),
                 startPoint: .bottomLeading,
                 endPoint: .topTrailing
             )
         }
-        .clipShape(RoundedRectangle(cornerRadius: 30))
-        .task {
-            do {
-                let data = try await Network.request(Weather.self, environment: .weather, endpoint: WeatherAPI.forecast(48.8, 8.3333))
-                print(data)
-            } catch {
-                print("Error \(error.localizedDescription)")
-            }
+        .onChange(of: weather) {
+            guard let weather else { return }
+            self.data = getNextFive(from: weather)
         }
+    }
+
+    private func getNextFive(from data: Weather)-> [HourlyWeatherData] {
+        var parsed: [HourlyWeatherData] = []
+        
+        let currentTimeString = Date().toString(with: "yyyy-MM-dd HH").replacingOccurrences(of: " ", with: "T").appending(":00")
+        let temperatures = data.hourly.temperatures
+        let firstIndex = data.hourly.time.firstIndex(where: {$0.starts(with: currentTimeString)}) ?? 0
+        
+        let relevant = Array(temperatures[firstIndex...firstIndex + 4])
+        
+        let currentTimestamp = Date().timeIntervalSince1970
+        
+        for i in 0..<5 {
+            let hour = "\(Date(timeIntervalSince1970: currentTimestamp + 3600.0 * i.double).toString(with: "HH"))"
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .cloudySunny))
+        }
+        
+        return parsed
     }
 }

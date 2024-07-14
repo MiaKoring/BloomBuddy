@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeatherIconView: View {
+struct SunBackgroundView: View {
     var body: some View {
         ZStack {
             Circle()
