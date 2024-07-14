@@ -9,10 +9,18 @@ import SwiftUI
 
 struct ForecastView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ForEach(0..<5) { index in
+                VStack {
+                    Image(systemName: WeatherType.allCases.randomElement()?.rawValue ?? "")
+                        .font(.title2)
+                    Text("13.0 °C")
+                    Text(Date.now.toString(with: "HH:mm"))
+                        .font(.caption2)
+                        .foregroundStyle(.black.tertiary)
+                }
+                .frame(width: 38)
+            }
+        }
     }
-}
-
-#Preview {
-    ForecastView()
 }
