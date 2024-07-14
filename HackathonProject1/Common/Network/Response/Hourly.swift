@@ -7,5 +7,10 @@
 
 struct Hourly: Codable {
     let time: [String]
-    let temperature_2m: [Double]
+    let temperatures: [Double]
+
+    enum CodingKeys: String, CodingKey {
+        case time
+        case temperatures = "temperature_2m"
+    }
 }

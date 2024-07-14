@@ -10,3 +10,9 @@ struct Weather: Codable {
     let longitude: Double
     let hourly: Hourly
 }
+
+extension Weather: Equatable {
+    static func == (lhs: Weather, rhs: Weather) -> Bool {
+        (lhs.longitude == rhs.longitude) && (lhs.latitude == rhs.longitude)
+    }
+}
