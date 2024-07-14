@@ -10,62 +10,46 @@ import Charts
 import SwiftChameleon
 
 struct WeatherCardView: View {
-    @State var data: [HourlyTemperature] = []
-    
+
+    @Binding var weather: Weather?
+
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("Test")
-                    .padding(.bottom, 1)
-                    .foregroundStyle(.black.secondary)
-                if let first = data.first {
-                    Text("\(String(format: "%.1f", first.temp)) °C")
-                        .font(.largeTitle)
+        ZStack {
+            VStack(alignment: .leading, spacing: 25.0) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Test")
+                            .padding(.bottom, 1)
+                            .foregroundStyle(.black.secondary)
+                        Text("12.0 °C")
+                            .font(.largeTitle)
+                    }
+
+                    Spacer()
                 }
-                else {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                }
-                
-                ForecastView(data: $data)
+
+                ForecastView()
             }
-            .background(alignment: .topTrailing) {
-                WeatherIconView()
-                    .offset(x: 80, y: -80)
-            }
+
+            WeatherIconView()
+                .offset(x: 180, y: -80)
         }
-        .padding(20)
+        .padding()
         .background {
-            LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+            LinearGradient(
+                gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]),
+                startPoint: .bottomLeading,
+                endPoint: .topTrailing
+            )
         }
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .task {
             do {
                 let data = try await Network.request(Weather.self, environment: .weather, endpoint: WeatherAPI.forecast(48.8, 8.3333))
-                print("\n\n\n\n\n\(data)\n\n\n\n\n")
-                self.data = getNextFive(from: data)
+                print(data)
             } catch {
                 print("Error \(error.localizedDescription)")
             }
         }
-    }
-    
-    private func getNextFive(from data: Weather)-> [HourlyTemperature] {
-        var parsed: [HourlyTemperature] = []
-        
-        let currentTimeString = Date().toString(with: "yyyy-MM-dd HH").replacingOccurrences(of: " ", with: "T").appending(":00")
-        let temperatures = data.hourly.temperature_2m
-        let firstIndex = data.hourly.time.firstIndex(where: {$0.starts(with: currentTimeString)}) ?? 0
-        
-        let relevant = Array(temperatures[firstIndex...firstIndex + 4])
-        
-        let currentTimestamp = Date().timeIntervalSince1970
-        
-        for i in 0..<5 {
-            let hour = "\(Date(timeIntervalSince1970: currentTimestamp + 3600.0 * i.double).toString(with: "HH"))"
-            parsed.append(HourlyTemperature(hour: hour, temp: relevant[i]))
-        }
-        
-        return parsed
     }
 }

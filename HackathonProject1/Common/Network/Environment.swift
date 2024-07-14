@@ -23,14 +23,14 @@ extension Environment {
     var host: String {
         switch self {
         case .weather: "api.open-meteo.com"
-        case .plants: ""
+        case .plants: "kirreth.pockethost.io"
         }
     }
 
     var path: String {
         switch self {
         case .weather: "/v1"
-        case .plants: ""
+        case .plants: "/api/collections"
         }
     }
 
