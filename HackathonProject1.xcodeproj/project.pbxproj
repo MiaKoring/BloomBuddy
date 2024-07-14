@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6D3B91A2C43E97E008D2441 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D3B9192C43E97E008D2441 /* Weather.swift */; };
+		A6D3B91C2C43E999008D2441 /* WeatherPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D3B91B2C43E999008D2441 /* WeatherPoint.swift */; };
+		A6D3B91E2C43E9CF008D2441 /* LocalWeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D3B91D2C43E9CF008D2441 /* LocalWeatherCardView.swift */; };
+		A6D3B9212C43E9FB008D2441 /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = A6D3B9202C43E9FB008D2441 /* SwiftChameleon */; };
 		A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */; };
 		A6DFF80F2C43E443002FD86A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80E2C43E443002FD86A /* ContentView.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
@@ -14,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6D3B9192C43E97E008D2441 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		A6D3B91B2C43E999008D2441 /* WeatherPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPoint.swift; sourceTree = "<group>"; };
+		A6D3B91D2C43E9CF008D2441 /* LocalWeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherCardView.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* HackathonProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
 		A6DFF80E2C43E443002FD86A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,12 +34,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D3B9212C43E9FB008D2441 /* SwiftChameleon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6D3B9172C43E949008D2441 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6D3B91D2C43E9CF008D2441 /* LocalWeatherCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6D3B9182C43E952008D2441 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6D3B9192C43E97E008D2441 /* Weather.swift */,
+				A6D3B91B2C43E999008D2441 /* WeatherPoint.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A6DFF8002C43E443002FD86A = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */,
+				A6D3B9182C43E952008D2441 /* Model */,
 				A6DFF80E2C43E443002FD86A /* ContentView.swift */,
+				A6D3B9172C43E949008D2441 /* View */,
 				A6DFF8102C43E445002FD86A /* Assets.xcassets */,
 				A6DFF8122C43E445002FD86A /* HackathonProject1.entitlements */,
 				A6DFF8132C43E445002FD86A /* Preview Content */,
@@ -85,6 +112,9 @@
 			dependencies = (
 			);
 			name = HackathonProject1;
+			packageProductDependencies = (
+				A6D3B9202C43E9FB008D2441 /* SwiftChameleon */,
+			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* HackathonProject1.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +143,9 @@
 				Base,
 			);
 			mainGroup = A6DFF8002C43E443002FD86A;
+			packageReferences = (
+				A6D3B91F2C43E9FB008D2441 /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
+			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6DFF80F2C43E443002FD86A /* ContentView.swift in Sources */,
+				A6D3B91A2C43E97E008D2441 /* Weather.swift in Sources */,
 				A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */,
+				A6D3B91C2C43E999008D2441 /* WeatherPoint.swift in Sources */,
+				A6D3B91E2C43E9CF008D2441 /* LocalWeatherCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A6D3B91F2C43E9FB008D2441 /* XCRemoteSwiftPackageReference "SwiftChameleon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simon-zwicker/SwiftChameleon.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A6D3B9202C43E9FB008D2441 /* SwiftChameleon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6D3B91F2C43E9FB008D2441 /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
+			productName = SwiftChameleon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6DFF8012C43E443002FD86A /* Project object */;
 }
