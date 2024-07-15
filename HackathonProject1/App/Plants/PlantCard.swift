@@ -85,13 +85,13 @@ extension Image {
         self
             .resizable()
             .renderingMode(.template)
-            .foregroundStyle(.white)
+            .foregroundStyle(.mint.darker())
             .scaledToFit()
             .frame(width: 25)
             .padding(8.0)
             .background(
                 Circle()
-                    .fill(.blue.gradient)
+                    .fill(.blue.lighter(by: 80))
             )
             .offset(x: 20, y: 20)
     }
