@@ -23,21 +23,10 @@ struct PlantCard: View {
                 Spacer()
 
                 VStack(alignment: .trailing) {
-                    Text(plant.growthStage)
-                        .font(.system(size: 12.0, weight: .regular))
-
+                    growthImage
+                        .infoStyle()
                     wateringImage
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundStyle(.white)
-                        .scaledToFit()
-                        .frame(width: 25)
-                        .padding(8.0)
-                        .background(
-                            Circle()
-                                .fill(.blue.gradient)
-                        )
-                        .offset(x: 20, y: 20)
+                        .infoStyle()
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
@@ -84,5 +73,26 @@ struct PlantCard: View {
         case "medium": Image("watering2")
         default: Image("watering3")
         }
+    }
+    
+    var growthImage: Image {
+        Image("Plant\(plant.growthStage)")
+    }
+}
+
+extension Image {
+    func infoStyle()-> some View {
+        self
+            .resizable()
+            .renderingMode(.template)
+            .foregroundStyle(.white)
+            .scaledToFit()
+            .frame(width: 25)
+            .padding(8.0)
+            .background(
+                Circle()
+                    .fill(.blue.gradient)
+            )
+            .offset(x: 20, y: 20)
     }
 }
