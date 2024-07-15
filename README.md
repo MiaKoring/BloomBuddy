@@ -1,5 +1,7 @@
 # Garden-Weather App (Mini-Hackathon Day 1)
 
+![Marketing](https://github.com/MiaKoring/Hackathon-project1/blob/main/Marketing/Screenshot%202024-07-15%20at%2015.28.21.png)
+
 ## Install
 After open the Xcode Project you have to Reset the Package Cache to get our SPM integrations. File -> Packages -> Reset Package Caches
 
