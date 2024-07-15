@@ -26,6 +26,7 @@
 		4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3A2C43F10600092522 /* ForecastView.swift */; };
 		4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */; };
 		4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69B93B2C4538BE005F544E /* PlantCard.swift */; };
+		4F69B93E2C454126005F544E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F69B93D2C454126005F544E /* Launch Screen.storyboard */; };
 		4F90F8512C44748500B57F3D /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90F84E2C44748500B57F3D /* TipsView.swift */; };
 		4F90F8542C44752200B57F3D /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8532C44752200B57F3D /* Mammut */; };
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
@@ -55,6 +56,7 @@
 		4F61ED3A2C43F10600092522 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		4F69B93B2C4538BE005F544E /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
+		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* HackathonProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				4F430B4C2C44813100AF7CCD /* Models */,
 				4F61ED342C43EF1800092522 /* Enumerations */,
 				4F61ED252C43E69700092522 /* Network */,
+				4F69B93D2C454126005F544E /* Launch Screen.storyboard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F69B93E2C454126005F544E /* Launch Screen.storyboard in Resources */,
 				A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */,
 				A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */,
 			);

@@ -71,8 +71,8 @@ struct WeatherCardView: View {
             )
         }
         .onChange(of: weather) {
-            print("WeatherUpdate Card")
             guard let weather else { return }
+            print("weather Card shit")
             self.data = getNextFive(from: weather)
         }
         .clipShape(RoundedRectangle(cornerRadius: 30))
