@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct HourlyTemperature {
+struct HourlyWeatherData {
     var hour: String
     var temp: Double
+    var weather: WeatherType
 }

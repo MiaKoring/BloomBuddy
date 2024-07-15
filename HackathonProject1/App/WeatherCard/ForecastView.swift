@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ForecastView: View {
-    @Binding var data: [HourlyTemperature]
+    @Binding var data: [HourlyWeatherData]
     
     var body: some View {
         HStack {
             if data.count >= 5 {
                 ForEach(0..<5) { index in
                     VStack {
-                        Image(systemName: WeatherType.allCases.randomElement()?.rawValue ?? "")
+                        Image(systemName: data[index].weather.rawValue)
                             .font(.title2)
                             .frame(height: 20) //damit die Temperaturen nicht bei unterschiedlich hohen images verschoben werden
                         Text("\(String(format: "%.1f", data[index].temp)) °C")

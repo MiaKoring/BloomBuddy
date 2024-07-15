@@ -16,7 +16,7 @@
 		4F61ED362C43EF2300092522 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED352C43EF2300092522 /* WeatherType.swift */; };
 		4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED382C43EFB900092522 /* WeatherCardView.swift */; };
 		4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3A2C43F10600092522 /* ForecastView.swift */; };
-		4F61ED3D2C43F13600092522 /* WeatherIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3C2C43F13600092522 /* WeatherIconView.swift */; };
+		4F61ED3D2C43F13600092522 /* SunBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3C2C43F13600092522 /* SunBackgroundView.swift */; };
 		4F61ED402C43F17A00092522 /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED3F2C43F17A00092522 /* SwiftChameleon */; };
 		4F61ED432C43F18200092522 /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F61ED422C43F18200092522 /* Mammut */; };
 		A6D3B9232C444E91008D2441 /* HourlyTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D3B9222C444E91008D2441 /* HourlyTemperature.swift */; };
@@ -36,7 +36,7 @@
 		4F61ED352C43EF2300092522 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 		4F61ED382C43EFB900092522 /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
 		4F61ED3A2C43F10600092522 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
-		4F61ED3C2C43F13600092522 /* WeatherIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconView.swift; sourceTree = "<group>"; };
+		4F61ED3C2C43F13600092522 /* SunBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunBackgroundView.swift; sourceTree = "<group>"; };
 		A6D3B9222C444E91008D2441 /* HourlyTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTemperature.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* HackathonProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			children = (
 				4F61ED382C43EFB900092522 /* WeatherCardView.swift */,
 				4F61ED3A2C43F10600092522 /* ForecastView.swift */,
-				4F61ED3C2C43F13600092522 /* WeatherIconView.swift */,
+				4F61ED3C2C43F13600092522 /* SunBackgroundView.swift */,
 			);
 			path = WeatherCard;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F61ED3D2C43F13600092522 /* WeatherIconView.swift in Sources */,
+				4F61ED3D2C43F13600092522 /* SunBackgroundView.swift in Sources */,
 				4F61ED2D2C43E79400092522 /* Network.swift in Sources */,
 				A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */,
 				4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */,

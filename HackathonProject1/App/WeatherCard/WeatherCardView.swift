@@ -10,7 +10,7 @@ import Charts
 import SwiftChameleon
 
 struct WeatherCardView: View {
-    @State var data: [HourlyTemperature] = []
+    @State var data: [HourlyWeatherData] = []
     
     var body: some View {
         VStack {
@@ -30,13 +30,50 @@ struct WeatherCardView: View {
                 ForecastView(data: $data)
             }
             .background(alignment: .topTrailing) {
-                WeatherIconView()
-                    .offset(x: 80, y: -80)
+                if let first = data.first {
+                    if [WeatherType.sunny, WeatherType.cloudySunny].contains(first.weather) {
+                        SunBackgroundView()
+                         .offset(x: 80, y: -80)
+                         .if(first.weather == .cloudySunny) { view in
+                             view.overlay {
+                                 Image(systemName: "cloud.fill")
+                                     .resizable()
+                                     .scaledToFit()
+                                     .foregroundStyle(LinearGradient(colors: [.gray, .blue], startPoint: .top, endPoint: .bottom))
+                                     .offset(x: 20, y: -30)
+                             }
+                         }
+                    }
+                }
+                else {
+                    SunBackgroundView()
+                     .offset(x: 80, y: -80)
+                }
             }
         }
         .padding(20)
         .background {
-            LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+            if let first = data.first {
+                switch first.weather {
+                case .sunny:
+                    LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .cloudySunny:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .cloudy:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .rain:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .snow:
+                    LinearGradient(colors: [.white, .white, .gray], startPoint: .bottomLeading, endPoint: .topLeading)
+                case .thunderstorm:
+                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                case .windy:
+                    LinearGradient(colors: [.gray, .gray, .white], startPoint: .leading, endPoint: .trailing)
+                }
+            }
+            else {
+                LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+            }
         }
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .task {
@@ -50,8 +87,8 @@ struct WeatherCardView: View {
         }
     }
     
-    private func getNextFive(from data: Weather)-> [HourlyTemperature] {
-        var parsed: [HourlyTemperature] = []
+    private func getNextFive(from data: Weather)-> [HourlyWeatherData] {
+        var parsed: [HourlyWeatherData] = []
         
         let currentTimeString = Date().toString(with: "yyyy-MM-dd HH").replacingOccurrences(of: " ", with: "T").appending(":00")
         let temperatures = data.hourly.temperature_2m
@@ -63,9 +100,13 @@ struct WeatherCardView: View {
         
         for i in 0..<5 {
             let hour = "\(Date(timeIntervalSince1970: currentTimestamp + 3600.0 * i.double).toString(with: "HH"))"
-            parsed.append(HourlyTemperature(hour: hour, temp: relevant[i]))
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .cloudySunny))
         }
         
         return parsed
     }
+}
+
+#Preview {
+    WeatherCardView()
 }
