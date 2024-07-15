@@ -33,12 +33,14 @@ struct MainView: View {
             TipsView()
                 .presentationDetents([.medium])
         })
-        .onChange(of: locationManager.location) { _, newValue in
+        .onChange(of: locationManager.location, { _, newValue in
+            
+        })
+        .onChange(of: locationManager.location, { _, newValue in
             callAPIs(newValue)
-        }
+        })
         .onAppear {
             locationManager.requestAuth()
-            locationManager.requestLocation()
         }
     }
 
@@ -82,9 +84,6 @@ struct MainView: View {
 
                 plants = plantsData.items
                 weather = weatherData
-
-                dump(weatherData)
-                dump(plants)
             } catch {
                 print("Error on retrieving Data: \(error.localizedDescription)")
             }

@@ -19,16 +19,23 @@ struct PlantListView: View {
     ]
 
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: adaptiveColumn, content: {
-                ForEach(plants, id: \.id) { plant in
-                    PlantCard(plant: plant, todaysRainMM: $todaysRainMM)
-                }
-            })
-        }
-        .onChange(of: weather) {
-            guard let weather = weather else { return }
-            todaysRainMM = weather.hourly.rain.prefix(24).reduce(0.0, +)
+        ZStack {
+            ScrollView {
+                LazyVGrid(columns: adaptiveColumn, content: {
+                    ForEach(plants, id: \.id) { plant in
+                        PlantCard(plant: plant, todaysRainMM: $todaysRainMM)
+                    }
+                })
+            }
+            .onChange(of: weather) {
+                print("WeatherUpdate PlantList")
+                guard let weather = weather else { return }
+                todaysRainMM = weather.hourly.rain.prefix(24).reduce(0.0, +)
+            }
+
+            if weather.isNil || plants.isEmpty {
+                ProgressView("Loading")
+            }
         }
     }
 }

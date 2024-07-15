@@ -17,7 +17,11 @@ struct WeatherCardView: View {
 
     var body: some View {
         ZStack {
-            VStack(alignment: .leading, spacing: 25.0) {
+            if weather.isNil {
+                ProgressView("Loading")
+            }
+
+            VStack(spacing: 25.0) {
                 HStack {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("\(locationManager.city), \(locationManager.country)")
@@ -26,8 +30,6 @@ struct WeatherCardView: View {
                         if let temp = weather?.current.temperature2M {
                             Text("\(String(format: "%.1f", temp)) °C")
                                 .font(.largeTitle)
-                        } else {
-                            Text("--")
                         }
                     }
 
@@ -69,6 +71,7 @@ struct WeatherCardView: View {
             )
         }
         .onChange(of: weather) {
+            print("WeatherUpdate Card")
             guard let weather else { return }
             self.data = getNextFive(from: weather)
         }

@@ -26,9 +26,6 @@ struct PlantCard: View {
                     Text(plant.growthStage)
                         .font(.system(size: 12.0, weight: .regular))
 
-                    Text(plant.soilType)
-                        .font(.system(size: 10.0, weight: .regular))
-
                     wateringImage
                         .resizable()
                         .renderingMode(.template)

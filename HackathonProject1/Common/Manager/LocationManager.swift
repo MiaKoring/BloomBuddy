@@ -16,14 +16,16 @@ class LocationManager: NSObject {
 
     var city: String = ""
     var country: String = ""
+    var wasUpdated: Bool = false
 
     func requestAuth() {
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
+        requestLocation()
     }
 
     func requestLocation() {
-        manager.requestLocation()
+        manager.startUpdatingLocation()
     }
 
     func fetchCityAndCountry(from location: CLLocation, completion: @escaping (String?, String?, Error?) -> ()) {
@@ -37,6 +39,7 @@ class LocationManager: NSObject {
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard !wasUpdated else { return }
         location = locations.first?.coordinate
         guard let firstLocation = locations.first else { return }
         fetchCityAndCountry(from: firstLocation) { city, country, error in
@@ -46,6 +49,8 @@ extension LocationManager: CLLocationManagerDelegate {
                 self.country = country
             }
         }
+        manager.stopUpdatingLocation()
+        wasUpdated.setTrue()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {

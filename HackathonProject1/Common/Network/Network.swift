@@ -11,11 +11,11 @@ import Mammut
 struct Network {
 
     static private var weatherAPI: Mammut {
-        Mammut(components: NetworkEnv.weather.components, loglevel: .debugCurl)
+        Mammut(components: NetworkEnv.weather.components, loglevel: .none)
     }
 
     static private var plantsAPI: Mammut {
-        Mammut(components: NetworkEnv.plants.components, loglevel: .debugCurl)
+        Mammut(components: NetworkEnv.plants.components, loglevel: .none)
     }
 
     static func request<T: Codable>(
