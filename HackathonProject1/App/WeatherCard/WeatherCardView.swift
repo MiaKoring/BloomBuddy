@@ -67,6 +67,7 @@ struct WeatherCardView: View {
             guard let weather else { return }
             self.data = getNextFive(from: weather)
         }
+        .clipShape(RoundedRectangle(cornerRadius: 30))
     }
 
     private func getNextFive(from data: Weather)-> [HourlyWeatherData] {
@@ -74,21 +75,36 @@ struct WeatherCardView: View {
         
         let currentTimeString = Date().toString(with: "yyyy-MM-dd HH").replacingOccurrences(of: " ", with: "T").appending(":00")
         let temperatures = data.hourly.temperature2M
+        let weatherCodes = data.hourly.weatherCode
         let firstIndex = data.hourly.time.firstIndex(where: {$0.starts(with: currentTimeString)}) ?? 0
         
         let relevant = Array(temperatures[firstIndex...firstIndex + 4])
+        let relevantWeatherCodes = Array(weatherCodes[firstIndex...firstIndex + 4])
         
         let currentTimestamp = Date().timeIntervalSince1970
         
         for i in 0..<5 {
             let hour = "\(Date(timeIntervalSince1970: currentTimestamp + 3600.0 * i.double).toString(with: "HH"))"
-            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .cloudySunny))
+            let weather: WeatherType = {
+                switch Int(relevantWeatherCodes[i]) {
+                case 0, 1, 2, 3, 45, 48 :
+                        .sunny
+                case 51, 43, 55:
+                        .cloudy
+                case 61, 63, 65, 66, 67, 80, 81, 82:
+                        .rain
+                case 71, 73, 75, 77, 85, 86:
+                        .snow
+                case 95, 96, 99:
+                        .thunderstorm
+                default:
+                        .sunny
+                }
+            }()
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: weather))
         }
         
         return parsed
     }
 }
 
-#Preview {
-    WeatherCardView()
-}
