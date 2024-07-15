@@ -21,14 +21,13 @@ struct WeatherCardView: View {
                         Text("Test")
                             .padding(.bottom, 1)
                             .foregroundStyle(.black.secondary)
-                        if let first = data.first {
-                    Text("\(String(format: "%.1f", first.temp)) °C")
-                        .font(.largeTitle)
-                }
-                else {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                }
+                        if let temp = weather?.current.temperature2M {
+                            Text("\(String(format: "%.1f", temp)) °C")
+                                .font(.largeTitle)
+                        }
+                        else {
+                            Text("?")
+                        }
                     }
 
                     Spacer()
