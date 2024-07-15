@@ -54,31 +54,8 @@ struct WeatherCardView: View {
         .padding()
         .background {
             if let first = data.first {
-                switch first.weather {
-                case .sunny:
-                    LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                case .cloudySunny:
-                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                case .cloudy:
-                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                case .rain:
-                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                case .snow:
-                    LinearGradient(colors: [.white, .white, .gray], startPoint: .bottomLeading, endPoint: .topLeading)
-                case .thunderstorm:
-                    LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                case .windy:
-                    LinearGradient(colors: [.gray, .gray, .white], startPoint: .leading, endPoint: .trailing)
-                }
+                first.weather.gradient
             }
-            else {
-                LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
-            }
-            LinearGradient(
-                gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]),
-                startPoint: .bottomLeading,
-                endPoint: .topTrailing
-            )
         }
         .onChange(of: weather) {
             guard let weather else { return }
@@ -90,7 +67,7 @@ struct WeatherCardView: View {
         var parsed: [HourlyWeatherData] = []
         
         let currentTimeString = Date().toString(with: "yyyy-MM-dd HH").replacingOccurrences(of: " ", with: "T").appending(":00")
-        let temperatures = data.hourly.temperatures
+        let temperatures = data.hourly.temperature2M
         let firstIndex = data.hourly.time.firstIndex(where: {$0.starts(with: currentTimeString)}) ?? 0
         
         let relevant = Array(temperatures[firstIndex...firstIndex + 4])

@@ -40,6 +40,9 @@ struct MainView: View {
 
                 plants = plantsData.items
                 weather = weatherData
+
+                dump(weatherData)
+                dump(plants)
             } catch {
                 print("Error on retrieving Data: \(error.localizedDescription)")
             }

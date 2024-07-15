@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2EFCA02C451039000FEBFD /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2EFC9F2C451039000FEBFD /* CurrentWeather.swift */; };
 		4F430B402C447A2F00AF7CCD /* PlantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B3F2C447A2F00AF7CCD /* PlantAPI.swift */; };
 		4F430B432C447A3700AF7CCD /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B412C447A3700AF7CCD /* Plant.swift */; };
 		4F430B442C447A3700AF7CCD /* PocketBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B422C447A3700AF7CCD /* PocketBase.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F2EFC9F2C451039000FEBFD /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		4F430B3F2C447A2F00AF7CCD /* PlantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantAPI.swift; sourceTree = "<group>"; };
 		4F430B412C447A3700AF7CCD /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		4F430B422C447A3700AF7CCD /* PocketBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketBase.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				4F61ED272C43E6BD00092522 /* ErrorObj.swift */,
 				4F61ED302C43EAC700092522 /* Weather.swift */,
 				4F61ED322C43EB6D00092522 /* Hourly.swift */,
+				4F2EFC9F2C451039000FEBFD /* CurrentWeather.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */,
 				4F430B4B2C44811A00AF7CCD /* HourlyTemperature.swift in Sources */,
 				4F430B402C447A2F00AF7CCD /* PlantAPI.swift in Sources */,
+				4F2EFCA02C451039000FEBFD /* CurrentWeather.swift in Sources */,
 				4F430B472C447A4500AF7CCD /* PlantListView.swift in Sources */,
 				4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */,
 				4F61ED282C43E6BD00092522 /* ErrorObj.swift in Sources */,
@@ -438,6 +442,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -477,6 +482,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

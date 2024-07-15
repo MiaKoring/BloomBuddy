@@ -34,8 +34,9 @@ extension WeatherAPI: Endpoint {
         case .forecast(let lat, let long):
             parameters["latitude"] = "\(lat)"
             parameters["longitude"] = "\(long)"
-            parameters["hourly"] = "temperature_2m"
+            parameters["hourly"] = "temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,rain,showers,snowfall,weather_code,pressure_msl,surface_pressure,evapotranspiration,wind_speed_10m"
             parameters["timezone"] = "auto"
+            parameters["current"] = "temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m"
         }
         return parameters
     }
