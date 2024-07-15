@@ -8,7 +8,8 @@
 import Foundation
 
 struct HourlyWeatherData {
-    var hour: String
-    var temp: Double
-    var weather: WeatherType
+    let id: UUID = .init()
+    let hour: String
+    let temp: Double
+    let weather: WeatherType
 }
