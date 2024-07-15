@@ -32,6 +32,10 @@ We present an app which helps you watering your plants according to their needs 
 - Mikan933
 - Ylivdesign
 - AngDiz
+- yukyik
+- Rudiyana
+- laterunlabs
+- Nikita Golubev
 
 ### Information about Watering
 [GartnWissn](https://gartnwissn.de/garten-richtig-giessen-wann-wie-viel-wie-oft/?utm_content=cmp-true)
