@@ -7,7 +7,7 @@
 After open the Xcode Project you have to Reset the Package Cache to get our SPM integrations. File -> Packages -> Reset Package Caches
 
 ## Information
-We present a swift app which helps you watering your plants according to their needs and the weather conditions without excess water use. 
+We present a swift app (made with SwiftUI) which helps you watering your plants according to their needs and the weather conditions without excess water use. We created our own plant database with PocketBase. 
 
 ## Authors
 
