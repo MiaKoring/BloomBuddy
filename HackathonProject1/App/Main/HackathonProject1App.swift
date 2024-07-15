@@ -13,10 +13,10 @@ struct HackathonProject1App: App {
     @State private var locationManager: LocationManager = .init()
     let gradient = LinearGradient(
         colors: [
-            .blue.opacity(0),
-            .blue.opacity(0.22),
-            .blue.opacity(0.44),
-            .blue
+            .mint.opacity(0),
+            .mint.opacity(0.22),
+            .mint.opacity(0.44),
+            .mint
         ],
         startPoint: .init(x: 0.50, y: 1.00),
         endPoint: .init(x: 0.50, y: 0.00)
