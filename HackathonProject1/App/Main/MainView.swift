@@ -21,9 +21,9 @@ struct MainView: View {
                 WeatherCardView(weather: $weather)
                     .frame(alignment: .top)
                     .padding()
-                    .shadow(radius: 10)
 
-                PlantListView(plants: $plants)
+                PlantListView(plants: $plants, weather: $weather)
+                    .shadow(radius: 10)
             }
 
             tipButtonView
