@@ -86,12 +86,12 @@ struct MainView: View {
             Spacer()
             HStack {
                 Image(systemName: "lightbulb")
-                    .foregroundColor(.black.opacity(0.6))
+                    .foregroundColor(.yellow.darker())
                     .font(.system(size: 24))
                     .padding()
                     .background(
-                        Circle().fill(.yellow.gradient)
-                            .shadow(radius: 10)
+                        Circle().fill(.yellow.lighter(by: 40).gradient)
+                            .shadow(radius: 10.0)
                     )
                     .button {
                         showInfo.toggle()
