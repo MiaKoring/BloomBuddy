@@ -111,7 +111,7 @@ struct WeatherCardView: View {
                         .sunny
                 }
             }()
-            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .snow))
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: weather))
         }
         
         return parsed

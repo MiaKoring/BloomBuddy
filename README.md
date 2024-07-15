@@ -1,7 +1,13 @@
-# Garden-Weather App (Mini-Hackathon Day 1)
+# BloomBuddy App (Mini-Hackathon Day 1)
+
+![Marketing](https://github.com/MiaKoring/Hackathon-project1/blob/main/Marketing/Screenshot%202024-07-15%20at%2015.28.21.png)
+
+![Video](https://github.com/MiaKoring/Hackathon-project1/blob/main/Marketing/VideoCompressed.mov)
+## Install
+After open the Xcode Project you have to Reset the Package Cache to get our SPM integrations. File -> Packages -> Reset Package Caches
 
 ## Information
-We present an app which helps you watering your plants according to their needs and the weather conditions. 
+We present a swift app (made with SwiftUI) which helps you watering your plants according to their needs and the weather conditions without excess water use. We created our own plant database with pockethost. 
 
 ## Authors
 
@@ -27,6 +33,10 @@ We present an app which helps you watering your plants according to their needs 
 - Mikan933
 - Ylivdesign
 - AngDiz
+- yukyik
+- Rudiyana
+- laterunlabs
+- Nikita Golubev
 
 ### Information about Watering
 [GartnWissn](https://gartnwissn.de/garten-richtig-giessen-wann-wie-viel-wie-oft/?utm_content=cmp-true)

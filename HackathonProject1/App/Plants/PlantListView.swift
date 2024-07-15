@@ -26,6 +26,9 @@ struct PlantListView: View {
                         PlantCard(plant: plant, todaysRainMM: $todaysRainMM)
                     }
                 })
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    Spacer().frame(height: 64)
+                }
             }
             .onChange(of: weather) {
                 print("WeatherUpdate PlantList")
