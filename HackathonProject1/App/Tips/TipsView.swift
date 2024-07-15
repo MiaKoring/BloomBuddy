@@ -38,7 +38,6 @@ struct TipsView: View {
             }
             .padding()
         }
-        .navigationTitle("Tips")
     }
 }
 

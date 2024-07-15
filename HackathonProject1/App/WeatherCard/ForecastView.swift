@@ -15,8 +15,9 @@ struct ForecastView: View {
             ForEach(data, id: \.id) { entry in
                 VStack {
                     Image(systemName: entry.weather.rawValue)
+                        .symbolRenderingMode(.multicolor)
                         .font(.title2)
-                        .frame(height: 20) //damit die Temperaturen nicht bei unterschiedlich hohen images verschoben werden
+                        .frame(height: 20)
                     Text("\(String(format: "%.1f", entry.temp)) °C")
                     Text("\(entry.hour):00")
                         .font(.caption2)

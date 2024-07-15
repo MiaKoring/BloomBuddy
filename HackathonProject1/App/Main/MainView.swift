@@ -21,6 +21,7 @@ struct MainView: View {
                 WeatherCardView(weather: $weather)
                     .frame(alignment: .top)
                     .padding()
+                    .shadow(radius: 10)
 
                 PlantListView(plants: $plants)
             }
@@ -52,6 +53,7 @@ struct MainView: View {
                     .padding()
                     .background(
                         Circle().fill(.yellow.gradient)
+                            .shadow(radius: 10)
                     )
                     .button {
                         showInfo.toggle()

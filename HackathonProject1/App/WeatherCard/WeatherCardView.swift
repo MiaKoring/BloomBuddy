@@ -26,9 +26,8 @@ struct WeatherCardView: View {
                         if let temp = weather?.current.temperature2M {
                             Text("\(String(format: "%.1f", temp)) °C")
                                 .font(.largeTitle)
-                        }
-                        else {
-                            Text("?")
+                        } else {
+                            Text("--")
                         }
                     }
 
