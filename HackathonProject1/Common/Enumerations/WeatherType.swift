@@ -23,21 +23,12 @@ extension WeatherType {
         case .sunny:
             LinearGradient(gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]), startPoint: .bottomLeading, endPoint: .topTrailing)
 
-        case .cloudySunny:
+        case .cloudySunny, .cloudy, .rain, .thunderstorm:
             LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-
-        case .cloudy:
-            LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-
-        case .rain:
-            LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-
+            
         case .snow:
             LinearGradient(colors: [.white, .white, .gray], startPoint: .bottomLeading, endPoint: .topLeading)
-
-        case .thunderstorm:
-            LinearGradient(gradient: Gradient(colors: [Color("Cloud1"), Color("Cloud2")]), startPoint: .bottomLeading, endPoint: .topTrailing)
-
+            
         case .windy:
             LinearGradient(colors: [.gray, .gray, .white], startPoint: .leading, endPoint: .trailing)
         }

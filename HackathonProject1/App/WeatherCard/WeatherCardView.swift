@@ -64,11 +64,13 @@ struct WeatherCardView: View {
             if let first = data.first {
                 first.weather.gradient
             }
-            LinearGradient(
-                gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]),
-                startPoint: .bottomLeading,
-                endPoint: .topTrailing
-            )
+            else {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]),
+                    startPoint: .bottomLeading,
+                    endPoint: .topTrailing
+                )
+            }
         }
         .onChange(of: weather) {
             guard let weather else { return }
@@ -109,7 +111,7 @@ struct WeatherCardView: View {
                         .sunny
                 }
             }()
-            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: weather))
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .snow))
         }
         
         return parsed
