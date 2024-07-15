@@ -30,3 +30,9 @@ extension Weather: Equatable {
         (lhs.longitude == rhs.longitude) && (lhs.latitude == rhs.longitude)
     }
 }
+
+extension Weather: Equatable {
+    static func == (lhs: Weather, rhs: Weather) -> Bool {
+        (lhs.longitude == rhs.longitude) && (lhs.latitude == rhs.longitude)
+    }
+}

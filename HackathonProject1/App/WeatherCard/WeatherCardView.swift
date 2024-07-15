@@ -62,6 +62,11 @@ struct WeatherCardView: View {
             if let first = data.first {
                 first.weather.gradient
             }
+            LinearGradient(
+                gradient: Gradient(colors: [Color("Sun"), Color.white, Color.white]),
+                startPoint: .bottomLeading,
+                endPoint: .topTrailing
+            )
         }
         .onChange(of: weather) {
             guard let weather else { return }
