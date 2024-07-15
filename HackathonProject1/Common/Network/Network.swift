@@ -11,16 +11,16 @@ import Mammut
 struct Network {
 
     static private var weatherAPI: Mammut {
-        Mammut(components: Environment.weather.components, loglevel: .debugCurl)
+        Mammut(components: NetworkEnv.weather.components, loglevel: .debugCurl)
     }
 
     static private var plantsAPI: Mammut {
-        Mammut(components: Environment.plants.components, loglevel: .debugCurl)
+        Mammut(components: NetworkEnv.plants.components, loglevel: .debugCurl)
     }
 
     static func request<T: Codable>(
         _ T: T.Type,
-        environment: Environment,
+        environment: NetworkEnv,
         endpoint: Endpoint
     ) async throws -> T {
         let result = await req(T.self, endpoint, environment )
@@ -33,7 +33,7 @@ struct Network {
     static private func req<T: Codable>(
         _ T: T.Type,
         _ endpoint: Endpoint,
-        _ env: Environment
+        _ env: NetworkEnv
     ) async -> Result<T, Error> {
         switch env {
         case .weather:

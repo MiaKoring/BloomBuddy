@@ -10,6 +10,8 @@ import Charts
 import SwiftChameleon
 
 struct WeatherCardView: View {
+
+    @Environment(LocationManager.self) private var locationManager
     @State var data: [HourlyWeatherData] = []
     @Binding var weather: Weather?
 
@@ -18,7 +20,7 @@ struct WeatherCardView: View {
             VStack(alignment: .leading, spacing: 25.0) {
                 HStack {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Test")
+                        Text("\(locationManager.city), \(locationManager.country)")
                             .padding(.bottom, 1)
                             .foregroundStyle(.black.secondary)
                         if let temp = weather?.current.temperature2M {

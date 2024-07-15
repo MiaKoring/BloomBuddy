@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HackathonProject1App: App {
+
+    @State private var locationManager: LocationManager = .init()
+
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environment(locationManager)
         }
     }
 }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum Environment {
+enum NetworkEnv {
     case weather
     case plants
 }
 
-extension Environment {
+extension NetworkEnv {
     var scheme: String {
         switch self {
         case .weather: "https"
