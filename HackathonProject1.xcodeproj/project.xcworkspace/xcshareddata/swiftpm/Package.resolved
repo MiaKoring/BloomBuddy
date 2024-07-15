@@ -1,5 +1,5 @@
 {
-  "originHash" : "6ac216d742fe7806c2c8c636ef0324f7b7374aef452b11fe232b1f8ce3066c8b",
+  "originHash" : "4ffc3e5d926e55861bb4cf3bda0942a6b5ec74a0dba953e885ca38855716adfb",
   "pins" : [
     {
       "identity" : "mammut",
@@ -13,7 +13,7 @@
     {
       "identity" : "swiftchameleon",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/simon-zwicker/SwiftChameleon",
+      "location" : "https://github.com/simon-zwicker/SwiftChameleon.git",
       "state" : {
         "branch" : "main",
         "revision" : "32f60c2209ec2e59f454ca8cc378a49b4096e3dd"

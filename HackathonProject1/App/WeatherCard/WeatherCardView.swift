@@ -10,16 +10,24 @@ import Charts
 import SwiftChameleon
 
 struct WeatherCardView: View {
+    @State var data: [HourlyTemperature] = []
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
                 Text("Test")
                     .padding(.bottom, 1)
                     .foregroundStyle(.black.secondary)
-                Text("12.0 °C")
-                    .font(.largeTitle)
+                if let first = data.first {
+                    Text("\(String(format: "%.1f", first.temp)) °C")
+                        .font(.largeTitle)
+                }
+                else {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                }
                 
-                ForecastView()
+                ForecastView(data: $data)
             }
             .background(alignment: .topTrailing) {
                 WeatherIconView()
@@ -34,10 +42,30 @@ struct WeatherCardView: View {
         .task {
             do {
                 let data = try await Network.request(Weather.self, environment: .weather, endpoint: WeatherAPI.forecast(48.8, 8.3333))
-                print(data)
+                print("\n\n\n\n\n\(data)\n\n\n\n\n")
+                self.data = getNextFive(from: data)
             } catch {
                 print("Error \(error.localizedDescription)")
             }
         }
+    }
+    
+    private func getNextFive(from data: Weather)-> [HourlyTemperature] {
+        var parsed: [HourlyTemperature] = []
+        
+        let currentTimeString = Date().toString(with: "yyyy-MM-dd HH").replacingOccurrences(of: " ", with: "T").appending(":00")
+        let temperatures = data.hourly.temperature_2m
+        let firstIndex = data.hourly.time.firstIndex(where: {$0.starts(with: currentTimeString)}) ?? 0
+        
+        let relevant = Array(temperatures[firstIndex...firstIndex + 4])
+        
+        let currentTimestamp = Date().timeIntervalSince1970
+        
+        for i in 0..<5 {
+            let hour = "\(Date(timeIntervalSince1970: currentTimestamp + 3600.0 * i.double).toString(with: "HH"))"
+            parsed.append(HourlyTemperature(hour: hour, temp: relevant[i]))
+        }
+        
+        return parsed
     }
 }
