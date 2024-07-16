@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ForecastView: View {
     @Binding var data: [HourlyWeatherData]
-
+    let hour: Int
+    
     var body: some View {
         HStack {
             ForEach(data, id: \.id) { entry in
                 VStack {
-                    Image(systemName: entry.weather.rawValue)
+                    image(entry.weather)
                         .if(entry.weather == .snow) { view in
                             view.foregroundStyle(.black)
                         }
@@ -30,6 +31,20 @@ struct ForecastView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+        }
+    }
+    
+    func image(_ weather: WeatherType) -> Image {
+        if (6...20).contains(hour) {
+            return Image(systemName: weather.rawValue)
+        }
+        switch weather {
+        case .sunny:
+            return Image(systemName: "moon.fill")
+        case .cloudySunny:
+            return Image(systemName: "cloud.moon.fill")
+        default:
+            return Image(systemName: weather.rawValue)
         }
     }
 }
