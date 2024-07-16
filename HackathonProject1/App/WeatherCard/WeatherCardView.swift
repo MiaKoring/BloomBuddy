@@ -13,6 +13,7 @@ struct WeatherCardView: View {
 
     @Environment(LocationManager.self) private var locationManager
     @State var data: [HourlyWeatherData] = []
+    let hour = 21//Calendar.current.component(.hour, from: Date())
     @Binding var weather: Weather?
 
     var body: some View {
@@ -26,10 +27,11 @@ struct WeatherCardView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("\(locationManager.city), \(locationManager.country)")
                             .padding(.bottom, 1)
-                            .foregroundStyle(.black.secondary)
+                            .foregroundStyle(dayText(weather: data.first?.weather) ? Color.black.secondary : Color.white.secondary)
                         if let temp = weather?.current.temperature2M {
                             Text("\(String(format: "%.1f", temp)) °C")
                                 .font(.largeTitle)
+                                .foregroundStyle(dayText(weather: data.first?.weather) ? Color.black : Color.white)
                         }
                     }
 
@@ -41,17 +43,43 @@ struct WeatherCardView: View {
             .background(alignment: .topTrailing) {
                 if let first = data.first {
                     if [WeatherType.sunny, WeatherType.cloudySunny].contains(first.weather) {
-                        SunBackgroundView()
-                            .offset(x: 80, y: -80)
-                            .if(first.weather == .cloudySunny) { view in
-                                view.overlay {
-                                    Image(systemName: "cloud.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundStyle(LinearGradient(colors: [.gray, .blue], startPoint: .top, endPoint: .bottom))
-                                        .offset(x: 20, y: -30)
+                        if (6...20).contains(hour) {
+                            SunBackgroundView()
+                                .offset(x: 80, y: -80)
+                                .if(first.weather == .cloudySunny) { view in
+                                    view.overlay {
+                                        Image(systemName: "cloud.fill")
+                                            .cloudStyle()
+                                            .offset(x: 20, y: -30)
+                                    }
                                 }
-                            }
+                        }
+                        else {
+                            Image(systemName: "moon.fill")
+                                .resizableFit()
+                                .foregroundStyle(LinearGradient(colors: [.yellow.opacity(0.3), .white], startPoint: .top, endPoint: .bottom))
+                                .frame(width: 100)
+                                .offset(x: 20, y: -30)
+                                .if(first.weather == .cloudySunny) { view in
+                                    view.overlay {
+                                        Image(systemName: "cloud.fill")
+                                            .cloudStyle()
+                                            .offset(x: 20, y: 0)
+                                    }
+                                }
+                        }
+                    }
+                    else if first.weather == .cloudy {
+                        Image(systemName: "cloud.fill")
+                            .cloudStyle()
+                            .frame(width: 150)
+                            .offset(x: 30, y: -30)
+                    }
+                    else if first.weather == .rain {
+                        Image(systemName: "cloud.rain.fill")
+                            .cloudStyle()
+                            .frame(width: 150)
+                            .offset(x: 30, y: -30)
                     }
                 } else {
                     SunBackgroundView()
@@ -62,7 +90,13 @@ struct WeatherCardView: View {
         .padding()
         .background {
             if let first = data.first {
-                first.weather.gradient
+                (6...20).contains(hour) || first.weather == .snow ?
+                first.weather.gradient :
+                LinearGradient(
+                    gradient: Gradient(colors: [.black, .blue]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
             }
             else {
                 LinearGradient(
@@ -111,10 +145,28 @@ struct WeatherCardView: View {
                         .sunny
                 }
             }()
-            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: weather))
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .windy))
         }
         
         return parsed
     }
+    
+    private func dayText(weather: WeatherType?) -> Bool {
+        weather == .snow || (6...20).contains(hour)
+    }
 }
 
+extension Image {
+    func cloudStyle()-> some View {
+        self
+            .resizable()
+            .scaledToFit()
+            .foregroundStyle(LinearGradient(colors: [.gray, .blue], startPoint: .top, endPoint: .bottom))
+    }
+    
+    func resizableFit()-> some View {
+        self
+            .resizable()
+            .scaledToFit()
+    }
+}
