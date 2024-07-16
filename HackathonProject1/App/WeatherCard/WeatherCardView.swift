@@ -38,7 +38,7 @@ struct WeatherCardView: View {
                     Spacer()
                 }
 
-                ForecastView(data: $data, hour: hour)
+                ForecastView(data: $data)
             }
             .background(alignment: .topTrailing) {
                 if let first = data.first {
