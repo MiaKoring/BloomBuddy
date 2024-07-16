@@ -13,7 +13,7 @@ struct WeatherCardView: View {
 
     @Environment(LocationManager.self) private var locationManager
     @State var data: [HourlyWeatherData] = []
-    let hour = 21//Calendar.current.component(.hour, from: Date())
+    let hour = Calendar.current.component(.hour, from: Date())
     @Binding var weather: Weather?
 
     var body: some View {
@@ -42,7 +42,8 @@ struct WeatherCardView: View {
             }
             .background(alignment: .topTrailing) {
                 if let first = data.first {
-                    if [WeatherType.sunny, WeatherType.cloudySunny].contains(first.weather) {
+                    switch first.weather {
+                    case .sunny, .cloudySunny:
                         if (6...20).contains(hour) {
                             SunBackgroundView()
                                 .offset(x: 80, y: -80)
@@ -68,18 +69,20 @@ struct WeatherCardView: View {
                                     }
                                 }
                         }
-                    }
-                    else if first.weather == .cloudy {
+                    case .cloudy:
                         Image(systemName: "cloud.fill")
                             .cloudStyle()
                             .frame(width: 150)
                             .offset(x: 30, y: -30)
-                    }
-                    else if first.weather == .rain {
+                    case .rain:
                         Image(systemName: "cloud.rain.fill")
                             .cloudStyle()
                             .frame(width: 150)
                             .offset(x: 30, y: -30)
+                    default:
+                        Rectangle()
+                            .frame(width: 0, height: 0)
+                            .hidden()
                     }
                 } else {
                     SunBackgroundView()
@@ -145,7 +148,7 @@ struct WeatherCardView: View {
                         .sunny
                 }
             }()
-            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: .windy))
+            parsed.append(HourlyWeatherData(hour: hour, temp: relevant[i], weather: weather))
         }
         
         return parsed
