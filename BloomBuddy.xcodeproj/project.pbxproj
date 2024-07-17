@@ -60,7 +60,7 @@
 		4F69B93B2C4538BE005F544E /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
-		A6DFF8092C43E443002FD86A /* HackathonProject1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackathonProject1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6DFF8092C43E443002FD86A /* BloomBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
 		A6DFF80E2C43E443002FD86A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A6DFF8102C43E445002FD86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		A6DFF80A2C43E443002FD86A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6DFF8092C43E443002FD86A /* HackathonProject1.app */,
+				A6DFF8092C43E443002FD86A /* BloomBuddy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,9 +246,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A6DFF8082C43E443002FD86A /* HackathonProject1 */ = {
+		A6DFF8082C43E443002FD86A /* BloomBuddy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6DFF8182C43E445002FD86A /* Build configuration list for PBXNativeTarget "HackathonProject1" */;
+			buildConfigurationList = A6DFF8182C43E445002FD86A /* Build configuration list for PBXNativeTarget "BloomBuddy" */;
 			buildPhases = (
 				A6DFF8052C43E443002FD86A /* Sources */,
 				A6DFF8062C43E443002FD86A /* Frameworks */,
@@ -258,13 +258,13 @@
 			);
 			dependencies = (
 			);
-			name = HackathonProject1;
+			name = BloomBuddy;
 			packageProductDependencies = (
 				4F90F8532C44752200B57F3D /* Mammut */,
 				4F90F8562C44752C00B57F3D /* SwiftChameleon */,
 			);
 			productName = HackathonProject1;
-			productReference = A6DFF8092C43E443002FD86A /* HackathonProject1.app */;
+			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -282,7 +282,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A6DFF8042C43E443002FD86A /* Build configuration list for PBXProject "HackathonProject1" */;
+			buildConfigurationList = A6DFF8042C43E443002FD86A /* Build configuration list for PBXProject "BloomBuddy" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -299,7 +299,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6DFF8082C43E443002FD86A /* HackathonProject1 */,
+				A6DFF8082C43E443002FD86A /* BloomBuddy */,
 			);
 		};
 /* End PBXProject section */
@@ -478,6 +478,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BloomBuddy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -495,7 +497,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.hackathon1.HackathonProject1;
+				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.BloomBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -519,6 +521,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BloomBuddy;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -536,7 +540,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.hackathon1.HackathonProject1;
+				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.BloomBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -550,7 +554,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6DFF8042C43E443002FD86A /* Build configuration list for PBXProject "HackathonProject1" */ = {
+		A6DFF8042C43E443002FD86A /* Build configuration list for PBXProject "BloomBuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6DFF8162C43E445002FD86A /* Debug */,
@@ -559,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6DFF8182C43E445002FD86A /* Build configuration list for PBXNativeTarget "HackathonProject1" */ = {
+		A6DFF8182C43E445002FD86A /* Build configuration list for PBXNativeTarget "BloomBuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A6DFF8192C43E445002FD86A /* Debug */,
