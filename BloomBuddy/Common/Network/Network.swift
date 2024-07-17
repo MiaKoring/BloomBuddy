@@ -14,10 +14,6 @@ struct Network {
         Mammut(components: NetworkEnv.weather.components, loglevel: .debug)
     }
 
-    static private var plantsAPI: Mammut {
-        Mammut(components: NetworkEnv.plants.components, loglevel: .debug)
-    }
-
     static func request<T: Codable>(
         _ T: T.Type,
         environment: NetworkEnv,
@@ -38,8 +34,6 @@ struct Network {
         switch env {
         case .weather:
             return await weatherAPI.request(endpoint, error: ErrorObj.self)
-        case .plants:
-            return await plantsAPI.request(endpoint, error: ErrorObj.self)
         }
     }
 }

@@ -7,11 +7,11 @@
 
 import SwiftUI
 import CoreLocation
+import RealmSwift
 
 struct MainView: View {
-
+    @ObservedResults(SavedPlant.self) private var plants
     @Environment(LocationManager.self) private var locationManager
-    @State private var plants: [Plant] = []
     @State private var weather: Weather?
     @State private var showInfo: Bool = false
 
@@ -106,19 +106,11 @@ struct MainView: View {
         guard let coords else { return }
         Task {
             do {
-                let plantsData = try await Network.request(
-                    PocketBase<Plant>.self,
-                    environment: .plants,
-                    endpoint: PlantAPI.plants
-                )
-
                 let weatherData = try await Network.request(
                     Weather.self,
                     environment: .weather,
                     endpoint: WeatherAPI.forecast(coords.latitude, coords.longitude)
                 )
-
-                plants = plantsData.items
                 weather = weatherData
 
                 dump(weatherData)

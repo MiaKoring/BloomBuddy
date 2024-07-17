@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct PlantListView: View {
 
-    @Binding var plants: [Plant]
+    @ObservedResults(SavedPlant.self) var plants
     @Binding var weather: Weather?
     @State var todaysRainMM: Double = 0.0
 

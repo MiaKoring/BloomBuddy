@@ -1,0 +1,222 @@
+[
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 15:42:08.524Z",
+        "growth_stage": "big",
+        "id": "69vttmo7ssjqikc",
+        "name": "Apfelbaum",
+        "soil_type": "loamy",
+        "updated": "2024-07-15 08:21:39.735Z",
+        "water_requirement": "big"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 16:15:15.530Z",
+        "growth_stage": "medium",
+        "id": "62ws5vqj2jp17hv",
+        "name": "Kirsche",
+        "soil_type": "loamy",
+        "updated": "2024-07-15 08:21:29.205Z",
+        "water_requirement": "big"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 18:57:29.655Z",
+        "growth_stage": "small",
+        "id": "thhy6anwcti0i1o",
+        "name": "Thymian",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 18:57:29.655Z",
+        "water_requirement": "medium"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 18:58:55.796Z",
+        "growth_stage": "big",
+        "id": "msz39hmo2zg1pcn",
+        "name": "Zuckererbse",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 18:58:55.796Z",
+        "water_requirement": "big"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 19:05:18.139Z",
+        "growth_stage": "medium",
+        "id": "otwcbpffeqwfuvx",
+        "name": "Pfingstrose",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 19:05:18.139Z",
+        "water_requirement": "small"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 19:06:04.008Z",
+        "growth_stage": "big",
+        "id": "s1ou1d13l5p6vc6",
+        "name": "Tomate",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 19:06:04.008Z",
+        "water_requirement": "medium"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 19:06:34.507Z",
+        "growth_stage": "medium",
+        "id": "3msv2fkttdkjbla",
+        "name": "Gurke",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 19:06:34.507Z",
+        "water_requirement": "big"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 19:08:06.685Z",
+        "growth_stage": "small",
+        "id": "o5vrd9ebfx1z8is",
+        "name": "Kürbis",
+        "soil_type": "loamy",
+        "updated": "2024-07-14 19:08:06.685Z",
+        "water_requirement": "big"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 19:09:23.286Z",
+        "growth_stage": "big",
+        "id": "ldoqr13ums4nrrz",
+        "name": "Himbeere",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 19:09:23.286Z",
+        "water_requirement": "small"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 21:14:09.114Z",
+        "growth_stage": "big",
+        "id": "5n0utdp0hgcszts",
+        "name": "Erdbeere",
+        "soil_type": "sandy",
+        "updated": "2024-07-14 21:14:09.114Z",
+        "water_requirement": "big"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 21:16:43.118Z",
+        "growth_stage": "big",
+        "id": "ysekeouphg2yo2n",
+        "name": "Brombeere",
+        "soil_type": "loamy - sandy",
+        "updated": "2024-07-14 21:16:43.118Z",
+        "water_requirement": "medium"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-14 21:18:31.659Z",
+        "growth_stage": "medium",
+        "id": "qmyfz7hqf6whdrd",
+        "name": "Karotte",
+        "soil_type": "sandy-loamy",
+        "updated": "2024-07-15 12:49:19.354Z",
+        "water_requirement": "medium"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 06:54:27.425Z",
+        "growth_stage": "big",
+        "id": "71v0lfdus4d5hii",
+        "name": "Gladiole",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 06:54:27.425Z",
+        "water_requirement": "small"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 11:39:50.535Z",
+        "growth_stage": "medium",
+        "id": "f77c8s1jrrt7w9t",
+        "name": "Rosmarin",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 11:39:50.535Z",
+        "water_requirement": "small"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 12:27:21.753Z",
+        "growth_stage": "medium",
+        "id": "oxnx7kkybtipy7d",
+        "name": "Mohn",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 12:48:16.698Z",
+        "water_requirement": "small"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 12:28:18.492Z",
+        "growth_stage": "big",
+        "id": "om4vxogcl2arrow",
+        "name": "Knoblauch",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 12:28:18.492Z",
+        "water_requirement": "small"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 12:28:46.934Z",
+        "growth_stage": "big",
+        "id": "zbsfvqos1p6q2up",
+        "name": "Chili",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 12:28:46.934Z",
+        "water_requirement": "medium"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 12:30:23.516Z",
+        "growth_stage": "medium",
+        "id": "nbjd1gb4bil2elg",
+        "name": "Cannabis",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 12:48:54.587Z",
+        "water_requirement": "medium"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 12:32:20.114Z",
+        "growth_stage": "big",
+        "id": "ua930kj2ohd2us8",
+        "name": "Celosia Argentea",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 12:32:20.114Z",
+        "water_requirement": "middle"
+    },
+    {
+        "collectionId": "tmx834eom9klfr4",
+        "collectionName": "plants",
+        "created": "2024-07-15 12:33:44.392Z",
+        "growth_stage": "big",
+        "id": "r8x0m1dbfwvm8ev",
+        "name": "Kiwibeere",
+        "soil_type": "sandy",
+        "updated": "2024-07-15 12:33:44.392Z",
+        "water_requirement": "big"
+    }
+]

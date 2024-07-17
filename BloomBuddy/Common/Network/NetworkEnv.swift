@@ -9,28 +9,24 @@ import Foundation
 
 enum NetworkEnv {
     case weather
-    case plants
 }
 
 extension NetworkEnv {
     var scheme: String {
         switch self {
         case .weather: "https"
-        case .plants: "https"
         }
     }
 
     var host: String {
         switch self {
         case .weather: "api.open-meteo.com"
-        case .plants: "kirreth.pockethost.io"
         }
     }
 
     var path: String {
         switch self {
         case .weather: "/v1"
-        case .plants: "/api/collections"
         }
     }
 

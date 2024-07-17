@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct HackathonProject1App: App {
-
+struct HackathonProject1App: SwiftUI.App {
+    @State var skipInit = UserDefaults().bool(forKey: "skipInit")
     @State private var locationManager: LocationManager = .init()
+    
     let gradient = LinearGradient(
         colors: [
             .mint.opacity(0),
@@ -28,9 +30,13 @@ struct HackathonProject1App: App {
                 Color.clear.ignoresSafeArea().background(
                     gradient
                 )
-
-                MainView()
-                    .environment(locationManager)
+                
+                if !skipInit {
+                    InitializationView(skipInit: $skipInit)
+                } else {
+                    MainView()
+                        .environment(locationManager)
+                }
             }
         }
     }

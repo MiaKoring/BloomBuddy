@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F2EFCA02C451039000FEBFD /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2EFC9F2C451039000FEBFD /* CurrentWeather.swift */; };
 		4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */; };
-		4F430B402C447A2F00AF7CCD /* PlantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B3F2C447A2F00AF7CCD /* PlantAPI.swift */; };
 		4F430B432C447A3700AF7CCD /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B412C447A3700AF7CCD /* Plant.swift */; };
-		4F430B442C447A3700AF7CCD /* PocketBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B422C447A3700AF7CCD /* PocketBase.swift */; };
 		4F430B472C447A4500AF7CCD /* PlantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B452C447A4500AF7CCD /* PlantListView.swift */; };
 		4F430B492C4480FE00AF7CCD /* SunBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B482C4480FE00AF7CCD /* SunBackgroundView.swift */; };
 		4F430B4B2C44811A00AF7CCD /* HourlyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B4A2C44811A00AF7CCD /* HourlyWeatherData.swift */; };
@@ -31,18 +29,39 @@
 		4F90F8512C44748500B57F3D /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90F84E2C44748500B57F3D /* TipsView.swift */; };
 		4F90F8542C44752200B57F3D /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8532C44752200B57F3D /* Mammut */; };
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
-		A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */; };
+		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
+		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
+		A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A689F7D92C485FC8006AA97F /* RealmSwift */; };
+		A689F7DC2C485FFD006AA97F /* SavedPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DB2C485FFD006AA97F /* SavedPlant.swift */; };
+		A689F7DE2C48600E006AA97F /* PlantCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DD2C48600E006AA97F /* PlantCollection.swift */; };
+		A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DF2C4860C1006AA97F /* GrowthStage.swift */; };
+		A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7E12C4860F7006AA97F /* WaterRequirement.swift */; };
+		A689F7E32C48621E006AA97F /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A689F7D92C485FC8006AA97F /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A689F7E62C48656F006AA97F /* InitializationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7E52C48656F006AA97F /* InitializationView.swift */; };
+		A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */; };
 		A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80E2C43E443002FD86A /* MainView.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
 		A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A689F7E42C48621E006AA97F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A689F7E32C48621E006AA97F /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4F2EFC9F2C451039000FEBFD /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		4F430B3F2C447A2F00AF7CCD /* PlantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantAPI.swift; sourceTree = "<group>"; };
 		4F430B412C447A3700AF7CCD /* Plant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
-		4F430B422C447A3700AF7CCD /* PocketBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketBase.swift; sourceTree = "<group>"; };
 		4F430B452C447A4500AF7CCD /* PlantListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantListView.swift; sourceTree = "<group>"; };
 		4F430B482C4480FE00AF7CCD /* SunBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunBackgroundView.swift; sourceTree = "<group>"; };
 		4F430B4A2C44811A00AF7CCD /* HourlyWeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyWeatherData.swift; sourceTree = "<group>"; };
@@ -60,11 +79,18 @@
 		4F69B93B2C4538BE005F544E /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		A67CA1EA2C48759F005F3856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
+		A689F7DB2C485FFD006AA97F /* SavedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlant.swift; sourceTree = "<group>"; };
+		A689F7DD2C48600E006AA97F /* PlantCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollection.swift; sourceTree = "<group>"; };
+		A689F7DF2C4860C1006AA97F /* GrowthStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthStage.swift; sourceTree = "<group>"; };
+		A689F7E12C4860F7006AA97F /* WaterRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirement.swift; sourceTree = "<group>"; };
+		A689F7E52C48656F006AA97F /* InitializationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializationView.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* BloomBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonProject1App.swift; sourceTree = "<group>"; };
+		A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyApp.swift; sourceTree = "<group>"; };
 		A6DFF80E2C43E443002FD86A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A6DFF8102C43E445002FD86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A6DFF8122C43E445002FD86A /* HackathonProject1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HackathonProject1.entitlements; sourceTree = "<group>"; };
+		A6DFF8122C43E445002FD86A /* BloomBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloomBuddy.entitlements; sourceTree = "<group>"; };
 		A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */,
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
 				4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */,
 			);
@@ -101,7 +128,10 @@
 		4F430B4C2C44813100AF7CCD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F430B412C447A3700AF7CCD /* Plant.swift */,
 				4F430B4A2C44811A00AF7CCD /* HourlyWeatherData.swift */,
+				A689F7DB2C485FFD006AA97F /* SavedPlant.swift */,
+				A689F7DD2C48600E006AA97F /* PlantCollection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A6DFF8102C43E445002FD86A /* Assets.xcassets */,
+				A689F7D62C485D08006AA97F /* ExistingPlants.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -141,7 +172,8 @@
 		4F61ED242C43E68B00092522 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A6DFF80C2C43E443002FD86A /* HackathonProject1App.swift */,
+				A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */,
+				A689F7E52C48656F006AA97F /* InitializationView.swift */,
 				A6DFF80E2C43E443002FD86A /* MainView.swift */,
 			);
 			path = Main;
@@ -150,7 +182,6 @@
 		4F61ED252C43E69700092522 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4F430B3F2C447A2F00AF7CCD /* PlantAPI.swift */,
 				4F61ED262C43E69B00092522 /* Response */,
 				4F61ED292C43E6F600092522 /* NetworkEnv.swift */,
 				4F61ED2C2C43E79400092522 /* Network.swift */,
@@ -162,8 +193,6 @@
 		4F61ED262C43E69B00092522 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				4F430B412C447A3700AF7CCD /* Plant.swift */,
-				4F430B422C447A3700AF7CCD /* PocketBase.swift */,
 				4F61ED272C43E6BD00092522 /* ErrorObj.swift */,
 				4F61ED302C43EAC700092522 /* Weather.swift */,
 				4F61ED322C43EB6D00092522 /* Hourly.swift */,
@@ -176,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				4F61ED352C43EF2300092522 /* WeatherType.swift */,
+				A689F7DF2C4860C1006AA97F /* GrowthStage.swift */,
+				A689F7E12C4860F7006AA97F /* WaterRequirement.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -210,7 +241,7 @@
 		A6DFF8002C43E443002FD86A = {
 			isa = PBXGroup;
 			children = (
-				A6DFF80B2C43E443002FD86A /* HackathonProject1 */,
+				A6DFF80B2C43E443002FD86A /* BloomBuddy */,
 				A6DFF80A2C43E443002FD86A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -223,16 +254,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6DFF80B2C43E443002FD86A /* HackathonProject1 */ = {
+		A6DFF80B2C43E443002FD86A /* BloomBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				A67CA1EA2C48759F005F3856 /* Info.plist */,
 				4F61ED232C43E68500092522 /* App */,
 				4F61ED222C43E68100092522 /* Common */,
 				4F61ED212C43E67B00092522 /* Resources */,
-				A6DFF8122C43E445002FD86A /* HackathonProject1.entitlements */,
+				A6DFF8122C43E445002FD86A /* BloomBuddy.entitlements */,
 				A6DFF8132C43E445002FD86A /* Preview Content */,
 			);
-			path = HackathonProject1;
+			path = BloomBuddy;
 			sourceTree = "<group>";
 		};
 		A6DFF8132C43E445002FD86A /* Preview Content */ = {
@@ -253,6 +285,7 @@
 				A6DFF8052C43E443002FD86A /* Sources */,
 				A6DFF8062C43E443002FD86A /* Frameworks */,
 				A6DFF8072C43E443002FD86A /* Resources */,
+				A689F7E42C48621E006AA97F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +295,7 @@
 			packageProductDependencies = (
 				4F90F8532C44752200B57F3D /* Mammut */,
 				4F90F8562C44752C00B57F3D /* SwiftChameleon */,
+				A689F7D92C485FC8006AA97F /* RealmSwift */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -294,6 +328,8 @@
 			packageReferences = (
 				4F90F8522C44752200B57F3D /* XCRemoteSwiftPackageReference "Mammut" */,
 				4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
+				A689F7D82C485FC8006AA97F /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -309,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */,
 				4F69B93E2C454126005F544E /* Launch Screen.storyboard in Resources */,
 				A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */,
 				A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */,
@@ -323,7 +360,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F61ED2D2C43E79400092522 /* Network.swift in Sources */,
+				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
 				A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */,
+				A689F7DC2C485FFD006AA97F /* SavedPlant.swift in Sources */,
 				4F56CB802C4546A100E3FF23 /* Color.swift in Sources */,
 				4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */,
 				4F430B492C4480FE00AF7CCD /* SunBackgroundView.swift in Sources */,
@@ -331,20 +370,22 @@
 				4F61ED332C43EB6D00092522 /* Hourly.swift in Sources */,
 				4F61ED2A2C43E6F600092522 /* NetworkEnv.swift in Sources */,
 				4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */,
+				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
 				4F430B432C447A3700AF7CCD /* Plant.swift in Sources */,
 				4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */,
+				A689F7E62C48656F006AA97F /* InitializationView.swift in Sources */,
 				4F430B4B2C44811A00AF7CCD /* HourlyWeatherData.swift in Sources */,
-				4F430B402C447A2F00AF7CCD /* PlantAPI.swift in Sources */,
 				4F2EFCA02C451039000FEBFD /* CurrentWeather.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
 				4F430B472C447A4500AF7CCD /* PlantListView.swift in Sources */,
 				4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */,
 				4F61ED282C43E6BD00092522 /* ErrorObj.swift in Sources */,
-				4F430B442C447A3700AF7CCD /* PocketBase.swift in Sources */,
-				A6DFF80D2C43E443002FD86A /* HackathonProject1App.swift in Sources */,
+				A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */,
+				A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */,
 				4F61ED362C43EF2300092522 /* WeatherType.swift in Sources */,
 				4F61ED312C43EAC700092522 /* Weather.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
+				A689F7DE2C48600E006AA97F /* PlantCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,14 +511,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HackathonProject1/HackathonProject1.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BloomBuddy/BloomBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HackathonProject1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BloomBuddy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BloomBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
@@ -513,14 +555,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = HackathonProject1/HackathonProject1.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BloomBuddy/BloomBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HackathonProject1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BloomBuddy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BloomBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
@@ -591,6 +634,22 @@
 				kind = branch;
 			};
 		};
+		A689F7D82C485FC8006AA97F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.52.1;
+			};
+		};
+		A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -603,6 +662,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
 			productName = SwiftChameleon;
+		};
+		A689F7D92C485FC8006AA97F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A689F7D82C485FC8006AA97F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

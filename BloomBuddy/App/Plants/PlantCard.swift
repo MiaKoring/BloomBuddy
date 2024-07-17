@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct PlantCard: View {
 
-    let plant: Plant
+    @ObservedRealmObject var plant: SavedPlant
     @Binding var todaysRainMM: Double
 
     var body: some View {
@@ -68,11 +69,7 @@ struct PlantCard: View {
     }
 
     var wateringImage: Image {
-        switch plant.waterRequirement {
-        case "small": Image("watering1")
-        case "medium": Image("watering2")
-        default: Image("watering3")
-        }
+        Image("watering\(plant.waterRequirement)")
     }
     
     var growthImage: Image {
