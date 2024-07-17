@@ -3,6 +3,12 @@
 ![Marketing](https://github.com/MiaKoring/Hackathon-project1/blob/main/Marketing/Screenshot%202024-07-15%20at%2015.28.21.png)
 
 ![Video](https://github.com/MiaKoring/Hackathon-project1/blob/main/Marketing/VideoCompressed.mov)
+
+## Disclaimer
+This project was initially created in the Kevin Chromik's first hackathon. 
+We decided to continue development of BloomBuddy.
+This branch will stay on the development stage submitted in the hackathon.
+
 ## Install
 After open the Xcode Project you have to Reset the Package Cache to get our SPM integrations. File -> Packages -> Reset Package Caches
 
