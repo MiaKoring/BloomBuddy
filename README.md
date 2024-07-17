@@ -5,7 +5,7 @@
 ![Video](https://github.com/MiaKoring/Hackathon-project1/blob/main/Marketing/VideoCompressed.mov)
 
 ## Disclaimer
-This project was initially created in the Kevin Chromik's first hackathon. 
+This project was initially created in Kevin Chromik's first hackathon. 
 We decided to continue development of BloomBuddy.
 This branch will stay on the development stage submitted in the hackathon.
 
