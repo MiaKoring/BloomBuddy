@@ -8,19 +8,28 @@
 import SwiftUI
 import CoreLocation
 import RealmSwift
+import ZapdosKit
 
 struct MainView: View {
     @ObservedResults(SavedPlant.self) private var plants
     @Environment(LocationManager.self) private var locationManager
+    @Environment(Zapdos.self) private var zapdos
     @State private var weather: Weather?
     @State private var showInfo: Bool = false
 
     var body: some View {
         ZStack {
             VStack {
-                WeatherCardView(weather: $weather)
+                /*WeatherCardView(weather: $weather)
                     .frame(alignment: .top)
                     .padding()
+                 */
+                if let current = zapdos.weather?.currentTempCel {
+                    Text("\(current.value.float)")
+                }
+                else {
+                    Text("Failed")
+                }
 
                 if !plants.isEmpty {
                     HStack(spacing: 20.0) {
@@ -77,6 +86,9 @@ struct MainView: View {
         })
         .onAppear {
             locationManager.requestAuth()
+        }
+        .task {
+            print(await zapdos.fetchWeather(for: CLLocation(latitude: 54.4858, longitude: 9.05239)))
         }
     }
 

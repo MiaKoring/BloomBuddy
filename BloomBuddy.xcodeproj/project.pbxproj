@@ -29,6 +29,8 @@
 		4F90F8512C44748500B57F3D /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90F84E2C44748500B57F3D /* TipsView.swift */; };
 		4F90F8542C44752200B57F3D /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8532C44752200B57F3D /* Mammut */; };
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
+		A60CE2082C4EA7F300A862A6 /* ZapdosKit in Frameworks */ = {isa = PBXBuildFile; productRef = A60CE2072C4EA7F300A862A6 /* ZapdosKit */; };
+		A60F5D8E2C4EEA6A0047ADFE /* WaterDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F5D8D2C4EEA6A0047ADFE /* WaterDay.swift */; };
 		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A689F7D92C485FC8006AA97F /* RealmSwift */; };
@@ -79,6 +81,7 @@
 		4F69B93B2C4538BE005F544E /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		A60F5D8D2C4EEA6A0047ADFE /* WaterDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDay.swift; sourceTree = "<group>"; };
 		A67CA1EA2C48759F005F3856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
 		A689F7DB2C485FFD006AA97F /* SavedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlant.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 			files = (
 				A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */,
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
+				A60CE2082C4EA7F300A862A6 /* ZapdosKit in Frameworks */,
 				4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +136,7 @@
 				4F430B4A2C44811A00AF7CCD /* HourlyWeatherData.swift */,
 				A689F7DB2C485FFD006AA97F /* SavedPlant.swift */,
 				A689F7DD2C48600E006AA97F /* PlantCollection.swift */,
+				A60F5D8D2C4EEA6A0047ADFE /* WaterDay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				4F90F8532C44752200B57F3D /* Mammut */,
 				4F90F8562C44752C00B57F3D /* SwiftChameleon */,
 				A689F7D92C485FC8006AA97F /* RealmSwift */,
+				A60CE2072C4EA7F300A862A6 /* ZapdosKit */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -330,6 +336,7 @@
 				4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
 				A689F7D82C485FC8006AA97F /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				A60CE2062C4EA7F300A862A6 /* XCRemoteSwiftPackageReference "ZapdosKit" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -385,6 +392,7 @@
 				4F61ED362C43EF2300092522 /* WeatherType.swift in Sources */,
 				4F61ED312C43EAC700092522 /* Weather.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
+				A60F5D8E2C4EEA6A0047ADFE /* WaterDay.swift in Sources */,
 				A689F7DE2C48600E006AA97F /* PlantCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +642,14 @@
 				kind = branch;
 			};
 		};
+		A60CE2062C4EA7F300A862A6 /* XCRemoteSwiftPackageReference "ZapdosKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MiaKoring/ZapdosKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		A689F7D82C485FC8006AA97F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -662,6 +678,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
 			productName = SwiftChameleon;
+		};
+		A60CE2072C4EA7F300A862A6 /* ZapdosKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A60CE2062C4EA7F300A862A6 /* XCRemoteSwiftPackageReference "ZapdosKit" */;
+			productName = ZapdosKit;
 		};
 		A689F7D92C485FC8006AA97F /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;

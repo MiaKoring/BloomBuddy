@@ -7,11 +7,13 @@
 
 import SwiftUI
 import RealmSwift
+import ZapdosKit
 
 @main
 struct HackathonProject1App: SwiftUI.App {
     @State var skipInit = UserDefaults().bool(forKey: "skipInit")
     @State private var locationManager: LocationManager = .init()
+    @State private var zapdos: Zapdos = Zapdos()
     
     let gradient = LinearGradient(
         colors: [
@@ -36,6 +38,8 @@ struct HackathonProject1App: SwiftUI.App {
                 } else {
                     MainView()
                         .environment(locationManager)
+                        .environment(zapdos)
+                    
                 }
             }
         }
