@@ -11,7 +11,7 @@ import BackgroundTasks
 struct BGTaskManager {
     static func scheduleWaterCheck() {
         let request = BGAppRefreshTaskRequest(identifier: waterCheckTaskId)
-        request.earliestBeginDate = .now.addingTimeInterval(10) //TODO: Change Time
+        request.earliestBeginDate = .now.addingTimeInterval(1) //TODO: Change Time
         do {
             try BGTaskScheduler.shared.submit(request)
             print("succeeded")

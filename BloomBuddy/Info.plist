@@ -4,8 +4,10 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>de.touchthegrass.checkWaterRequirement</string>
+		<string>de.touchthegrass.BloomBuddy.checkWaterRequirement</string>
 	</array>
+	<key>CFBundleSignature</key>
+	<string></string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIBackgroundModes</key>

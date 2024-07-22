@@ -67,6 +67,9 @@ struct HackathonProject1App: SwiftUI.App {
             }
         }
         .backgroundTask(.appRefresh(waterCheckTaskId)) {
+            print("TaskCalled")
+            NotificationManager.sendNotification("Alla gieß ma deine Pflanzen", description: "Die hamm ooch Jefühle")
+            /*
             if await !zapdos.fetchWeather(for: CLLocation(latitude: 54.4858, longitude: 9.05239)) {
                 print("Nope keen fetchn hier do")
                 return
@@ -74,7 +77,7 @@ struct HackathonProject1App: SwiftUI.App {
             if UserDefaults.standard.integer(forKey: "lastWatered") > (Date().timeIntervalSinceReferenceDate - 3600).int {
                 return
             }
-            NotificationManager.sendNotification("Alla gieß ma deine Pflanzen", description: "Die hamm ooch Jefühle")
+            NotificationManager.sendNotification("Alla gieß ma deine Pflanzen", description: "Die hamm ooch Jefühle")*/
         }
     }
 }
