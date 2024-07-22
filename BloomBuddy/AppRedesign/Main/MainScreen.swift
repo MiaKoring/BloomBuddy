@@ -18,7 +18,7 @@ struct MainScreen: View {
 
     // MARK: - Properties
     @AppStorage(UDKey.tips.key) private var tips: Bool = false
-    @State var showTipDetail: Bool = false
+    @State private var showTipDetail: Bool = false
     @State private var scrollPosition: CGPoint = .zero
     @State private var weather: Weather?
 

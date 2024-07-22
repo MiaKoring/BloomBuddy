@@ -29,6 +29,7 @@
 		4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */; };
 		4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69B93B2C4538BE005F544E /* PlantCard.swift */; };
 		4F69B93E2C454126005F544E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F69B93D2C454126005F544E /* Launch Screen.storyboard */; };
+		4F75873D2C4F0D6D00474424 /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75873C2C4F0D6D00474424 /* PlantDetail.swift */; };
 		4F90F8512C44748500B57F3D /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90F84E2C44748500B57F3D /* TipsView.swift */; };
 		4F90F8542C44752200B57F3D /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8532C44752200B57F3D /* Mammut */; };
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
@@ -82,6 +83,7 @@
 		4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		4F69B93B2C4538BE005F544E /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		4F75873C2C4F0D6D00474424 /* PlantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		A67CA1EA2C48759F005F3856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				4F3AD4E12C4E8FD4005BB774 /* PlantList.swift */,
 				4F3AD4E42C4E8FE2005BB774 /* PlantRow.swift */,
+				4F75873C2C4F0D6D00474424 /* PlantDetail.swift */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
+				4F75873D2C4F0D6D00474424 /* PlantDetail.swift in Sources */,
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,

@@ -11,6 +11,7 @@ import RealmSwift
 struct PlantList: View {
 
     @ObservedResults(Plant.self) var plants
+    @State private var showAdd: Bool = false
 
     var body: some View {
         VStack {
@@ -26,6 +27,9 @@ struct PlantList: View {
                 Image(systemName: "plus")
                     .foregroundStyle(.plantGreen)
                     .font(.Bold.title2)
+                    .button {
+                        showAdd.setTrue()
+                    }
             }
             .padding(.horizontal, 10.0)
 
@@ -52,6 +56,9 @@ struct PlantList: View {
                 })
             }
         }
+        .sheet(isPresented: $showAdd, content: {
+            PlantDetail()
+        })
     }
 }
 
