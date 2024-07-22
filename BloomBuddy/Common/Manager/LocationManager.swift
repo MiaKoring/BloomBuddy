@@ -31,7 +31,7 @@ class LocationManager: NSObject {
     func fetchCityAndCountry(from location: CLLocation, completion: @escaping (String?, String?, Error?) -> ()) {
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             completion(placemarks?.first?.locality,
-                       placemarks?.first?.country,
+                       placemarks?.first?.isoCountryCode,
                        error)
         }
     }

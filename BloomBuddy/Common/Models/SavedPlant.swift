@@ -7,14 +7,12 @@
 
 import RealmSwift
 
-final class SavedPlant: Object, ObjectKeyIdentifiable {
+final class Plant: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var growthStage: GrowthStage.RawValue
     @Persisted var waterRequirement: WaterRequirement.RawValue
-    @Persisted(originProperty: "plants") var collections: LinkingObjects<PlantCollection>
-    
-    override init() { }
+    @Persisted(originProperty: "plants") var collections: LinkingObjects<Plants>
     
     convenience init(name: String, growthStage: GrowthStage, waterRequirement: WaterRequirement) {
         self.init()

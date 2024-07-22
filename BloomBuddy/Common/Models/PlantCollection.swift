@@ -7,7 +7,8 @@
 
 import RealmSwift
 
-final class PlantCollection: Object, ObjectKeyIdentifiable {
+final class Plants: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var plants = RealmSwift.List<SavedPlant>()
+    @Persisted var name: String = ""
+    @Persisted var plants: List<Plant> = .init()
 }

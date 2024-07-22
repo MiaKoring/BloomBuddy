@@ -7,10 +7,11 @@
 
 import SwiftUI
 import RealmSwift
+import WeatherKit
 
 struct PlantListView: View {
 
-    @ObservedResults(SavedPlant.self) var plants
+    @ObservedResults(Plant.self) var plants
     @Binding var weather: Weather?
     @State var todaysRainMM: Double = 0.0
 
@@ -34,7 +35,7 @@ struct PlantListView: View {
             .onChange(of: weather) {
                 print("WeatherUpdate PlantList")
                 guard let weather = weather else { return }
-                todaysRainMM = weather.hourly.rain.prefix(24).reduce(0.0, +)
+//                todaysRainMM = weather.hourly.rain.prefix(24).reduce(0.0, +)
             }
 
             if weather.isNil || plants.isEmpty {

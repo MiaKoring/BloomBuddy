@@ -10,7 +10,7 @@ import RealmSwift
 
 struct PlantCard: View {
 
-    @ObservedRealmObject var plant: SavedPlant
+    @ObservedRealmObject var plant: Plant
     @Binding var todaysRainMM: Double
 
     var body: some View {

@@ -8,9 +8,10 @@
 import SwiftUI
 import CoreLocation
 import RealmSwift
+import WeatherKit
 
 struct MainView: View {
-    @ObservedResults(SavedPlant.self) private var plants
+    @ObservedResults(Plant.self) private var plants
     @Environment(LocationManager.self) private var locationManager
     @State private var weather: Weather?
     @State private var showInfo: Bool = false
@@ -19,7 +20,7 @@ struct MainView: View {
         ZStack {
             VStack {
                 WeatherCardView(weather: $weather)
-                    .frame(alignment: .top)
+//                    .frame(alignment: .top)
                     .padding()
 
                 if !plants.isEmpty {
@@ -105,18 +106,18 @@ struct MainView: View {
     private func callAPIs(_ coords: CLLocationCoordinate2D?) {
         guard let coords else { return }
         Task {
-            do {
-                let weatherData = try await Network.request(
-                    Weather.self,
-                    environment: .weather,
-                    endpoint: WeatherAPI.forecast(coords.latitude, coords.longitude)
-                )
-                weather = weatherData
-
-                dump(weatherData)
-            } catch {
-                print("Error on retrieving Data: \(error.localizedDescription)")
-            }
+//            do {
+//                let weatherData = try await Network.request(
+//                    Weather.self,
+//                    environment: .weather,
+//                    endpoint: WeatherAPI.forecast(coords.latitude, coords.longitude)
+//                )
+//                weather = weatherData
+//
+//                dump(weatherData)
+//            } catch {
+//                print("Error on retrieving Data: \(error.localizedDescription)")
+//            }
         }
     }
 }
