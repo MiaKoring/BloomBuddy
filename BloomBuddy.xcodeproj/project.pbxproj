@@ -31,6 +31,8 @@
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
 		A60CE2082C4EA7F300A862A6 /* ZapdosKit in Frameworks */ = {isa = PBXBuildFile; productRef = A60CE2072C4EA7F300A862A6 /* ZapdosKit */; };
 		A60F5D8E2C4EEA6A0047ADFE /* WaterDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F5D8D2C4EEA6A0047ADFE /* WaterDay.swift */; };
+		A60F5D902C4EECD40047ADFE /* BGTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F5D8F2C4EECD40047ADFE /* BGTaskManager.swift */; };
+		A60F5D922C4EF2620047ADFE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60F5D912C4EF2620047ADFE /* NotificationManager.swift */; };
 		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A689F7D92C485FC8006AA97F /* RealmSwift */; };
@@ -82,6 +84,8 @@
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		A60F5D8D2C4EEA6A0047ADFE /* WaterDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDay.swift; sourceTree = "<group>"; };
+		A60F5D8F2C4EECD40047ADFE /* BGTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGTaskManager.swift; sourceTree = "<group>"; };
+		A60F5D912C4EF2620047ADFE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A67CA1EA2C48759F005F3856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
 		A689F7DB2C485FFD006AA97F /* SavedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlant.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */,
+				A60F5D912C4EF2620047ADFE /* NotificationManager.swift */,
+				A60F5D8F2C4EECD40047ADFE /* BGTaskManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				4F61ED2A2C43E6F600092522 /* NetworkEnv.swift in Sources */,
 				4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
+				A60F5D922C4EF2620047ADFE /* NotificationManager.swift in Sources */,
 				4F430B432C447A3700AF7CCD /* Plant.swift in Sources */,
 				4F61ED2F2C43E9D500092522 /* WeatherAPI.swift in Sources */,
 				A689F7E62C48656F006AA97F /* InitializationView.swift in Sources */,
@@ -393,6 +400,7 @@
 				4F61ED312C43EAC700092522 /* Weather.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
 				A60F5D8E2C4EEA6A0047ADFE /* WaterDay.swift in Sources */,
+				A60F5D902C4EECD40047ADFE /* BGTaskManager.swift in Sources */,
 				A689F7DE2C48600E006AA97F /* PlantCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

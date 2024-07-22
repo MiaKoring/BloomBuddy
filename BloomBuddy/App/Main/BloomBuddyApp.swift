@@ -8,12 +8,17 @@
 import SwiftUI
 import RealmSwift
 import ZapdosKit
+import CoreLocation
+
+let waterCheckTaskId = "de.touchthegrass.BloomBuddy.checkWaterRequirement"
 
 @main
 struct HackathonProject1App: SwiftUI.App {
     @State var skipInit = UserDefaults().bool(forKey: "skipInit")
     @State private var locationManager: LocationManager = .init()
     @State private var zapdos: Zapdos = Zapdos()
+    @State var showNotificationRequest: Bool = false
+    @Environment(\.scenePhase) var phase
     
     let gradient = LinearGradient(
         colors: [
@@ -39,9 +44,37 @@ struct HackathonProject1App: SwiftUI.App {
                     MainView()
                         .environment(locationManager)
                         .environment(zapdos)
-                    
+                        .onAppear() {
+                            showNotificationRequest = !UserDefaults.standard.bool(forKey: NotificationManager.allowedUDKey)
+                        }
+                        .alert("Möchtest du Benachrichtigungen erhalten?", isPresented: $showNotificationRequest) {
+                            Button {
+                                NotificationManager.requestAuth()
+                            } label: {
+                                Text("Ja")
+                            }
+                            Button(role: .cancel) {} label: {
+                                Text("Nein")
+                            }
+                        }
                 }
             }
+        }
+        .onChange(of: phase) {
+            switch phase {
+            case .background: BGTaskManager.scheduleWaterCheck()
+            default: break
+            }
+        }
+        .backgroundTask(.appRefresh(waterCheckTaskId)) {
+            if await !zapdos.fetchWeather(for: CLLocation(latitude: 54.4858, longitude: 9.05239)) {
+                print("Nope keen fetchn hier do")
+                return
+            }
+            if UserDefaults.standard.integer(forKey: "lastWatered") > (Date().timeIntervalSinceReferenceDate - 3600).int {
+                return
+            }
+            NotificationManager.sendNotification("Alla gieß ma deine Pflanzen", description: "Die hamm ooch Jefühle")
         }
     }
 }
