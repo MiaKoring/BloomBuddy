@@ -23,7 +23,7 @@ struct PlantList: View {
             LazyVGrid(columns: [.init(), .init()],
                       spacing: 10.0,
                       content: {
-                ForEach(collection.plants, id: \.id) { plant in
+                ForEach(collection.plants, id: \._id) { plant in
                     ZStack {
                         PlantRow(
                             cardColor: [

@@ -43,7 +43,7 @@
 		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A689F7D92C485FC8006AA97F /* RealmSwift */; };
-		A689F7DC2C485FFD006AA97F /* SavedPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DB2C485FFD006AA97F /* SavedPlant.swift */; };
+		A689F7DC2C485FFD006AA97F /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DB2C485FFD006AA97F /* Plant.swift */; };
 		A689F7DE2C48600E006AA97F /* PlantCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DD2C48600E006AA97F /* PlantCollection.swift */; };
 		A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DF2C4860C1006AA97F /* GrowthStage.swift */; };
 		A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7E12C4860F7006AA97F /* WaterRequirement.swift */; };
@@ -100,7 +100,7 @@
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		A67CA1EA2C48759F005F3856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
-		A689F7DB2C485FFD006AA97F /* SavedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlant.swift; sourceTree = "<group>"; };
+		A689F7DB2C485FFD006AA97F /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		A689F7DD2C48600E006AA97F /* PlantCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollection.swift; sourceTree = "<group>"; };
 		A689F7DF2C4860C1006AA97F /* GrowthStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthStage.swift; sourceTree = "<group>"; };
 		A689F7E12C4860F7006AA97F /* WaterRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirement.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		4F430B4C2C44813100AF7CCD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A689F7DB2C485FFD006AA97F /* SavedPlant.swift */,
+				A689F7DB2C485FFD006AA97F /* Plant.swift */,
 				A689F7DD2C48600E006AA97F /* PlantCollection.swift */,
 			);
 			path = Models;
@@ -452,7 +452,7 @@
 				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
 				4F3AD4CF2C4E8531005BB774 /* WeatherExtraInfo.swift in Sources */,
 				A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */,
-				A689F7DC2C485FFD006AA97F /* SavedPlant.swift in Sources */,
+				A689F7DC2C485FFD006AA97F /* Plant.swift in Sources */,
 				4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */,
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
 				4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */,
@@ -612,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = PSU9VZHG7L;
+				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -636,7 +636,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.BloomBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.BloomBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -658,7 +658,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = PSU9VZHG7L;
+				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -682,7 +682,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.BloomBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.BloomBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;

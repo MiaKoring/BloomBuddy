@@ -11,20 +11,16 @@ final class Plant: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
     @Persisted var size: Double
-    @Persisted var growthStage: GrowthStage
-    @Persisted var waterRequirement: WaterRequirement
+    @Persisted var growthStage: GrowthStage.RawValue
+    @Persisted var waterRequirement: WaterRequirement.RawValue
     @Persisted(originProperty: "plants") var collections: LinkingObjects<PlantCollection>
     
-    convenience init(
-        name: String,
-        size: Double,
-        growthStage: GrowthStage = .small,
-        waterRequirement: WaterRequirement = .small
-    ) {
-        self.init()
+    override init() {}
+    
+    init(name: String, size: Double, growthStage: GrowthStage = .medium, waterRequirement: WaterRequirement) {
         self.name = name
         self.size = size
-        self.growthStage = growthStage
-        self.waterRequirement = waterRequirement
+        self.growthStage = growthStage.rawValue
+        self.waterRequirement = waterRequirement.rawValue
     }
 }

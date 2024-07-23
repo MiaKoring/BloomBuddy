@@ -10,11 +10,11 @@ import RealmSwift
 final class PlantCollection: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String = ""
-    @Persisted var plants: List<Plant> = .init()
+    @Persisted var plants = RealmSwift.List<Plant>()
+    
+    override init() {}
 
-    convenience init(name: String, plants: List<Plant> = .init()) {
-        self.init()
+    init(name: String) {
         self.name = name
-        self.plants = plants
     }
 }

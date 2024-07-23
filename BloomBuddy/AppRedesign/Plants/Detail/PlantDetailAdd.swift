@@ -89,7 +89,7 @@ struct PlantDetailAdd: View {
             .scrollIndicators(.hidden)
         }
     }
-
+/*
     private func save() {
         let thawed = collection.thaw()
 
@@ -103,5 +103,29 @@ struct PlantDetailAdd: View {
             })
         }
         dismiss()
+    }*/
+    
+    private func save() {
+        let plant = Plant(name: name, size: size, waterRequirement: watering)
+        
+        if let thawed = collection.thaw() {
+            do {
+                try realm.write {
+                    thawed.plants.append(plant)
+                    print("done")
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        else {
+            print("weird")
+        }
+        print("called")
+        dismiss()
+        print("dismissed")
+        print(collection.plants)
     }
 }
+
+let realm = try! Realm()

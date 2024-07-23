@@ -29,7 +29,7 @@ struct PlantRow: View {
                         .foregroundStyle(.blue.lighter())
                         .frame(width: 20, height: 15)
 
-                    Text(plant.waterRequirement.rawValue)
+                    Text(plant.waterRequirement)
                         .foregroundStyle(.gray)
                         .font(.Bold.small)
                 }
