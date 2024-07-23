@@ -15,7 +15,7 @@ struct HackathonProject1App: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             MainScreen()
-                .environment(\.realmConfiguration, Realm.Configuration())
+                //.environment(\.realmConfiguration, Realm.Configuration())
                 .environment(locationManager)
         }
     }

@@ -86,6 +86,7 @@ struct MainScreen: View {
         if collection.isEmpty {
             $collections.append(PlantCollection(name: "Mein Garten"))
             collection = collections.first?.name ?? ""
+            print(collections)
         }
     }
 }

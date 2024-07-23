@@ -12,7 +12,9 @@ final class PlantCollection: Object, ObjectKeyIdentifiable {
     @Persisted var name: String = ""
     @Persisted var plants = RealmSwift.List<Plant>()
     
-    override init() {}
+    override init() {
+        super.init()
+    }
 
     init(name: String) {
         self.name = name

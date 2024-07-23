@@ -15,7 +15,9 @@ final class Plant: Object, ObjectKeyIdentifiable {
     @Persisted var waterRequirement: WaterRequirement.RawValue
     @Persisted(originProperty: "plants") var collections: LinkingObjects<PlantCollection>
     
-    override init() {}
+    override init() {
+        super.init()
+    }
     
     init(name: String, size: Double, growthStage: GrowthStage = .medium, waterRequirement: WaterRequirement) {
         self.name = name
