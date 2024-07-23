@@ -7,8 +7,14 @@
 
 import RealmSwift
 
-final class Plants: Object, ObjectKeyIdentifiable {
+final class PlantCollection: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String = ""
     @Persisted var plants: List<Plant> = .init()
+
+    convenience init(name: String, plants: List<Plant> = .init()) {
+        self.init()
+        self.name = name
+        self.plants = plants
+    }
 }

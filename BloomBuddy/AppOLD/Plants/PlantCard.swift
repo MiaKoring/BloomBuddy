@@ -42,7 +42,7 @@ struct PlantCard: View {
         .frame(width: 150, height: 150)
         .background(
             RoundedRectangle(cornerRadius: 20.0)
-                .fill(gradient(todaysRainMM, waterRequirement: plant.waterRequirement))
+                .fill(gradient(todaysRainMM, waterRequirement: plant.waterRequirement.rawValue))
         )
     }
 

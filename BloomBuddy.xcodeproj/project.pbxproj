@@ -19,17 +19,24 @@
 		4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AD4DA2C4E86AA005BB774 /* MainScreen.swift */; };
 		4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AD4DD2C4E87C6005BB774 /* TipCard.swift */; };
 		4F3AD4E02C4E87D0005BB774 /* TipDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AD4DF2C4E87D0005BB774 /* TipDetail.swift */; };
-		4F3AD4E22C4E8FD4005BB774 /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AD4E12C4E8FD4005BB774 /* PlantList.swift */; };
+		4F3AD4E22C4E8FD4005BB774 /* PlantsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AD4E12C4E8FD4005BB774 /* PlantsScreen.swift */; };
 		4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AD4E42C4E8FE2005BB774 /* PlantRow.swift */; };
 		4F3AD4ED2C4E9AD6005BB774 /* ZapdosKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4F3AD4EC2C4E9AD6005BB774 /* ZapdosKit */; };
 		4F430B472C447A4500AF7CCD /* PlantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B452C447A4500AF7CCD /* PlantListView.swift */; };
 		4F430B492C4480FE00AF7CCD /* SunBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F430B482C4480FE00AF7CCD /* SunBackgroundView.swift */; };
+		4F557AC32C4F9DDB00C744F1 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 4F557AC22C4F9DDB00C744F1 /* Sliders */; };
+		4F557AC62C4FA87500C744F1 /* WaterRequirementButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AC52C4FA87500C744F1 /* WaterRequirementButtons.swift */; };
+		4F557AC82C4FA98900C744F1 /* PlantImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AC72C4FA98900C744F1 /* PlantImage.swift */; };
+		4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AC92C4FC99500C744F1 /* BBTextfieldStyle.swift */; };
+		4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557ACB2C4FCB3800C744F1 /* BBTextField.swift */; };
+		4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557ACD2C4FCE9400C744F1 /* BBNumberField.swift */; };
+		4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AD02C4FD32400C744F1 /* PlantList.swift */; };
 		4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED382C43EFB900092522 /* WeatherCardView.swift */; };
 		4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F61ED3A2C43F10600092522 /* ForecastView.swift */; };
 		4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */; };
 		4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F69B93B2C4538BE005F544E /* PlantCard.swift */; };
 		4F69B93E2C454126005F544E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F69B93D2C454126005F544E /* Launch Screen.storyboard */; };
-		4F75873D2C4F0D6D00474424 /* PlantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75873C2C4F0D6D00474424 /* PlantDetail.swift */; };
+		4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */; };
 		4F90F8512C44748500B57F3D /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F90F84E2C44748500B57F3D /* TipsView.swift */; };
 		4F90F8542C44752200B57F3D /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8532C44752200B57F3D /* Mammut */; };
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
@@ -74,16 +81,22 @@
 		4F3AD4DA2C4E86AA005BB774 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		4F3AD4DD2C4E87C6005BB774 /* TipCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCard.swift; sourceTree = "<group>"; };
 		4F3AD4DF2C4E87D0005BB774 /* TipDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetail.swift; sourceTree = "<group>"; };
-		4F3AD4E12C4E8FD4005BB774 /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
+		4F3AD4E12C4E8FD4005BB774 /* PlantsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsScreen.swift; sourceTree = "<group>"; };
 		4F3AD4E42C4E8FE2005BB774 /* PlantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRow.swift; sourceTree = "<group>"; };
 		4F430B452C447A4500AF7CCD /* PlantListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantListView.swift; sourceTree = "<group>"; };
 		4F430B482C4480FE00AF7CCD /* SunBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunBackgroundView.swift; sourceTree = "<group>"; };
+		4F557AC52C4FA87500C744F1 /* WaterRequirementButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirementButtons.swift; sourceTree = "<group>"; };
+		4F557AC72C4FA98900C744F1 /* PlantImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantImage.swift; sourceTree = "<group>"; };
+		4F557AC92C4FC99500C744F1 /* BBTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBTextfieldStyle.swift; sourceTree = "<group>"; };
+		4F557ACB2C4FCB3800C744F1 /* BBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBTextField.swift; sourceTree = "<group>"; };
+		4F557ACD2C4FCE9400C744F1 /* BBNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBNumberField.swift; sourceTree = "<group>"; };
+		4F557AD02C4FD32400C744F1 /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
 		4F61ED382C43EFB900092522 /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
 		4F61ED3A2C43F10600092522 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		4F69B93B2C4538BE005F544E /* PlantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCard.swift; sourceTree = "<group>"; };
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		4F75873C2C4F0D6D00474424 /* PlantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetail.swift; sourceTree = "<group>"; };
+		4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailAdd.swift; sourceTree = "<group>"; };
 		4F90F84E2C44748500B57F3D /* TipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		A67CA1EA2C48759F005F3856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
@@ -104,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F557AC32C4F9DDB00C744F1 /* Sliders in Frameworks */,
 				A689F7DA2C485FC8006AA97F /* RealmSwift in Frameworks */,
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
 				4F3AD4ED2C4E9AD6005BB774 /* ZapdosKit in Frameworks */,
@@ -157,6 +171,7 @@
 		4F3AD4D42C4E8594005BB774 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				4F557ACF2C4FCE9800C744F1 /* Textfields */,
 				4F3AD4D82C4E85C7005BB774 /* BackgroundView.swift */,
 			);
 			path = UIComponents;
@@ -182,9 +197,11 @@
 		4F3AD4E32C4E8FD8005BB774 /* Plants */ = {
 			isa = PBXGroup;
 			children = (
-				4F3AD4E12C4E8FD4005BB774 /* PlantList.swift */,
+				4F557AC42C4FA85E00C744F1 /* Detail */,
+				4F3AD4E12C4E8FD4005BB774 /* PlantsScreen.swift */,
 				4F3AD4E42C4E8FE2005BB774 /* PlantRow.swift */,
-				4F75873C2C4F0D6D00474424 /* PlantDetail.swift */,
+				4F557AC72C4FA98900C744F1 /* PlantImage.swift */,
+				4F557AD02C4FD32400C744F1 /* PlantList.swift */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -205,6 +222,25 @@
 				A689F7DD2C48600E006AA97F /* PlantCollection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4F557AC42C4FA85E00C744F1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */,
+				4F557AC52C4FA87500C744F1 /* WaterRequirementButtons.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		4F557ACF2C4FCE9800C744F1 /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				4F557AC92C4FC99500C744F1 /* BBTextfieldStyle.swift */,
+				4F557ACB2C4FCB3800C744F1 /* BBTextField.swift */,
+				4F557ACD2C4FCE9400C744F1 /* BBNumberField.swift */,
+			);
+			path = Textfields;
 			sourceTree = "<group>";
 		};
 		4F61ED212C43E67B00092522 /* Resources */ = {
@@ -345,6 +381,7 @@
 				4F90F8562C44752C00B57F3D /* SwiftChameleon */,
 				A689F7D92C485FC8006AA97F /* RealmSwift */,
 				4F3AD4EC2C4E9AD6005BB774 /* ZapdosKit */,
+				4F557AC22C4F9DDB00C744F1 /* Sliders */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -380,6 +417,7 @@
 				A689F7D82C485FC8006AA97F /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				4F3AD4EB2C4E9AD6005BB774 /* XCRemoteSwiftPackageReference "ZapdosKit" */,
+				4F557AC12C4F9DDB00C744F1 /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -415,6 +453,7 @@
 				4F3AD4CF2C4E8531005BB774 /* WeatherExtraInfo.swift in Sources */,
 				A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */,
 				A689F7DC2C485FFD006AA97F /* SavedPlant.swift in Sources */,
+				4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */,
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
 				4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */,
 				4F430B492C4480FE00AF7CCD /* SunBackgroundView.swift in Sources */,
@@ -422,21 +461,26 @@
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
-				4F75873D2C4F0D6D00474424 /* PlantDetail.swift in Sources */,
+				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
+				4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
 				4F430B472C447A4500AF7CCD /* PlantListView.swift in Sources */,
+				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
 				4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
+				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
 				4F3AD4D32C4E854B005BB774 /* WeatherScrollHeader.swift in Sources */,
 				A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */,
+				4F557AC62C4FA87500C744F1 /* WaterRequirementButtons.swift in Sources */,
 				A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */,
+				4F557AC82C4FA98900C744F1 /* PlantImage.swift in Sources */,
 				4F3AD4CD2C4E84F7005BB774 /* WeatherCardForecast.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
 				4F3AD4D12C4E8539005BB774 /* WeatherScreen.swift in Sources */,
-				4F3AD4E22C4E8FD4005BB774 /* PlantList.swift in Sources */,
+				4F3AD4E22C4E8FD4005BB774 /* PlantsScreen.swift in Sources */,
 				A689F7DE2C48600E006AA97F /* PlantCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +726,14 @@
 				kind = branch;
 			};
 		};
+		4F557AC12C4F9DDB00C744F1 /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-sliders";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		4F90F8522C44752200B57F3D /* XCRemoteSwiftPackageReference "Mammut" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simon-zwicker/Mammut";
@@ -721,6 +773,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F3AD4EB2C4E9AD6005BB774 /* XCRemoteSwiftPackageReference "ZapdosKit" */;
 			productName = ZapdosKit;
+		};
+		4F557AC22C4F9DDB00C744F1 /* Sliders */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F557AC12C4F9DDB00C744F1 /* XCRemoteSwiftPackageReference "swiftui-sliders" */;
+			productName = Sliders;
 		};
 		4F90F8532C44752200B57F3D /* Mammut */ = {
 			isa = XCSwiftPackageProductDependency;

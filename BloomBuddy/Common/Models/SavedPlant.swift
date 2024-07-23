@@ -10,14 +10,21 @@ import RealmSwift
 final class Plant: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String
-    @Persisted var growthStage: GrowthStage.RawValue
-    @Persisted var waterRequirement: WaterRequirement.RawValue
-    @Persisted(originProperty: "plants") var collections: LinkingObjects<Plants>
+    @Persisted var size: Double
+    @Persisted var growthStage: GrowthStage
+    @Persisted var waterRequirement: WaterRequirement
+    @Persisted(originProperty: "plants") var collections: LinkingObjects<PlantCollection>
     
-    convenience init(name: String, growthStage: GrowthStage, waterRequirement: WaterRequirement) {
+    convenience init(
+        name: String,
+        size: Double,
+        growthStage: GrowthStage = .small,
+        waterRequirement: WaterRequirement = .small
+    ) {
         self.init()
         self.name = name
-        self.growthStage = growthStage.rawValue
-        self.waterRequirement = waterRequirement.rawValue
+        self.size = size
+        self.growthStage = growthStage
+        self.waterRequirement = waterRequirement
     }
 }

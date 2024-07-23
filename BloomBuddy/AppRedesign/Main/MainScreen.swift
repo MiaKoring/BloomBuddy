@@ -9,8 +9,12 @@ import SwiftUI
 import ZapdosKit
 import WeatherKit
 import CoreLocation
+import RealmSwift
 
 struct MainScreen: View {
+
+    // MARK: - Realm
+    @ObservedResults(PlantCollection.self) var collections
 
     // MARK: - Environments
     @Environment(LocationManager.self) private var locationManager
@@ -18,6 +22,7 @@ struct MainScreen: View {
 
     // MARK: - Properties
     @AppStorage(UDKey.tips.key) private var tips: Bool = false
+    @AppStorage(UDKey.collection.key) private var collection: String = ""
     @State private var showTipDetail: Bool = false
     @State private var scrollPosition: CGPoint = .zero
     @State private var weather: Weather?
@@ -37,7 +42,9 @@ struct MainScreen: View {
                         TipCard()
                     }
 
-                    PlantList()
+                    if !collections.isEmpty, let selected = collections.first(where: { $0.name == collection }) {
+                        PlantsScreen(collection: selected)
+                    }
                 }
                 .padding()
                 .background(
@@ -59,6 +66,7 @@ struct MainScreen: View {
         }
         .onAppear {
             locationManager.requestAuth()
+            checkCollections()
         }
         .onChange(of: scenePhase) { _, newPhase in
             guard newPhase == .active, let location = locationManager.location else { return }
@@ -71,6 +79,13 @@ struct MainScreen: View {
         Task {
             _ = await Zapdos.shared.fetchWeather(for: location)
             self.weather = Zapdos.shared.weather
+        }
+    }
+
+    private func checkCollections() {
+        if collection.isEmpty {
+            $collections.append(PlantCollection(name: "Mein Garten"))
+            collection = collections.first?.name ?? ""
         }
     }
 }

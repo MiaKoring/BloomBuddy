@@ -20,16 +20,7 @@ struct PlantRow: View {
                 .font(.Bold.title)
                 .lineLimit(2)
 
-            Image(plant.name)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .clipShape(.circle)
-                .background(
-                    Circle()
-                        .fill(cardColor)
-                        .frame(width: 88, height: 88)
-                )
+            PlantImage(80, "plantBg", color: .constant(cardColor))
 
             HStack {
                 VStack {
@@ -38,7 +29,7 @@ struct PlantRow: View {
                         .foregroundStyle(.blue.lighter())
                         .frame(width: 20, height: 15)
 
-                    Text(plant.waterRequirement)
+                    Text(plant.waterRequirement.rawValue)
                         .foregroundStyle(.gray)
                         .font(.Bold.small)
                 }
@@ -53,7 +44,7 @@ struct PlantRow: View {
                         .foregroundStyle(.orange)
                         .frame(width: 20, height: 15)
 
-                    Text("120 cm")
+                    Text("\(plant.size.roundedInt) cm")
                         .foregroundStyle(.gray)
                         .font(.Bold.small)
                 }

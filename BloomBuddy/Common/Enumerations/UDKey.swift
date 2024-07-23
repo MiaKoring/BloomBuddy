@@ -10,6 +10,7 @@ import Foundation
 enum UDKey: String {
     case onboarding = "showOnboarding"
     case tips = "showTips"
+    case collection = "currentCollection"
 }
 
 extension UDKey {

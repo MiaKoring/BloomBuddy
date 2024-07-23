@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import RealmSwift
 
-enum WaterRequirement: String, CaseIterable {
+enum WaterRequirement: String, CaseIterable, PersistableEnum {
     case small = "Wenig"
     case medium = "Mittel"
     case big = "Viel"
@@ -23,5 +24,13 @@ extension WaterRequirement {
         case .medium: 2
         case .big: 3
         }
+    }
+
+    func `is`(_ value: Self) -> Bool {
+        self == value
+    }
+
+    func isNot(_ value: Self) -> Bool {
+        self != value
     }
 }
