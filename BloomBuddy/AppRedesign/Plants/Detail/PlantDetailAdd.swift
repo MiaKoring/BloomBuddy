@@ -16,6 +16,9 @@ struct PlantDetailAdd: View {
     @State var name: String = ""
     @State var size: Double = 100
     @State var watering: WaterRequirement = .small
+    
+    var edit: Bool = false
+    var plant: Plant? = nil
 
     var valid: Bool {
         name.isNotEmpty && size > 0
@@ -35,9 +38,9 @@ struct PlantDetailAdd: View {
                             .overlay {
                                 Color.plantGreen.opacity(0.8)
                             }
-
+                        
                         PlantImage(150, "plantBg", color: .constant(.white), lineWidth: 10)
-
+                        
                         VStack {
                             HStack {
                                 Spacer()
@@ -57,14 +60,14 @@ struct PlantDetailAdd: View {
                         .padding()
                     }
                     .frame(height: 250.0)
-
+                    
                     VStack(spacing: 20.0) {
                         BBTextField("Name der Pflanze", text: $name)
                         BBNumberField("Größe in cm", value: $size)
                         WaterRequirementButtons(selected: $watering)
-
+                        
                         Spacer()
-
+                        
                         Text("Speichern")
                             .font(.Bold.title)
                             .padding()
@@ -75,6 +78,10 @@ struct PlantDetailAdd: View {
                                     .fill(valid ? .plantGreen: .gray.opacity(0.4))
                             )
                             .button {
+                                if !edit {
+                                    create()
+                                    return
+                                }
                                 save()
                             }
                             .disabled(!valid)
@@ -87,15 +94,27 @@ struct PlantDetailAdd: View {
             }
             .scrollIndicators(.hidden)
         }
+        .task {
+            if edit, let plant, let name = plant.name, let watering = plant.waterRequirement {
+                self.name = name
+                self.size = plant.size
+                self.watering = WaterRequirement(rawValue: watering) ?? .small
+            }
+        }
     }
     
-    private func save() {
+    private func create() {
         CoreDataProvider.shared.createPlant(
             name,
             size: size,
             watering: watering,
             collection: collection
         )
+        dismiss()
+    }
+    
+    private func save() {
+        //TODO: Insert Coredata save
         dismiss()
     }
 }

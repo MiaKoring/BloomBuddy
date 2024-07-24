@@ -12,6 +12,8 @@ struct PlantRow: View {
     let cardColor: Color
     let plant: Plant?
     let onDelete: () -> Void
+    let onEdit: () -> Void
+    @State var showEdit: Bool = false
 
     var body: some View {
         VStack {
@@ -61,7 +63,8 @@ struct PlantRow: View {
                         .plantGreen.lighter().opacity(0.4)
                     )
                     .button {
-                        onDelete()
+                        //onDelete()
+                        onEdit()
                     }
 
             }

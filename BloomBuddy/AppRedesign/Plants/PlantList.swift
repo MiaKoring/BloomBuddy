@@ -7,16 +7,19 @@
 
 import SwiftUI
 import CoreData
+import ZapdosKit
 
 struct PlantList: View {
 
     // MARK: - Properties
     @FetchRequest var plants: FetchedResults<Plant>
     let onDelete: (Plant) -> Void
-
-    init(_ request: NSFetchRequest<Plant>, onDelete: @escaping (Plant) -> Void) {
+    let onEdit: (Plant) -> Void
+    
+    init(_ request: NSFetchRequest<Plant>, onDelete: @escaping (Plant) -> Void, onEdit: @escaping (Plant) -> Void) {
         _plants = FetchRequest(fetchRequest: request)
         self.onDelete = onDelete
+        self.onEdit = onEdit
     }
 
     var body: some View {
@@ -33,19 +36,34 @@ struct PlantList: View {
                 ForEach(plants, id: \.id) { plant in
                     ZStack {
                         PlantRow(
-                            cardColor: [
-                                Color.plantGreen,
-                                Color.red,
-                                Color.yellow
-                            ].randomElement() ?? .plantGreen,
+                            cardColor: calcWatering(for: plant),
                             plant: plant, 
                             onDelete: {
                                 onDelete(plant)
+                            },
+                            onEdit: {
+                                onEdit(plant)
                             }
                         )
                     }
                 }
             })
         }
+    }
+    
+    func calcWatering(for plant: Plant) -> Color {
+        guard let weather = Zapdos.shared.weather else {
+            return .gray
+        }
+        
+        guard let precipation = weather.precipitionAmount?.double else {
+            return .gray
+        }
+        
+        let required = plant.size * 0.25
+        
+        if precipation >= (required / 100) * 95 { return .green }
+        if precipation >= (required / 100) * 70 { return .yellow }
+        return .red
     }
 }

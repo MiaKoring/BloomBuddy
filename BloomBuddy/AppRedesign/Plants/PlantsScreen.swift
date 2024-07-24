@@ -10,6 +10,7 @@ struct PlantsScreen: View {
 
     let collection: PlantCollection
     @State private var showAdd: Bool = false
+    @State var editPlant: Plant? = nil
 
     var body: some View {
         VStack {
@@ -66,10 +67,15 @@ struct PlantsScreen: View {
 
             PlantList(collection.plantsRequest) { plant in
                 CoreDataProvider.shared.deletePlant(plant, collection: collection)
+            } onEdit: { plant in
+                editPlant = plant
             }
         }
         .sheet(isPresented: $showAdd) {
             PlantDetailAdd(collection: collection)
+        }
+        .sheet(item: $editPlant) {plant in
+            PlantDetailAdd(collection: collection, edit: true, plant: plant)
         }
     }
 }
