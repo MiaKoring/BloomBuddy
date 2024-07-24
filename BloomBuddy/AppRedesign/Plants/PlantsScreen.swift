@@ -20,9 +20,7 @@ struct PlantsScreen: View {
                 // TODO: - Next Feature, different PlantCollections
 //                Image(systemName: "chevron.down")
 //                    .font(.Bold.regular)
-
                 Spacer()
-
                 Image(systemName: "plus")
                     .foregroundStyle(.plantGreen)
                     .font(.Bold.title2)
@@ -30,7 +28,41 @@ struct PlantsScreen: View {
                         showAdd.setTrue()
                     }
             }
-            .padding(.horizontal, 10.0)
+
+            VStack(alignment: .leading) {
+                Text("Bewässerung")
+                    .font(.Bold.verySmall)
+                    .foregroundStyle(.plantGreen)
+
+                HStack {
+                    Text("ok")
+                        .padding(.vertical, 5.0)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color.plantGreen.opacity(0.15)
+                        )
+                        .clipShape(.rect(cornerRadius: 5.0))
+
+                    Text("kann")
+                        .padding(.vertical, 5.0)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color.yellow.opacity(0.15)
+                        )
+                        .clipShape(.rect(cornerRadius: 5.0))
+
+                    Text("muss")
+                        .padding(.vertical, 5.0)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color.red.opacity(0.15)
+                        )
+                        .clipShape(.rect(cornerRadius: 5.0))
+                }
+                .font(.Bold.verySmall)
+                .foregroundStyle(.gray)
+            }
+            .padding(.vertical, 10.0)
 
             PlantList(collection.plantsRequest) { plant in
                 CoreDataProvider.shared.deletePlant(plant, collection: collection)

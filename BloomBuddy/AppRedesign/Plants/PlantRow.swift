@@ -11,6 +11,7 @@ struct PlantRow: View {
 
     let cardColor: Color
     let plant: Plant?
+    let onDelete: () -> Void
 
     var body: some View {
         VStack {
@@ -48,6 +49,18 @@ struct PlantRow: View {
                         .font(.Bold.small)
                 }
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+
+                Divider()
+                    .frame(width: 1, height: 20.0)
+
+                Image(systemName: "trash.circle.fill")
+                    .symbolRenderingMode(.palette)
+                    .font(.Regular.regular)
+                    .foregroundStyle(
+                        .plantGreen.darker().opacity(0.8),
+                        .plantGreen.lighter().opacity(0.4)
+                    )
+
             }
             .padding(.top, 5.0)
         }

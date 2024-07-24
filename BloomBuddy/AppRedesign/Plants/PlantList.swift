@@ -38,20 +38,11 @@ struct PlantList: View {
                                 Color.red,
                                 Color.yellow
                             ].randomElement() ?? .plantGreen,
-                            plant: plant
+                            plant: plant, 
+                            onDelete: {
+                                onDelete(plant)
+                            }
                         )
-                        .overlay {
-                            Image(systemName: "trash.circle.fill")
-                                .symbolRenderingMode(.palette)
-                                .font(.Regular.small)
-                                .foregroundStyle(
-                                    .plantGreen.darker().opacity(0.8),
-                                    .plantGreen.lighter().opacity(0.4)
-                                )
-                                .button {
-                                    onDelete(plant)
-                                }
-                        }
                     }
                 }
             })
