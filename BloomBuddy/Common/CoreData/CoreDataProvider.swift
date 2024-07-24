@@ -72,6 +72,26 @@ extension CoreDataProvider {
         }
     }
 
+    func updatePlant(
+        _ name: String,
+        size: Double,
+        watering: WaterRequirement,
+        plant: Plant?
+    ) {
+        if plant == nil {
+            return
+        }
+        plant?.name = name
+        plant?.size = size
+        plant?.waterRequirement = watering.rawValue
+
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error on updating Plant \(error.localizedDescription)")
+        }
+    }
+
     func deletePlant(_ plant: Plant, collection: PlantCollection) {
         do {
             collection.removeFromPlants(plant)
