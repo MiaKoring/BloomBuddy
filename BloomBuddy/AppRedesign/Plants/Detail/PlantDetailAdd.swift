@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Sliders
 
 struct PlantDetailAdd: View {
 

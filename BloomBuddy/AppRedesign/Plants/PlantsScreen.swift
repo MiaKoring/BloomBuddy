@@ -35,7 +35,7 @@ struct PlantsScreen: View {
                     .foregroundStyle(.plantGreen)
 
                 HStack {
-                    Text("ok")
+                    Text("keine")
                         .padding(.vertical, 5.0)
                         .frame(maxWidth: .infinity)
                         .background(
@@ -43,7 +43,7 @@ struct PlantsScreen: View {
                         )
                         .clipShape(.rect(cornerRadius: 5.0))
 
-                    Text("kann")
+                    Text("möglich")
                         .padding(.vertical, 5.0)
                         .frame(maxWidth: .infinity)
                         .background(
@@ -51,7 +51,7 @@ struct PlantsScreen: View {
                         )
                         .clipShape(.rect(cornerRadius: 5.0))
 
-                    Text("muss")
+                    Text("notwendig")
                         .padding(.vertical, 5.0)
                         .frame(maxWidth: .infinity)
                         .background(
