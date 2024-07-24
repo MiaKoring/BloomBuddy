@@ -60,6 +60,9 @@ struct PlantRow: View {
                         .plantGreen.darker().opacity(0.8),
                         .plantGreen.lighter().opacity(0.4)
                     )
+                    .button {
+                        onDelete()
+                    }
 
             }
             .padding(.top, 5.0)
