@@ -9,16 +9,16 @@ import SwiftUI
 import ZapdosKit
 import WeatherKit
 import CoreLocation
-import RealmSwift
 
 struct MainScreen: View {
 
-    // MARK: - Realm
-    @ObservedResults(PlantCollection.self) var collections
-
     // MARK: - Environments
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(LocationManager.self) private var locationManager
     @Environment(\.scenePhase) private var scenePhase
+
+    // MARK: - CoreData
+    @FetchRequest(fetchRequest: PlantCollection.all) var collections: FetchedResults<PlantCollection>
 
     // MARK: - Properties
     @AppStorage(UDKey.tips.key) private var tips: Bool = false
@@ -75,7 +75,6 @@ struct MainScreen: View {
     }
 
     private func fetchWeather(_ location: CLLocation) {
-        print("Fetching ...")
         Task {
             _ = await Zapdos.shared.fetchWeather(for: location)
             self.weather = Zapdos.shared.weather
@@ -84,9 +83,9 @@ struct MainScreen: View {
 
     private func checkCollections() {
         if collection.isEmpty {
-            $collections.append(PlantCollection(name: "Mein Garten"))
-            collection = collections.first?.name ?? ""
-            print(collections)
+            let defaultCollectionName = "Garten"
+            CoreDataProvider.shared.createCollection(defaultCollectionName)
+            self.collection = defaultCollectionName
         }
     }
 }

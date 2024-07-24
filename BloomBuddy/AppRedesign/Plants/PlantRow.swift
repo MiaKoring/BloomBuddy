@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-import RealmSwift
 
 struct PlantRow: View {
 
     let cardColor: Color
-    @ObservedRealmObject var plant: Plant
+    let plant: Plant?
 
     var body: some View {
         VStack {
-            Text(plant.name)
+            Text(plant?.name ?? "")
                 .foregroundStyle(.plantGreen)
                 .font(.Bold.title)
                 .lineLimit(2)
@@ -29,7 +28,7 @@ struct PlantRow: View {
                         .foregroundStyle(.blue.lighter())
                         .frame(width: 20, height: 15)
 
-                    Text(plant.waterRequirement)
+                    Text(plant?.waterRequirement ?? "")
                         .foregroundStyle(.gray)
                         .font(.Bold.small)
                 }
@@ -44,7 +43,7 @@ struct PlantRow: View {
                         .foregroundStyle(.orange)
                         .frame(width: 20, height: 15)
 
-                    Text("\(plant.size.roundedInt) cm")
+                    Text("\(plant?.size.roundedInt ?? 0) cm")
                         .foregroundStyle(.gray)
                         .font(.Bold.small)
                 }

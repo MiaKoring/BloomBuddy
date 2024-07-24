@@ -7,12 +7,11 @@
 
 import SwiftUI
 import Sliders
-import RealmSwift
 
 struct PlantDetailAdd: View {
 
     // MARK: - Properties
-    @ObservedRealmObject var collection: PlantCollection
+    let collection: PlantCollection
     @Environment(\.dismiss) private var dismiss
     @State var name: String = ""
     @State var size: Double = 100
@@ -89,43 +88,14 @@ struct PlantDetailAdd: View {
             .scrollIndicators(.hidden)
         }
     }
-/*
-    private func save() {
-        let thawed = collection.thaw()
-
-        if let thawed, let realm = thawed.realm, !realm.isInWriteTransaction {
-            try? realm.write({
-                thawed.plants.append(Plant(
-                    name: name,
-                    size: size,
-                    waterRequirement: watering
-                ))
-            })
-        }
-        dismiss()
-    }*/
     
     private func save() {
-        let plant = Plant(name: name, size: size, waterRequirement: watering)
-        
-        if let thawed = collection.thaw() {
-            do {
-                try realm.write {
-                    thawed.plants.append(plant)
-                    print("done")
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        else {
-            print("weird")
-        }
-        print("called")
+        CoreDataProvider.shared.createPlant(
+            name,
+            size: size,
+            watering: watering,
+            collection: collection
+        )
         dismiss()
-        print("dismissed")
-        print(collection.plants)
     }
 }
-
-let realm = try! Realm()

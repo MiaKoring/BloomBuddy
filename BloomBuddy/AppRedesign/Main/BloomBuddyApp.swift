@@ -6,17 +6,17 @@
 //
 
 import SwiftUI
-import RealmSwift
 
 @main
-struct HackathonProject1App: SwiftUI.App {
+struct BloomBuddyApp: App {
     @State private var locationManager: LocationManager = .init()
 
     var body: some Scene {
         WindowGroup {
             MainScreen()
-                //.environment(\.realmConfiguration, Realm.Configuration())
+                .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
                 .environment(locationManager)
         }
     }
 }
+

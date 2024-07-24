@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
-import RealmSwift
-
 struct PlantsScreen: View {
 
-    @ObservedRealmObject var collection: PlantCollection
+    let collection: PlantCollection
     @State private var showAdd: Bool = false
 
     var body: some View {
         VStack {
             HStack(spacing: 20.0) {
-                Text(collection.name)
+                Text(collection.name ?? "")
                     .font(.Bold.title2)
 
                 // TODO: - Next Feature, different PlantCollections
@@ -34,7 +32,9 @@ struct PlantsScreen: View {
             }
             .padding(.horizontal, 10.0)
 
-            PlantList(collection: collection)
+            PlantList(collection.plantsRequest) { plant in
+                CoreDataProvider.shared.deletePlant(plant, collection: collection)
+            }
         }
         .sheet(isPresented: $showAdd) {
             PlantDetailAdd(collection: collection)

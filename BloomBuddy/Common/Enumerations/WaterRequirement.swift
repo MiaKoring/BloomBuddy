@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
-import RealmSwift
 
-enum WaterRequirement: String, CaseIterable, PersistableEnum {
+enum WaterRequirement: String, CaseIterable {
     case small = "Wenig"
     case medium = "Mittel"
     case big = "Viel"

@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
-import RealmSwift
 
-enum GrowthStage: String, CaseIterable, PersistableEnum {
+enum GrowthStage: String, CaseIterable {
     case small = "Klein"
     case medium = "Mittel"
     case big = "Groß"

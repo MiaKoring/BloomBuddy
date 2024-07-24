@@ -6,14 +6,21 @@
 //
 
 import SwiftUI
-import RealmSwift
+import CoreData
 
 struct PlantList: View {
 
-    @ObservedRealmObject var collection: PlantCollection
+    // MARK: - Properties
+    @FetchRequest var plants: FetchedResults<Plant>
+    let onDelete: (Plant) -> Void
+
+    init(_ request: NSFetchRequest<Plant>, onDelete: @escaping (Plant) -> Void) {
+        _plants = FetchRequest(fetchRequest: request)
+        self.onDelete = onDelete
+    }
 
     var body: some View {
-        if collection.plants.isEmpty {
+        if plants.isEmpty {
             ContentUnavailableView(
                 "Pflanzen anlegen",
                 systemImage: "leaf",
@@ -23,7 +30,7 @@ struct PlantList: View {
             LazyVGrid(columns: [.init(), .init()],
                       spacing: 10.0,
                       content: {
-                ForEach(collection.plants, id: \._id) { plant in
+                ForEach(plants, id: \.id) { plant in
                     ZStack {
                         PlantRow(
                             cardColor: [
@@ -33,25 +40,21 @@ struct PlantList: View {
                             ].randomElement() ?? .plantGreen,
                             plant: plant
                         )
-
-                        Image(systemName: "trash.circle.fill")
-                        symbolRenderingMode(.palette)
-                        .font(.Regular.small)
-                        .foregroundStyle(
-                            .plantGreen.darker().opacity(0.8),
-                            .plantGreen.lighter().opacity(0.4)
-                        )
-                        .button {
-                            remove(plant)
+                        .overlay {
+                            Image(systemName: "trash.circle.fill")
+                                .symbolRenderingMode(.palette)
+                                .font(.Regular.small)
+                                .foregroundStyle(
+                                    .plantGreen.darker().opacity(0.8),
+                                    .plantGreen.lighter().opacity(0.4)
+                                )
+                                .button {
+                                    onDelete(plant)
+                                }
                         }
                     }
                 }
             })
         }
-    }
-
-    private func remove(_ plant: Plant) {
-        guard let index = collection.plants.index(of: plant) else { return }
-        $collection.plants.remove(at: index)
     }
 }
