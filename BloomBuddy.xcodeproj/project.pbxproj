@@ -32,7 +32,6 @@
 		4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AD02C4FD32400C744F1 /* PlantList.swift */; };
 		4F557AD42C51214700C744F1 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AD32C51214700C744F1 /* CoreDataProvider.swift */; };
 		4F557ADC2C512CC900C744F1 /* PlantCollection+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557ADB2C512CC900C744F1 /* PlantCollection+Data.swift */; };
-		4F557ADF2C51A5F100C744F1 /* PlantsCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F557ADD2C51A5F100C744F1 /* PlantsCD.xcdatamodeld */; };
 		4F557AE12C51AA9800C744F1 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AE02C51AA9800C744F1 /* FlipView.swift */; };
 		4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AE22C51AAE000C744F1 /* PlantRowFront.swift */; };
 		4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F557AE42C51ABD700C744F1 /* PlantRowBack.swift */; };
@@ -53,6 +52,7 @@
 		A6DFF80F2C43E443002FD86A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80E2C43E443002FD86A /* MainView.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
 		A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */; };
+		A6FDBA962C51B2B80009EAFF /* PlantsCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBA942C51B2B80009EAFF /* PlantsCD.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,7 +93,6 @@
 		4F557AD02C4FD32400C744F1 /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantList.swift; sourceTree = "<group>"; };
 		4F557AD32C51214700C744F1 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		4F557ADB2C512CC900C744F1 /* PlantCollection+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantCollection+Data.swift"; sourceTree = "<group>"; };
-		4F557ADE2C51A5F100C744F1 /* PlantsCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantsCD.xcdatamodel; sourceTree = "<group>"; };
 		4F557AE02C51AA9800C744F1 /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 		4F557AE22C51AAE000C744F1 /* PlantRowFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRowFront.swift; sourceTree = "<group>"; };
 		4F557AE42C51ABD700C744F1 /* PlantRowBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRowBack.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		A6DFF8102C43E445002FD86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6DFF8122C43E445002FD86A /* BloomBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloomBuddy.entitlements; sourceTree = "<group>"; };
 		A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A6FDBA952C51B2B80009EAFF /* PlantsCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantsCD.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +242,7 @@
 		4F557AD22C50F8B300C744F1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				4F557ADD2C51A5F100C744F1 /* PlantsCD.xcdatamodeld */,
+				A6FDBA942C51B2B80009EAFF /* PlantsCD.xcdatamodeld */,
 				4F557AD32C51214700C744F1 /* CoreDataProvider.swift */,
 				4F557ADB2C512CC900C744F1 /* PlantCollection+Data.swift */,
 			);
@@ -461,6 +461,7 @@
 				4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */,
 				4F61ED3B2C43F10600092522 /* ForecastView.swift in Sources */,
 				4F430B492C4480FE00AF7CCD /* SunBackgroundView.swift in Sources */,
+				A6FDBA962C51B2B80009EAFF /* PlantsCD.xcdatamodeld in Sources */,
 				4F90F8512C44748500B57F3D /* TipsView.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				4F69B93C2C4538BE005F544E /* PlantCard.swift in Sources */,
@@ -475,7 +476,6 @@
 				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
 				4F61ED392C43EFB900092522 /* WeatherCardView.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
-				4F557ADF2C51A5F100C744F1 /* PlantsCD.xcdatamodeld in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
 				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
 				4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */,
@@ -777,14 +777,14 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		4F557ADD2C51A5F100C744F1 /* PlantsCD.xcdatamodeld */ = {
+		A6FDBA942C51B2B80009EAFF /* PlantsCD.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4F557ADE2C51A5F100C744F1 /* PlantsCD.xcdatamodel */,
+				A6FDBA952C51B2B80009EAFF /* PlantsCD.xcdatamodel */,
 			);
-			currentVersion = 4F557ADE2C51A5F100C744F1 /* PlantsCD.xcdatamodel */;
+			currentVersion = A6FDBA952C51B2B80009EAFF /* PlantsCD.xcdatamodel */;
 			name = PlantsCD.xcdatamodeld;
-			path = "/Users/simon.zwicker/szwicker/Projects/BloomBuddy 2/BloomBuddy/Common/CoreData/PlantsCD.xcdatamodeld";
+			path = /Users/miakoring/Desktop/BloomBuddy/BloomBuddy/Common/CoreData/PlantsCD.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

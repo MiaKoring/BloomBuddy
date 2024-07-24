@@ -24,7 +24,8 @@ struct PlantRow: View {
             backView: PlantRowBack(
                 cardColor: cardColor,
                 plant: plant,
-                onDelete: onDelete
+                onDelete: onDelete,
+                onEdit: onEdit
             ),
             showBack: $showBack
         )

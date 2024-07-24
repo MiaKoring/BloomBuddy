@@ -12,6 +12,7 @@ struct PlantRowBack: View {
     let cardColor: Color
     let plant: Plant?
     let onDelete: () -> Void
+    let onEdit: () -> Void
 
     var body: some View {
         HStack {
@@ -22,6 +23,9 @@ struct PlantRowBack: View {
                     .white.opacity(0.8),
                     .blue.opacity(0.4)
                 )
+                .button {
+                    onEdit()
+                }
 
             Divider()
                 .frame(width: 2, height: 40.0)
