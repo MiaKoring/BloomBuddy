@@ -7,10 +7,12 @@
 
 import SwiftUI
 struct PlantsScreen: View {
-
+    
     let collection: PlantCollection
     @State private var showAdd: Bool = false
     @State var editPlant: Plant? = nil
+    
+    let refresh: () -> Void
 
     var body: some View {
         VStack {
@@ -74,7 +76,7 @@ struct PlantsScreen: View {
         .sheet(isPresented: $showAdd) {
             PlantDetailAdd(collection: collection)
         }
-        .sheet(item: $editPlant) {plant in
+        .sheet(item: $editPlant, onDismiss: refresh) {plant in
             PlantDetailAdd(collection: collection, edit: true, plant: plant)
         }
     }

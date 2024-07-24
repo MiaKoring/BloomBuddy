@@ -43,7 +43,9 @@ struct MainScreen: View {
                     }
 
                     if !collections.isEmpty, let selected = collections.first(where: { $0.name == collection }) {
-                        PlantsScreen(collection: selected)
+                        PlantsScreen(collection: selected) {
+                            viewContext.refreshAllObjects()
+                        }
                     }
                 }
                 .padding()

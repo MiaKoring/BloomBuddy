@@ -113,7 +113,7 @@ struct PlantDetailAdd: View {
     }
     
     private func save() {
-        //TODO: Insert Coredata save
+        CoreDataProvider.shared.updatePlant(name, size: size, watering: watering, plant: plant)
         dismiss()
     }
 }
