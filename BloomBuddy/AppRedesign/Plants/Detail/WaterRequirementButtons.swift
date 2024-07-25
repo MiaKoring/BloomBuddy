@@ -11,6 +11,7 @@ struct WaterRequirementButtons: View {
 
     // MARK: - Properties
     @Binding var selected: WaterRequirement
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5.0) {
@@ -35,7 +36,7 @@ struct WaterRequirementButtons: View {
                         Text(water.rawValue)
                             .font(.Bold.regular)
                             .opacity(0.8)
-                            .foregroundStyle(selected.is(water) ? .white: .black.opacity(0.25))
+                            .foregroundStyle(selected.is(water) ? .white: colorScheme == .dark ? .white.opacity(0.3) : .black.opacity(0.25))
                     }
                     .padding()
                     .background(

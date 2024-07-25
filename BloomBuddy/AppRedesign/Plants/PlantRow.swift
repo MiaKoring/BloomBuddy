@@ -11,9 +11,9 @@ struct PlantRow: View {
 
     let cardColor: Color
     let plant: Plant?
+    @Binding var resetFlip: Bool
     let onDelete: () -> Void
 	let onEdit: () -> Void
-    @State var showEdit: Bool = false
 	@State var showBack: Bool = false
 	var body: some View {
         FlipView(
@@ -25,11 +25,15 @@ struct PlantRow: View {
                 cardColor: cardColor,
                 plant: plant,
                 onDelete: onDelete,
-                onEdit: onEdit
+                onEdit: {
+                    withAnimation(.linear(duration: 0.2)) {
+                        showBack = false
+                    }
+                    onEdit()
+                }
             ),
-            showBack: $showBack
+            showBack: $showBack,
+            resetFlip: $resetFlip
         )
-
-    
     }
 }

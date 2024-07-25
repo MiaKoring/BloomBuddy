@@ -15,6 +15,7 @@ struct PlantList: View {
     var plants: [Plant]
     let onDelete: (Plant) -> Void
     let onEdit: (Plant) -> Void
+    @State var resetFlip: Bool = false
     
     init(_ plants: [Plant], onDelete: @escaping (Plant) -> Void, onEdit: @escaping (Plant) -> Void) {
         self.plants = plants
@@ -38,6 +39,7 @@ struct PlantList: View {
                         PlantRow(
                             cardColor: calcWatering(for: plant),
                             plant: plant, 
+                            resetFlip: $resetFlip,
                             onDelete: {
                                 onDelete(plant)
                             },
