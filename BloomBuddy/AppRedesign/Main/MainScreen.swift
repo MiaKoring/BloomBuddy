@@ -9,6 +9,7 @@ import SwiftUI
 import ZapdosKit
 import WeatherKit
 import CoreLocation
+import SwiftData
 
 struct MainScreen: View {
 
@@ -16,9 +17,9 @@ struct MainScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(LocationManager.self) private var locationManager
     @Environment(\.scenePhase) private var scenePhase
-
-    // MARK: - CoreData
-    @FetchRequest(fetchRequest: PlantCollection.all) var collections: FetchedResults<PlantCollection>
+    @Environment(\.modelContext) var context
+    
+    @Query var collections: [PlantCollection]
 
     // MARK: - Properties
     @AppStorage(UDKey.tips.key) private var tips: Bool = false
@@ -42,7 +43,7 @@ struct MainScreen: View {
                         TipCard()
                     }
 
-                    if !collections.isEmpty, let selected = collections.first(where: { $0.name == collection }) {
+                    if !collections.isEmpty, var selected = collections.first(where: { $0.name == collection }) {
                         PlantsScreen(collection: selected) {
                             viewContext.refreshAllObjects()
                         }
@@ -86,7 +87,7 @@ struct MainScreen: View {
     private func checkCollections() {
         if collection.isEmpty {
             let defaultCollectionName = "Garten"
-            CoreDataProvider.shared.createCollection(defaultCollectionName)
+            context.insert(PlantCollection(name: defaultCollectionName))
             self.collection = defaultCollectionName
         }
     }

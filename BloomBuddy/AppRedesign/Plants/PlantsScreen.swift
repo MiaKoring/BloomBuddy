@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 struct PlantsScreen: View {
     
-    let collection: PlantCollection
+    @Bindable var collection: PlantCollection
     @State private var showAdd: Bool = false
     @State var editPlant: Plant? = nil
     
@@ -67,8 +68,8 @@ struct PlantsScreen: View {
             }
             .padding(.vertical, 10.0)
 
-            PlantList(collection.plantsRequest) { plant in
-                CoreDataProvider.shared.deletePlant(plant, collection: collection)
+            PlantList(collection.plants) { plant in
+                collection.plants.removeAll(where: {$0.id == plant.id})
             } onEdit: { plant in
                 editPlant = plant
             }

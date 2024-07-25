@@ -10,7 +10,7 @@ import SwiftUI
 struct PlantDetailAdd: View {
 
     // MARK: - Properties
-    let collection: PlantCollection
+    @Bindable var collection: PlantCollection
     @Environment(\.dismiss) private var dismiss
     @State var name: String = ""
     @State var size: Double = 100
@@ -94,26 +94,25 @@ struct PlantDetailAdd: View {
             .scrollIndicators(.hidden)
         }
         .task {
-            if edit, let plant, let name = plant.name, let watering = plant.waterRequirement {
-                self.name = name
+            if edit, let plant {
+                self.name = plant.name
                 self.size = plant.size
-                self.watering = WaterRequirement(rawValue: watering) ?? .small
+                self.watering = WaterRequirement(rawValue: plant.waterRequirement) ?? .small
             }
         }
     }
     
     private func create() {
-        CoreDataProvider.shared.createPlant(
-            name,
-            size: size,
-            watering: watering,
-            collection: collection
-        )
+        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering))
         dismiss()
     }
     
     private func save() {
-        CoreDataProvider.shared.updatePlant(name, size: size, watering: watering, plant: plant)
+        guard let plant = collection.plants.first(where: {$0.id == plant?.id}) else { return }
+        plant.name = name
+        plant.waterRequirement = watering.rawValue
+        plant.size = size
+        
         dismiss()
     }
 }

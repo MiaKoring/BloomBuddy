@@ -12,12 +12,12 @@ import ZapdosKit
 struct PlantList: View {
 
     // MARK: - Properties
-    @FetchRequest var plants: FetchedResults<Plant>
+    var plants: [Plant]
     let onDelete: (Plant) -> Void
     let onEdit: (Plant) -> Void
     
-    init(_ request: NSFetchRequest<Plant>, onDelete: @escaping (Plant) -> Void, onEdit: @escaping (Plant) -> Void) {
-        _plants = FetchRequest(fetchRequest: request)
+    init(_ plants: [Plant], onDelete: @escaping (Plant) -> Void, onEdit: @escaping (Plant) -> Void) {
+        self.plants = plants
         self.onDelete = onDelete
         self.onEdit = onEdit
     }

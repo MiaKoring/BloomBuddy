@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct BloomBuddyApp: App {
@@ -14,7 +15,7 @@ struct BloomBuddyApp: App {
     var body: some Scene {
         WindowGroup {
             MainScreen()
-                .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
+                .modelContainer(for: PlantCollection.self)
                 .environment(locationManager)
         }
     }
