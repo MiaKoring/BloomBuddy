@@ -17,30 +17,21 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="aEJ-dP-nvV">
                                 <rect key="frame" x="20" y="251" width="350" height="350"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="Pxj-8E-mqk"/>
                                     <constraint firstAttribute="height" constant="350" id="oDg-Aw-Vfq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BloomBuddy" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="20" y="79" width="350" height="152"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.57647058823529407" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aEJ-dP-nvV" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="20" id="BtQ-GU-9H9"/>
                             <constraint firstItem="aEJ-dP-nvV" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" id="DaG-Eb-aGn"/>
                             <constraint firstItem="aEJ-dP-nvV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OI4-71-BGg"/>
                             <constraint firstItem="aEJ-dP-nvV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eUH-Q7-9tT"/>
                             <constraint firstItem="aEJ-dP-nvV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fSm-st-96f"/>
                             <constraint firstItem="aEJ-dP-nvV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fk4-yy-nKk"/>
-                            <constraint firstAttribute="trailing" secondItem="GJd-Yh-RWb" secondAttribute="trailing" constant="20" id="kUf-g4-Mxc"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="qBF-UZ-0h7"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="20" id="sXw-cc-NPN"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="aEJ-dP-nvV" secondAttribute="trailing" constant="20" id="yWO-WC-XaI"/>
                         </constraints>
                     </view>
@@ -51,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MainIcon" width="341.33334350585938" height="341.66665649414062"/>
+        <image name="MainIcon" width="341.33334350585938" height="341.33334350585938"/>
     </resources>
 </document>

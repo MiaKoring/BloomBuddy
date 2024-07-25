@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
+import WeatherKit
+import ZapdosKit
 
 struct WeatherScrollHeader: View {
 
+    @Environment(LocationManager.self) private var locationManager
     @Binding var scrollPosition: CGPoint
+    let weather: Weather
 
     var body: some View {
         VStack {
             HStack {
                 HStack(alignment: .top, spacing: 0.0) {
-                    Text("24")
+                    Text("\(weather.intCurrentTemp)")
                         .font(.Bold.large)
                         .foregroundStyle(.white.opacity(0.9).gradient)
 
@@ -26,12 +30,12 @@ struct WeatherScrollHeader: View {
                 }
                 .frame(maxWidth: .infinity)
 
-                Text("DE - Hamburg")
+                Text("\(locationManager.city)")
                     .foregroundStyle(.white)
                     .font(.Bold.regularSmall)
                     .frame(maxWidth: .infinity)
 
-                Image(systemName: "sun.max.fill")
+                Image(systemName: weather.currentWeather.symbolName + ".fill")
                     .symbolRenderingMode(.multicolor)
                     .font(.Regular.large)
                     .frame(maxWidth: .infinity)

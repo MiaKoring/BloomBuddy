@@ -43,7 +43,7 @@ struct MainScreen: View {
                         TipCard()
                     }
 
-                    if !collections.isEmpty, var selected = collections.first(where: { $0.name == collection }) {
+                    if !collections.isEmpty, let selected = collections.first(where: { $0.name == collection }) {
                         PlantsScreen(collection: selected) {
                             viewContext.refreshAllObjects()
                         }
@@ -64,8 +64,9 @@ struct MainScreen: View {
             }
             .scrollIndicators(.hidden)
             .coordinateSpace(name: "mainScroll")
-
-            WeatherScrollHeader(scrollPosition: $scrollPosition)
+            if let weather {
+                WeatherScrollHeader(scrollPosition: $scrollPosition, weather: weather)
+            }
         }
         .onAppear {
             locationManager.requestAuth()
