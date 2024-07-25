@@ -30,7 +30,7 @@ struct WeatherScrollHeader: View {
                 }
                 .frame(maxWidth: .infinity)
 
-                Text("\(locationManager.city)")
+                Text("\(locationManager.country) - \(locationManager.city)")
                     .foregroundStyle(.white)
                     .font(.Bold.regularSmall)
                     .frame(maxWidth: .infinity)

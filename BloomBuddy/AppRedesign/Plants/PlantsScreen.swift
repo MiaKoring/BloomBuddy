@@ -18,7 +18,7 @@ struct PlantsScreen: View {
     var body: some View {
         VStack {
             HStack(spacing: 20.0) {
-                Text(collection.name ?? "")
+                Text(collection.name)
                     .font(.Bold.title2)
 
                 // TODO: - Next Feature, different PlantCollections
@@ -69,7 +69,9 @@ struct PlantsScreen: View {
             .padding(.vertical, 10.0)
 
             PlantList(collection.plants) { plant in
-                collection.plants.removeAll(where: {$0.id == plant.id})
+                withAnimation {
+                    collection.plants.removeAll(where: {$0.id == plant.id})
+                }
             } onEdit: { plant in
                 editPlant = plant
             }
