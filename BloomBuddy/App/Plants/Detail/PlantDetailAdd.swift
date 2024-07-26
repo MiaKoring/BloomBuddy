@@ -103,6 +103,7 @@ struct PlantDetailAdd: View {
                 self.name = plant.name
                 self.size = plant.size
                 self.watering = WaterRequirement(rawValue: plant.waterRequirement) ?? .small
+                self.image = plant.image
             }
         }
     }
