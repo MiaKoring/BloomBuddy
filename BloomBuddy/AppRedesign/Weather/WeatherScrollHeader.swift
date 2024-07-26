@@ -42,7 +42,7 @@ struct WeatherScrollHeader: View {
             }
             .padding(.horizontal)
             .padding(.bottom, 10.0)
-            .background(.plantGreen.gradient)
+            .background(.plantGreen)
 
             Spacer()
         }
