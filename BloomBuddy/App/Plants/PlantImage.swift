@@ -25,6 +25,8 @@ struct PlantImage: View {
     @State var showEdit = false
     @State var showCamera = false
     @State private var cameraModel = CameraVM()
+    
+    let configuration = SwiftyCropConfiguration(rotateImage: false)
 
     init(_ size: CGFloat, _ imageName: String, color: Binding<Color>, lineWidth: CGFloat = 8, data: Binding<Data?> = .constant(nil), showButtons: Binding<Bool>, editable: Bool = false) {
         self.size = size
@@ -106,7 +108,8 @@ struct PlantImage: View {
             if let image {
                 SwiftyCropView(
                     imageToCrop: image,
-                    maskShape: .circle
+                    maskShape: .circle,
+                    configuration: configuration
                 ) { croppedImage in
                     data = croppedImage?.pngData()
                 }
