@@ -21,7 +21,7 @@ struct PlantRowFront: View {
                 .lineLimit(2)
                 .frame(maxWidth: .infinity)
 
-            PlantImage(80, "plantBg", color: .constant(cardColor), showButtons: .constant(false))
+            PlantImage(80, "plantBg", color: .constant(cardColor), data: .constant(plant?.image), showButtons: .constant(false))
 
             HStack {
                 VStack {

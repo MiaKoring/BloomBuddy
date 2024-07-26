@@ -10,21 +10,49 @@ import SwiftUI
 struct CameraView: View {
     
     @Binding var image: CGImage?
+    let onCapture: (CGImage) -> Void
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        GeometryReader { geometry in
-            if let image = image {
-                Image(decorative: image, scale: 1)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: geometry.size.width,
-                           height: geometry.size.height)
-            } else {
-                ContentUnavailableView("No camera feed", systemImage: "xmark.circle.fill")
-                    .frame(width: geometry.size.width,
-                           height: geometry.size.height)
+        if let image = image {
+            Image(decorative: image, scale: 1, orientation: .right)
+                .resizable()
+                .scaledToFill()
+                .overlay(alignment: .bottom) {
+                    ZStack {
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 50)
+                        Circle()
+                            .stroke(lineWidth: 5)
+                            .fill(.white)
+                            .frame(width: 60)
+                    }
+                    .button {
+                        onCapture(image)
+                        dismiss()
+                    }
+                    .padding(.bottom, 20)
+                }
+                .overlay(alignment: .bottom) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Abbrechen")
+                    }
+                    .offset(x: -100)
+                    .padding(.bottom, 40)
+                    .foregroundStyle(.white)
+                }
+        } else {
+            ContentUnavailableView("Kein Kamera Feed", systemImage: "xmark.circle.fill")
+            Button {
+                dismiss()
+            } label: {
+                Text("Zurück")
             }
         }
+        
     }
     
 }

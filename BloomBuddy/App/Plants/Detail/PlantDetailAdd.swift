@@ -108,7 +108,7 @@ struct PlantDetailAdd: View {
     }
     
     private func create() {
-        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering, image: Data()))
+        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering, image: image))
         dismiss()
     }
     
@@ -117,6 +117,7 @@ struct PlantDetailAdd: View {
         plant.name = name
         plant.waterRequirement = watering.rawValue
         plant.size = size
+        plant.image = image
         
         dismiss()
     }

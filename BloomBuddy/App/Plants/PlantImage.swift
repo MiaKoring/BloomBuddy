@@ -21,7 +21,7 @@ struct PlantImage: View {
     let editable: Bool
     @State private var item: PhotosPickerItem?
     @State var showImageLoadError: Bool = false
-    @State var image: Data? = nil
+    @State var image: UIImage? = nil
     @State var showEdit = false
     @State var showCamera = false
     @State private var cameraModel = CameraVM()
@@ -66,6 +66,7 @@ struct PlantImage: View {
                             .font(.system(size: 30))
                     }
                     Button {
+                        image = nil
                         showCamera = true
                     } label: {
                         Image(systemName: "camera")
@@ -104,9 +105,9 @@ struct PlantImage: View {
                 }
             }
         }) {
-            if let image, let uiImage = UIImage(data: image) {
+            if let image {
                 SwiftyCropView(
-                    imageToCrop: uiImage,
+                    imageToCrop: image,
                     maskShape: .circle
                 ) { croppedImage in
                     data = croppedImage?.pngData()
@@ -114,7 +115,11 @@ struct PlantImage: View {
             }
         }
         .fullScreenCover(isPresented: $showCamera) {
-            CameraView(image: $cameraModel.currentFrame)
+            CameraView(image: $cameraModel.currentFrame) { captured in
+                let uiImage = UIImage(cgImage: captured, scale: 1.0, orientation: .right)
+                image = uiImage
+                showEdit = true
+            }
         }
     }
     
@@ -125,7 +130,8 @@ struct PlantImage: View {
                 print("failed")
                 return
             }
-            image = res
+            guard let uiImage = UIImage(data: res) else { return }
+            image = uiImage
             showEdit = true
         }
     }
