@@ -99,10 +99,8 @@ struct PlantImage: View {
             Button("OK", role: .cancel) {}
         }
         .fullScreenCover(isPresented: $showEdit, onDismiss: {
-            if data != nil {
-                withAnimation {
-                    showButtons = false
-                }
+            withAnimation {
+                showButtons = false
             }
         }) {
             if let image {

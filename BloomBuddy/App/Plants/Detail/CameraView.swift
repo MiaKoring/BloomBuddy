@@ -32,7 +32,7 @@ struct CameraView: View {
                         onCapture(image)
                         dismiss()
                     }
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 50)
                 }
                 .overlay(alignment: .bottom) {
                     Button {
@@ -41,9 +41,10 @@ struct CameraView: View {
                         Text("Abbrechen")
                     }
                     .offset(x: -100)
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 70)
                     .foregroundStyle(.white)
                 }
+                .ignoresSafeArea()
         } else {
             ContentUnavailableView("Kein Kamera Feed", systemImage: "xmark.circle.fill")
             Button {
