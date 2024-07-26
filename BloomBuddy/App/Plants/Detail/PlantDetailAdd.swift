@@ -15,6 +15,8 @@ struct PlantDetailAdd: View {
     @State var name: String = ""
     @State var size: Double = 100
     @State var watering: WaterRequirement = .small
+    @State var image: Data? = nil
+    @State var showImageButtons = false
     
     var edit: Bool = false
     var plant: Plant? = nil
@@ -37,8 +39,11 @@ struct PlantDetailAdd: View {
                             .overlay {
                                 Color.plantGreen.opacity(0.8)
                             }
+                            .onTapGesture {
+                                showImageButtons = false
+                            }
                         
-                        PlantImage(150, "plantBg", color: .constant(.white), lineWidth: 10)
+                        PlantImage(150, "plantBg", color: .constant(.white), lineWidth: 10, data: $image, showButtons: $showImageButtons, editable: true)
                         
                         VStack {
                             HStack {
@@ -103,7 +108,7 @@ struct PlantDetailAdd: View {
     }
     
     private func create() {
-        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering))
+        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering, image: Data()))
         dismiss()
     }
     

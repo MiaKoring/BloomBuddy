@@ -14,13 +14,15 @@ final class Plant {
     var name: String
     var size: Double
     var waterRequirement: WaterRequirement.RawValue
+    var image: Data
     var collection: PlantCollection?
     
-    init(id: UUID = UUID(), name: String, size: Double, waterRequirement: WaterRequirement) {
+    init(id: UUID = UUID(), name: String, size: Double, waterRequirement: WaterRequirement, image: Data) {
         self.id = id
         self.name = name
         self.size = size
         self.waterRequirement = waterRequirement.rawValue
+        self.image = image
     }
     
 }

@@ -38,6 +38,13 @@
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
 		A62540A42C52D7900010C299 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A32C52D7900010C299 /* Plant.swift */; };
 		A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A52C52D9810010C299 /* PlantCollection.swift */; };
+		A6660FA12C53E9B800816CD9 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = A6660FA02C53E9B800816CD9 /* SwiftyCrop */; };
+		A6660FA32C53EB8300816CD9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA22C53EB8300816CD9 /* Image.swift */; };
+		A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA42C53FE8800816CD9 /* CameraManager.swift */; };
+		A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA62C5400BD00816CD9 /* CMSampleBuffer.swift */; };
+		A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA82C5400F900816CD9 /* CoreImage.swift */; };
+		A6660FAB2C5401B200816CD9 /* CameraVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FAA2C5401B100816CD9 /* CameraVM.swift */; };
+		A6660FAD2C5401F900816CD9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FAC2C5401F900816CD9 /* CameraView.swift */; };
 		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DF2C4860C1006AA97F /* GrowthStage.swift */; };
@@ -89,6 +96,12 @@
 		4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailAdd.swift; sourceTree = "<group>"; };
 		A62540A32C52D7900010C299 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		A62540A52C52D9810010C299 /* PlantCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollection.swift; sourceTree = "<group>"; };
+		A6660FA22C53EB8300816CD9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		A6660FA42C53FE8800816CD9 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		A6660FA62C5400BD00816CD9 /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
+		A6660FA82C5400F900816CD9 /* CoreImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImage.swift; sourceTree = "<group>"; };
+		A6660FAA2C5401B100816CD9 /* CameraVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVM.swift; sourceTree = "<group>"; };
+		A6660FAC2C5401F900816CD9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
 		A689F7DF2C4860C1006AA97F /* GrowthStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthStage.swift; sourceTree = "<group>"; };
 		A689F7E12C4860F7006AA97F /* WaterRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirement.swift; sourceTree = "<group>"; };
@@ -104,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6660FA12C53E9B800816CD9 /* SwiftyCrop in Frameworks */,
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
 				4F3AD4ED2C4E9AD6005BB774 /* ZapdosKit in Frameworks */,
 				4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */,
@@ -117,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */,
+				A6660FA42C53FE8800816CD9 /* CameraManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -199,6 +214,8 @@
 			children = (
 				4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */,
 				4F557AC52C4FA87500C744F1 /* WaterRequirementButtons.swift */,
+				A6660FAA2C5401B100816CD9 /* CameraVM.swift */,
+				A6660FAC2C5401F900816CD9 /* CameraView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -250,6 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */,
+				A6660FA22C53EB8300816CD9 /* Image.swift */,
+				A6660FA62C5400BD00816CD9 /* CMSampleBuffer.swift */,
+				A6660FA82C5400F900816CD9 /* CoreImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +340,7 @@
 				4F90F8532C44752200B57F3D /* Mammut */,
 				4F90F8562C44752C00B57F3D /* SwiftChameleon */,
 				4F3AD4EC2C4E9AD6005BB774 /* ZapdosKit */,
+				A6660FA02C53E9B800816CD9 /* SwiftyCrop */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -354,6 +375,7 @@
 				4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */,
 				A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				4F3AD4EB2C4E9AD6005BB774 /* XCRemoteSwiftPackageReference "ZapdosKit" */,
+				A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -384,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F557AE12C51AA9800C744F1 /* FlipView.swift in Sources */,
+				A6660FAB2C5401B200816CD9 /* CameraVM.swift in Sources */,
 				4F3AD4E02C4E87D0005BB774 /* TipDetail.swift in Sources */,
 				4F3AD4C82C4E82CF005BB774 /* UDKey.swift in Sources */,
 				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
@@ -392,13 +415,18 @@
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
 				4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */,
 				A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */,
+				A6660FAD2C5401F900816CD9 /* CameraView.swift in Sources */,
+				A6660FA32C53EB8300816CD9 /* Image.swift in Sources */,
+				A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
 				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
 				4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
+				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
+				A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */,
 				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
@@ -544,7 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = PSU9VZHG7L;
+				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -570,7 +598,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.BloomBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.BloomBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -592,7 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = PSU9VZHG7L;
+				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -618,7 +646,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.zwicker.BloomBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = de.touchthegrass.BloomBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -678,6 +706,14 @@
 				kind = branch;
 			};
 		};
+		A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benedom/SwiftyCrop.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
@@ -703,6 +739,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
 			productName = SwiftChameleon;
+		};
+		A6660FA02C53E9B800816CD9 /* SwiftyCrop */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
+			productName = SwiftyCrop;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
