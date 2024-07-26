@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bloombuddy_logo 1.png",
+      "filename" : "bloombuddy_logo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bloombuddy_logo 2.png",
+      "filename" : "bloombuddy_logo 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bloombuddy_logo.png",
+      "filename" : "bloombuddy_logo 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
