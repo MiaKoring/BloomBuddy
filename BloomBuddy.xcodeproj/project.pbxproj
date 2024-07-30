@@ -570,7 +570,7 @@
 				CODE_SIGN_ENTITLEMENTS = BloomBuddy/BloomBuddy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -618,7 +618,7 @@
 				CODE_SIGN_ENTITLEMENTS = BloomBuddy/BloomBuddy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;

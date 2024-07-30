@@ -53,6 +53,7 @@ struct WeatherExtraInfo: View {
                     Text("Regenmenge")
                         .font(.Regular.verySmall)
                         .foregroundStyle(.gray)
+                        .lineLimit(1)
                 }
             }
             .padding(.vertical)

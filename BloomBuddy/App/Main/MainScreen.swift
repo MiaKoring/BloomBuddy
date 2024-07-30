@@ -27,6 +27,7 @@ struct MainScreen: View {
     @State private var showTipDetail: Bool = false
     @State private var scrollPosition: CGPoint = .zero
     @State private var weather: Weather?
+    @State var showDisclaimer: Bool = false
 
     var body: some View {
         BackgroundView(.plantGreen.opacity(0.15)) {
@@ -75,6 +76,34 @@ struct MainScreen: View {
         .onChange(of: scenePhase) { _, newPhase in
             guard newPhase == .active, let location = locationManager.location else { return }
             fetchWeather(.init(latitude: location.latitude, longitude: location.longitude))
+        }
+        .sheet(isPresented: $showDisclaimer) {
+            VStack {
+                Text("Disclaimer")
+                    .font(.title2)
+                ScrollView {
+                    Text("Trotz größter Sorgfalt bei der Entwicklung und Pflege der App können wir keine Haftung für Schäden übernehmen, die durch die Nutzung von BloomBuddy entstehen. Unsere Empfehlungen basieren nur auf Wahrscheinlichkeiten. Nutzer sollten stets ihre eigene Beurteilung zur Pflege ihrer Pflanzen verwenden.")
+                }
+                Text("Akzeptieren")
+                    .font(.Bold.title)
+                    .padding()
+                    .frame(maxWidth: .infinity, idealHeight: 60.0)
+                    .foregroundStyle(.white)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20.0)
+                            .fill(.plantGreen)
+                    )
+                    .button {
+                        UDKey.disclaimer.boolValue = true
+                        showDisclaimer = false
+                    }
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 20)
+            .presentationDetents([.height(250)])
+        }
+        .task {
+            showDisclaimer = !UDKey.disclaimer.boolValue
         }
     }
 
