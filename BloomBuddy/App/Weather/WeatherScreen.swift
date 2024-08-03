@@ -9,7 +9,6 @@ import SwiftUI
 import WeatherKit
 
 struct WeatherScreen: View {
-
     // MARK: - Properties
     let weather: Weather
 

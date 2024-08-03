@@ -12,6 +12,7 @@ struct WeatherCard: View {
 
     // MARK: - Properties
     @Environment(LocationManager.self) private var locationManager
+    @Environment(\.openURL) private var openUrl
     let weather: Weather
 
     var body: some View {
@@ -66,6 +67,18 @@ struct WeatherCard: View {
 
             WeatherCardForecast(forecast: weather.nextHourlyForecasts(count: 5))
                 .padding(.top)
+                .overlay(alignment: .topTrailing) {
+                    Text(" Weather")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.white.opacity(0.8))
+                        .offset(y: -5)
+                        .button {
+                            if let url = URL(string: "https://weatherkit.apple.com/legal-attribution.html") {
+                                openUrl(url)
+                            }
+                        }
+                        .padding(.trailing, 5)
+                }
         }
         .frame(maxWidth: .infinity)
         .background(
