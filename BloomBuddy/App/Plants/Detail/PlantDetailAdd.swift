@@ -73,15 +73,7 @@ struct PlantDetailAdd: View {
                         Spacer()
                         
                         Text("Speichern")
-                            .font(.Bold.title)
-                            .padding()
-                            .frame(maxWidth: .infinity, idealHeight: 60.0)
-                            .foregroundStyle(.white)
-                            .background(
-                                RoundedRectangle(cornerRadius: 20.0)
-                                    .fill(valid ? .plantGreen: .gray.opacity(0.4))
-                            )
-                            .button {
+                            .bigButton(valid: valid) {
                                 if !edit {
                                     create()
                                     return

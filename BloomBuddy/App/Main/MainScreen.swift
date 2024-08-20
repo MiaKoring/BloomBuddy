@@ -85,15 +85,7 @@ struct MainScreen: View {
                     Text("Trotz größter Sorgfalt bei der Entwicklung und Pflege der App können wir keine Haftung für Schäden übernehmen, die durch die Nutzung von BloomBuddy entstehen. Unsere Empfehlungen basieren nur auf Wahrscheinlichkeiten. Nutzer sollten stets ihre eigene Beurteilung zur Pflege ihrer Pflanzen verwenden.")
                 }
                 Text("Akzeptieren")
-                    .font(.Bold.title)
-                    .padding()
-                    .frame(maxWidth: .infinity, idealHeight: 60.0)
-                    .foregroundStyle(.white)
-                    .background(
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .fill(.plantGreen)
-                    )
-                    .button {
+                    .bigButton {
                         UDKey.disclaimer.boolValue = true
                         showDisclaimer = false
                     }
