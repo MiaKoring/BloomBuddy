@@ -6,4 +6,6 @@
 //
 
 import Foundation
-struct ErrorObj: Codable {}
+struct ErrorObj: Codable {
+    let reason: String
+}

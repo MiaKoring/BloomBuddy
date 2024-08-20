@@ -41,6 +41,11 @@
 		A630A89C2C74FCC2009171D7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89B2C74FCC2009171D7 /* View.swift */; };
 		A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89D2C74FCE5009171D7 /* LoginField.swift */; };
 		A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89F2C750933009171D7 /* BloomBuddyJWT.swift */; };
+		A630A8A32C753256009171D7 /* BloomBuddyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8A22C753256009171D7 /* BloomBuddyController.swift */; };
+		A630A8A62C7534F2009171D7 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8A52C7534F2009171D7 /* NetworkError.swift */; };
+		A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8A92C75378F009171D7 /* URLReqEndpoint.swift */; };
+		A630A8AD2C753C1D009171D7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */; };
+		A630A8AF2C75419F009171D7 /* BloomBuddyApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8AE2C75419F009171D7 /* BloomBuddyApiError.swift */; };
 		A6660FA12C53E9B800816CD9 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = A6660FA02C53E9B800816CD9 /* SwiftyCrop */; };
 		A6660FA32C53EB8300816CD9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA22C53EB8300816CD9 /* Image.swift */; };
 		A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA42C53FE8800816CD9 /* CameraManager.swift */; };
@@ -107,6 +112,11 @@
 		A630A89B2C74FCC2009171D7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		A630A89D2C74FCE5009171D7 /* LoginField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginField.swift; sourceTree = "<group>"; };
 		A630A89F2C750933009171D7 /* BloomBuddyJWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyJWT.swift; sourceTree = "<group>"; };
+		A630A8A22C753256009171D7 /* BloomBuddyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyController.swift; sourceTree = "<group>"; };
+		A630A8A52C7534F2009171D7 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A630A8A92C75378F009171D7 /* URLReqEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLReqEndpoint.swift; sourceTree = "<group>"; };
+		A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		A630A8AE2C75419F009171D7 /* BloomBuddyApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyApiError.swift; sourceTree = "<group>"; };
 		A6660FA22C53EB8300816CD9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A6660FA42C53FE8800816CD9 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A6660FA62C5400BD00816CD9 /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
@@ -259,6 +269,7 @@
 		4F61ED222C43E68100092522 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A630A8A82C753780009171D7 /* Protocols */,
 				A67CDA1A2C7229C5005CFCA2 /* Network */,
 				A62540A22C52D7790010C299 /* SwiftData */,
 				4F3AD4D52C4E8599005BB774 /* Keys */,
@@ -303,9 +314,29 @@
 			path = SwiftData;
 			sourceTree = "<group>";
 		};
+		A630A8A12C75323D009171D7 /* URLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A630A8A22C753256009171D7 /* BloomBuddyController.swift */,
+				A630A8A52C7534F2009171D7 /* NetworkError.swift */,
+				A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */,
+				A630A8AE2C75419F009171D7 /* BloomBuddyApiError.swift */,
+			);
+			path = URLRequest;
+			sourceTree = "<group>";
+		};
+		A630A8A82C753780009171D7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A630A8A92C75378F009171D7 /* URLReqEndpoint.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A67CDA1A2C7229C5005CFCA2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A630A8A12C75323D009171D7 /* URLRequest */,
 				A67CDA212C722A66005CFCA2 /* Response */,
 				A67CDA1B2C722A1F005CFCA2 /* Network.swift */,
 				A67CDA1D2C722A38005CFCA2 /* NetworkEnv.swift */,
@@ -469,6 +500,7 @@
 				A6660FA32C53EB8300816CD9 /* Image.swift in Sources */,
 				A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */,
 				A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */,
+				A630A8A32C753256009171D7 /* BloomBuddyController.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
 				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
@@ -479,10 +511,12 @@
 				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
 				A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */,
+				A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */,
 				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
+				A630A8AF2C75419F009171D7 /* BloomBuddyApiError.swift in Sources */,
 				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
 				A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */,
 				4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */,
@@ -495,9 +529,11 @@
 				A67CDA1E2C722A38005CFCA2 /* NetworkEnv.swift in Sources */,
 				4F3AD4CD2C4E84F7005BB774 /* WeatherCardForecast.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
+				A630A8A62C7534F2009171D7 /* NetworkError.swift in Sources */,
 				A62540A42C52D7900010C299 /* Plant.swift in Sources */,
 				4F3AD4D12C4E8539005BB774 /* WeatherScreen.swift in Sources */,
 				4F3AD4E22C4E8FD4005BB774 /* PlantsScreen.swift in Sources */,
+				A630A8AD2C753C1D009171D7 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

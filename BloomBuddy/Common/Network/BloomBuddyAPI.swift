@@ -18,8 +18,8 @@ enum BloomBuddyAPI {
     case info(String)
 }
 
-extension BloomBuddyAPI: Endpoint {
-
+extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
+ 
     var path: String {
         switch self {
         case .createUser, .delete: "/users"
@@ -43,6 +43,14 @@ extension BloomBuddyAPI: Endpoint {
         case .login(let username, let password): [ .authorization(.basic("\(username):\(password)")) ]
         case .createUser: []
         case .delete(let token), .info(let token), .createSensor(let token), .sensors(let token), .sensorData(_, let token): [.authorization(.bearer(token))]
+        }
+    }
+    
+    var urlReqHeaders: [String: String] {
+        switch self {
+        case .createUser: [:]
+        case .login(let username, let password): ["Authorization": "Basic \("\(username):\(password)".data(using: .utf8)?.base64EncodedString() ?? "")"]
+        case .delete(let token), .info(let token), .createSensor(let token), .sensors(let token), .sensorData(_, let token): ["Authorization": "Bearer \(token)"]
         }
     }
 

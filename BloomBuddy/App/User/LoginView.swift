@@ -102,8 +102,16 @@ struct LoginView: View {
         if isLogin {
             Task {//TODO: Fiy Mammut error 1
                 do {
-                    let response = try await Network.request(String.self, environment: .bloombuddy, endpoint: BloomBuddyAPI.login(name, pwd))
-                    print(response)
+                    let (data, response) = try await BloomBuddyController.request(BloomBuddyAPI.login(name, pwd))
+                    let res = BloomBuddyController.processResponse(data, response: response, expected: BloomBuddyJWT.self)
+                    switch res {
+                    case .success(let jwt): print(jwt.token) //TODO: Save
+                    case .failure(let error):
+                        switch error {
+                        case .unknown(let err): print("ERROR: \(err)")
+                        default: print(error.localizedDescription)
+                        }
+                    }
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -112,10 +120,18 @@ struct LoginView: View {
         }
         Task {
             do {
-                let response = try await Network.request(BloomBuddyJWT.self, environment: .bloombuddy, endpoint: BloomBuddyAPI.createUser(name, pwd))
-                print(response)
+                let (data, response) = try await BloomBuddyController.request(BloomBuddyAPI.createUser(name, pwd))
+                let res = BloomBuddyController.processResponse(data, response: response, expected: BloomBuddyJWT.self)
+                switch res {
+                case .success(let jwt): print(jwt.token) //TODO: Save
+                case .failure(let error):
+                    switch error {
+                    case .unknown(let err): print("ERROR: \(err)")
+                    default: print(error.localizedDescription)
+                    }
+                }
             } catch {
-                print(error.localizedDescription)
+                print(error.localizedDescription) //TODO: add error handling for unknown errors
             }
         }
     }

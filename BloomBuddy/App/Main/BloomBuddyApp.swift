@@ -14,7 +14,8 @@ struct BloomBuddyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainScreen()
+            LoginView()
+            //MainScreen()
                 .modelContainer(for: PlantCollection.self)
                 .environment(locationManager)
         }
