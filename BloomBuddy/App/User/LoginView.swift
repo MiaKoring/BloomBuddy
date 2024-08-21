@@ -38,15 +38,18 @@ struct LoginView: View {
                         TextField("Username", text: $name)
                             .textContentType(.username)
                             .focused($focusedField, equals: .name)
+                            .frame(height: 40)
                             .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .name, valid: nameValid)
                         TextField("Passwort", text: $pwd)
                             .textContentType(login ? .password: .newPassword)
                             .focused($focusedField, equals: .pwd)
+                            .frame(height: 40)
                             .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwd, valid: pwdValid)
                         if !login {
                             TextField("Passwort bestätigen", text: $pwdConfirm)
                                 .textContentType(.newPassword)
                                 .focused($focusedField, equals: .pwdConfirm)
+                                .frame(height: 40)
                                 .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwdConfirm, valid: pwdValid)
                         }
                         if let fieldErrorMessage {
@@ -61,6 +64,7 @@ struct LoginView: View {
                                     showDisclaimer.toggle()
                                 }
                         })
+                        .tint(.accent)
                     } header: {
                         Text(login ? "Login": "Registrieren")
                     }
@@ -79,7 +83,6 @@ struct LoginView: View {
                 }
             }
             .padding(.top)
-            .background(.forecastBackground)
             if loading {
                 RoundedRectangle(cornerRadius: 25.0)
                     .fill(.gray.opacity(0.5))
@@ -90,6 +93,7 @@ struct LoginView: View {
             }
         }
         .padding(.horizontal, 40)
+        .background(.forecastBackground)
         .sheet(isPresented: $showDisclaimer) {
             VStack {
                 Text("Disclaimer")
@@ -233,7 +237,7 @@ struct LoginView: View {
     }
     
     private func disclaimerNoticeText() -> Text {
-        Text("*Ich habe den ") + Text("Disclaimer").foregroundStyle(.blue) + Text(" gelesen und stimme zu.")
+        Text("*Ich habe den ") + Text("Disclaimer").foregroundStyle(.accent) + Text(" gelesen und stimme zu.")
     }
     
 }
