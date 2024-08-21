@@ -86,7 +86,7 @@ struct MainScreen: View {
             }
             let res = await sensorManager.fetch()
             switch res {
-            case .success(let success):
+            case .success:
                 break
             case .failure(let failure):
                 switch failure {
@@ -105,7 +105,7 @@ struct MainScreen: View {
                 Task {
                     let res = await sensorManager.fetch()
                     switch res {
-                    case .success(let success):
+                    case .success:
                         break
                     case .failure(let failure):
                         unexpectedError = failure

@@ -162,6 +162,7 @@ struct LoginView: View {
                     return
                 }
                 loading = false
+                UDKey.isSetup.boolValue = true
                 completion(dismiss)
             }
             return
@@ -182,6 +183,7 @@ struct LoginView: View {
                 return
             }
             loading = false
+            UDKey.isSetup.boolValue = true
             completion(dismiss)
         }
     }
