@@ -11,13 +11,14 @@ import SwiftData
 @main
 struct BloomBuddyApp: App {
     @State private var locationManager: LocationManager = .init()
+    @State private var sensorManager: SensorManager = .init()
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
-            //MainScreen()
+            MainScreen()
                 .modelContainer(for: PlantCollection.self)
                 .environment(locationManager)
+                .environment(sensorManager)
         }
     }
 }

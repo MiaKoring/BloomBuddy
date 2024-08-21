@@ -23,7 +23,7 @@ extension View {
                                 Color.gray.opacity(0.5)):
                             Color.red
                         , lineWidth: 0.5
-                    ) // Hier änderst du die Rahmenfarbe
+                    )
             )
     }
     

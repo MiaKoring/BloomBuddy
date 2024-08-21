@@ -36,6 +36,12 @@
 		4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */; };
 		4F90F8542C44752200B57F3D /* Mammut in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8532C44752200B57F3D /* Mammut */; };
 		4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */ = {isa = PBXBuildFile; productRef = 4F90F8562C44752C00B57F3D /* SwiftChameleon */; };
+		A6058A2A2C75F50600A7D0C3 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = A6058A292C75F50600A7D0C3 /* KeychainAccess */; };
+		A6058A2C2C75F69E00A7D0C3 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A2B2C75F69E00A7D0C3 /* KeyChainManager.swift */; };
+		A6058A2E2C75F8F500A7D0C3 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A2D2C75F8F500A7D0C3 /* KeychainKey.swift */; };
+		A6058A302C761DAC00A7D0C3 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A2F2C761DAC00A7D0C3 /* SensorManager.swift */; };
+		A6058A352C76217600A7D0C3 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A342C76217600A7D0C3 /* Sensor.swift */; };
+		A6058A372C76233200A7D0C3 /* BBAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A362C76233200A7D0C3 /* BBAuthManager.swift */; };
 		A62540A42C52D7900010C299 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A32C52D7900010C299 /* Plant.swift */; };
 		A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A52C52D9810010C299 /* PlantCollection.swift */; };
 		A630A89C2C74FCC2009171D7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89B2C74FCC2009171D7 /* View.swift */; };
@@ -107,6 +113,11 @@
 		4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		4F69B93D2C454126005F544E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailAdd.swift; sourceTree = "<group>"; };
+		A6058A2B2C75F69E00A7D0C3 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		A6058A2D2C75F8F500A7D0C3 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		A6058A2F2C761DAC00A7D0C3 /* SensorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		A6058A342C76217600A7D0C3 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		A6058A362C76233200A7D0C3 /* BBAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBAuthManager.swift; sourceTree = "<group>"; };
 		A62540A32C52D7900010C299 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		A62540A52C52D9810010C299 /* PlantCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollection.swift; sourceTree = "<group>"; };
 		A630A89B2C74FCC2009171D7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -147,6 +158,7 @@
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
 				4F3AD4ED2C4E9AD6005BB774 /* ZapdosKit in Frameworks */,
 				4F90F8572C44752C00B57F3D /* SwiftChameleon in Frameworks */,
+				A6058A2A2C75F50600A7D0C3 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +170,9 @@
 			children = (
 				4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */,
 				A6660FA42C53FE8800816CD9 /* CameraManager.swift */,
+				A6058A2B2C75F69E00A7D0C3 /* KeyChainManager.swift */,
+				A6058A2F2C761DAC00A7D0C3 /* SensorManager.swift */,
+				A6058A362C76233200A7D0C3 /* BBAuthManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -289,6 +304,7 @@
 				A689F7E12C4860F7006AA97F /* WaterRequirement.swift */,
 				4F3AD4C72C4E82CF005BB774 /* UDKey.swift */,
 				A630A89D2C74FCE5009171D7 /* LoginField.swift */,
+				A6058A2D2C75F8F500A7D0C3 /* KeychainKey.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -318,9 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				A630A8A22C753256009171D7 /* BloomBuddyController.swift */,
-				A630A8A52C7534F2009171D7 /* NetworkError.swift */,
-				A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */,
 				A630A8AE2C75419F009171D7 /* BloomBuddyApiError.swift */,
+				A630A8A52C7534F2009171D7 /* NetworkError.swift */,
 			);
 			path = URLRequest;
 			sourceTree = "<group>";
@@ -348,8 +363,10 @@
 		A67CDA212C722A66005CFCA2 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */,
 				A67CDA222C722A73005CFCA2 /* ErrorObj.swift */,
 				A630A89F2C750933009171D7 /* BloomBuddyJWT.swift */,
+				A6058A342C76217600A7D0C3 /* Sensor.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -420,6 +437,7 @@
 				4F90F8562C44752C00B57F3D /* SwiftChameleon */,
 				4F3AD4EC2C4E9AD6005BB774 /* ZapdosKit */,
 				A6660FA02C53E9B800816CD9 /* SwiftyCrop */,
+				A6058A292C75F50600A7D0C3 /* KeychainAccess */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -455,6 +473,7 @@
 				A689F7EA2C486974006AA97F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				4F3AD4EB2C4E9AD6005BB774 /* XCRemoteSwiftPackageReference "ZapdosKit" */,
 				A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				A6058A282C75F50600A7D0C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -491,6 +510,7 @@
 				4F3AD4C82C4E82CF005BB774 /* UDKey.swift in Sources */,
 				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
 				4F3AD4CF2C4E8531005BB774 /* WeatherExtraInfo.swift in Sources */,
+				A6058A2C2C75F69E00A7D0C3 /* KeyChainManager.swift in Sources */,
 				4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */,
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
 				4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */,
@@ -501,6 +521,7 @@
 				A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */,
 				A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */,
 				A630A8A32C753256009171D7 /* BloomBuddyController.swift in Sources */,
+				A6058A302C761DAC00A7D0C3 /* SensorManager.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
 				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
@@ -513,6 +534,7 @@
 				A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */,
 				A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */,
 				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
+				A6058A352C76217600A7D0C3 /* Sensor.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
@@ -528,10 +550,12 @@
 				A67CDA202C722A50005CFCA2 /* BloomBuddyAPI.swift in Sources */,
 				A67CDA1E2C722A38005CFCA2 /* NetworkEnv.swift in Sources */,
 				4F3AD4CD2C4E84F7005BB774 /* WeatherCardForecast.swift in Sources */,
+				A6058A2E2C75F8F500A7D0C3 /* KeychainKey.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
 				A630A8A62C7534F2009171D7 /* NetworkError.swift in Sources */,
 				A62540A42C52D7900010C299 /* Plant.swift in Sources */,
 				4F3AD4D12C4E8539005BB774 /* WeatherScreen.swift in Sources */,
+				A6058A372C76233200A7D0C3 /* BBAuthManager.swift in Sources */,
 				4F3AD4E22C4E8FD4005BB774 /* PlantsScreen.swift in Sources */,
 				A630A8AD2C753C1D009171D7 /* ErrorResponse.swift in Sources */,
 			);
@@ -800,6 +824,14 @@
 				kind = branch;
 			};
 		};
+		A6058A282C75F50600A7D0C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop.git";
@@ -833,6 +865,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F90F8552C44752C00B57F3D /* XCRemoteSwiftPackageReference "SwiftChameleon" */;
 			productName = SwiftChameleon;
+		};
+		A6058A292C75F50600A7D0C3 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6058A282C75F50600A7D0C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 		A6660FA02C53E9B800816CD9 /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;

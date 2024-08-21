@@ -10,7 +10,17 @@ import Mammut
 
 struct BloomBuddyController {
     private static let host = "https://bloombuddy.touchthegrass.de"
-    static func request(_ endpoint: URLReqEndpoint) async throws -> (Data, URLResponse) {
+    
+    static func request<T: Decodable>(_ endpoint: BloomBuddyAPI, expected: T.Type) async -> Result<T, BloomBuddyApiError> {
+        do {
+            let (data, response) = try await req(endpoint)
+            return processResponse(data, response: response, expected: expected)
+        } catch {
+            return .failure(.unknown(error.localizedDescription))
+        }
+    }
+    
+    private static func req(_ endpoint: URLReqEndpoint) async throws -> (Data, URLResponse) {
         guard let url = URL(string: "\(BloomBuddyController.host)\(endpoint.path)") else {
             throw NetworkError.invalidUrl
         }
@@ -21,24 +31,25 @@ struct BloomBuddyController {
             req.setValue(header.value, forHTTPHeaderField: header.key)
         }
         
-        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        guard let body: Data = {
-            switch endpoint.encoding {
-            case .json:
-                try? JSONSerialization.data(withJSONObject: endpoint.parameters)
-            default:
-                try? JSONSerialization.data(withJSONObject: [])
+        if endpoint.method != .get {
+            req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            guard let body: Data = {
+                switch endpoint.encoding {
+                case .json:
+                    try? JSONSerialization.data(withJSONObject: endpoint.parameters)
+                default:
+                    try? JSONSerialization.data(withJSONObject: [])
+                }
+            }() else {
+                throw NetworkError.jsonEncoding
             }
-        }() else {
-            throw NetworkError.jsonEncoding
+            req.httpBody = body
         }
-        req.httpBody = body
         
         return try await URLSession.shared.data(for: req)        
     }
     
-    static func processResponse<T: Decodable>(_ data: Data, response res: URLResponse, expected: T.Type) -> Result<T, BloomBuddyApiError> {
+    private static func processResponse<T: Decodable>(_ data: Data, response res: URLResponse, expected: T.Type) -> Result<T, BloomBuddyApiError> {
         guard let res = res as? HTTPURLResponse else {
             return .failure(.unknown("ResponseDecode"))
         }

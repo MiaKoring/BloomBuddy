@@ -39,7 +39,7 @@ extension BloomBuddyApiError: LocalizedError {
         case .unauthorized:
             NSLocalizedString("Ungültige Anmeldedaten", comment: "")
         case .internalServer(let string):
-            NSLocalizedString("Ein interner Serverfehler ist aufgetreten", comment: "")
+            NSLocalizedString("Ein interner Serverfehler ist aufgetreten: \(string)", comment: "")
         case .exceedingBasicSensorLimit:
             NSLocalizedString("Du hast bereits 5/5 Sensoren erstellt", comment: "")
         case .noSensorData:
@@ -47,5 +47,11 @@ extension BloomBuddyApiError: LocalizedError {
         case .unknown(let string):
             NSLocalizedString("Ein interner Fehler ist aufgetreten: \(string)", comment: "")
         }
+    }
+}
+
+extension BloomBuddyApiError: Identifiable {
+    var id: String {
+        "\(self.localizedDescription)"
     }
 }

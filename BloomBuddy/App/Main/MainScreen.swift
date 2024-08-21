@@ -18,6 +18,7 @@ struct MainScreen: View {
     @Environment(LocationManager.self) private var locationManager
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.modelContext) var context
+    @Environment(SensorManager.self) private var sensorManager
     
     @Query var collections: [PlantCollection]
 
@@ -27,7 +28,8 @@ struct MainScreen: View {
     @State private var showTipDetail: Bool = false
     @State private var scrollPosition: CGPoint = .zero
     @State private var weather: Weather?
-    @State var showDisclaimer: Bool = false
+    @State var showLogin: Bool = false
+    @State var unexpectedError: BloomBuddyApiError?
 
     var body: some View {
         BackgroundView(.plantGreen.opacity(0.15)) {
@@ -77,25 +79,41 @@ struct MainScreen: View {
             guard newPhase == .active, let location = locationManager.location else { return }
             fetchWeather(.init(latitude: location.latitude, longitude: location.longitude))
         }
-        .sheet(isPresented: $showDisclaimer) {
-            VStack {
-                Text("Disclaimer")
-                    .font(.title2)
-                ScrollView {
-                    Text("Trotz größter Sorgfalt bei der Entwicklung und Pflege der App können wir keine Haftung für Schäden übernehmen, die durch die Nutzung von BloomBuddy entstehen. Unsere Empfehlungen basieren nur auf Wahrscheinlichkeiten. Nutzer sollten stets ihre eigene Beurteilung zur Pflege ihrer Pflanzen verwenden.")
-                }
-                Text("Akzeptieren")
-                    .bigButton {
-                        UDKey.disclaimer.boolValue = true
-                        showDisclaimer = false
-                    }
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 20)
-            .presentationDetents([.height(250)])
-        }
         .task {
-            showDisclaimer = !UDKey.disclaimer.boolValue
+            if !UDKey.isSetup.boolValue {
+                KeyChainManager.setValue(nil, for: .basicAuth)
+                KeyChainManager.setValue(nil, for: .jwtAuth)
+            }
+            let res = await sensorManager.fetch()
+            switch res {
+            case .success(let success):
+                break
+            case .failure(let failure):
+                switch failure {
+                case .unauthorized:
+                    showLogin = true
+                default:
+                    unexpectedError = failure
+                }
+            }
+        }
+        .alert(item: $unexpectedError) { error in
+            Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(error.localizedDescription)) //TODO: Add error reporting to server
+        }
+        .sheet(isPresented: $showLogin) {
+            LoginView() { dismiss in
+                Task {
+                    let res = await sensorManager.fetch()
+                    switch res {
+                    case .success(let success):
+                        break
+                    case .failure(let failure):
+                        unexpectedError = failure
+                    }
+                }
+                dismiss()
+            }
+            .interactiveDismissDisabled()
         }
     }
 

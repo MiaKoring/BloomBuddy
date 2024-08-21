@@ -11,9 +11,9 @@ enum UDKey: String {
     case onboarding = "showOnboarding"
     case tips = "showTips"
     case collection = "currentCollection"
-    case disclaimer = "disclaimerNoticed"
+    case jwtExpiration
+    case isSetup
 }
-
 extension UDKey {
     var key: String {
         switch self {
