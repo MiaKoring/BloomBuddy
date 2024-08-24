@@ -7,6 +7,9 @@
 
 import Foundation
 import Mammut
+import SwiftUI
+
+typealias BBController = BloomBuddyController
 
 struct BloomBuddyController {
     private static let host = "https://bloombuddy.touchthegrass.de"
@@ -17,6 +20,15 @@ struct BloomBuddyController {
             return processResponse(data, response: response, expected: expected)
         } catch {
             return .failure(.unknown(error.localizedDescription))
+        }
+    }
+    
+    static func handleUnauthorized(_ error: BloomBuddyApiError, showLogin: Binding<Bool>, unexpectedError: Binding<BloomBuddyApiError?>?) {
+        switch error {
+        case .unauthorized:
+            showLogin.wrappedValue = true
+        default:
+            unexpectedError?.wrappedValue = error
         }
     }
     
@@ -50,6 +62,7 @@ struct BloomBuddyController {
     }
     
     private static func processResponse<T: Decodable>(_ data: Data, response res: URLResponse, expected: T.Type) -> Result<T, BloomBuddyApiError> {
+        print(expected)
         guard let res = res as? HTTPURLResponse else {
             return .failure(.unknown("ResponseDecode"))
         }
@@ -59,8 +72,14 @@ struct BloomBuddyController {
             }
             return .failure(.byReason(decoded.reason))
         } else {
-            guard let decoded = try? JSONDecoder().decode(expected, from: data) else {
-                return .failure(.unknown("JSONDecode"))
+            if expected != String.self {
+                guard let decoded = try? JSONDecoder().decode(expected, from: data) else {
+                    return .failure(.unknown("JSONDecode"))
+                }
+                return .success(decoded)
+            }
+            guard let decoded = String(data: data, encoding: .utf8) as? T else {
+                return .failure(.unknown("Response not utf-8 decodeable or convertible to T"))
             }
             return .success(decoded)
         }

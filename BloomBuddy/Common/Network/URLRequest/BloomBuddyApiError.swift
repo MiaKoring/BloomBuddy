@@ -20,6 +20,7 @@ extension BloomBuddyApiError: LocalizedError {
     static func byReason(_ reason: String) -> BloomBuddyApiError {
         switch reason {
         case "User with that name already exists": .nameUsed
+        case "Sensor with that name already exists": .nameUsed
         case "Error while hashing password": .internalServer(reason)
         case "fetching user failed": .internalServer(reason)
         case "Can't have more than 5 sensors": .exceedingBasicSensorLimit

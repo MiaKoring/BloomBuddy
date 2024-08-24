@@ -11,6 +11,7 @@ import SwiftUI
 extension View {
     func loginTextFieldStyle(focusedField: LoginField?, appearance: ColorScheme, expected: LoginField, valid: Bool) -> some View {
         self
+            .textInputAutocapitalization(.never)
             .padding(5)
             .background(appearance == .light ? .white : .black)
             .cornerRadius(5)

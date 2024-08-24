@@ -13,10 +13,11 @@ enum BloomBuddyAPI {
     case login(String, String)
     case loginBasic(String)
     case delete(String)
-    case createSensor(String)
+    case createSensor(String, String)
     case sensors(String)
     case sensorData(String, String)
     case allSensorData(String)
+    case changeSensorName(String, String, String)
     case info(String)
 }
 
@@ -29,6 +30,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .createSensor, .sensors: "/users/sensors"
         case .sensorData(let id, _): "/users/sensors/\(id)"
         case .allSensorData: "/users/sensors/all"
+        case .changeSensorName(_, let id, _): "/users/sensors/\(id)"
         }
     }
 
@@ -36,6 +38,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         switch self {
         case .login, .loginBasic, .createSensor, .createUser: .post
         case .sensors, .sensorData, .allSensorData, .info: .get
+        case .changeSensorName: .patch
         case .delete: .delete
         }
     }
@@ -46,7 +49,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .loginBasic(let basic): [
             .authorization(.basic(basic)) ]
         case .createUser: []
-        case .delete(let token), .info(let token), .createSensor(let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token): [.authorization(.bearer(token))]
+        case .delete(let token), .info(let token), .createSensor(_, let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token), .changeSensorName(_, _, let token): [.authorization(.bearer(token))]
         }
     }
     
@@ -55,13 +58,14 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .createUser: [:]
         case .login(let username, let password): ["Authorization": "Basic \("\(username):\(password)".data(using: .utf8)?.base64EncodedString() ?? "")"]
         case .loginBasic(let basic): ["Authorization": "Basic \(basic)"]
-        case .delete(let token), .info(let token), .createSensor(let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token): ["Authorization": "Bearer \(token)"]
+        case .delete(let token), .info(let token), .createSensor(_, let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token), .changeSensorName(_, _, let token): ["Authorization": "Bearer \(token)"]
         }
     }
 
     var parameters: [String : Any] {
         switch self {
         case .createUser(let username, let password): ["name": username, "password": password]
+        case .createSensor(let name, _): ["name": name]
         default: [:]
         }
     }

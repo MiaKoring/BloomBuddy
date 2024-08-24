@@ -4,5 +4,13 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSAccessorySetupBluetoothServices</key>
+	<array>
+		<string>abc</string>
+	</array>
+	<key>NSAccessorySetupKitSupports</key>
+	<array>
+		<string>Bluetooth</string>
+	</array>
 </dict>
 </plist>

@@ -67,6 +67,11 @@
 		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DF2C4860C1006AA97F /* GrowthStage.swift */; };
 		A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7E12C4860F7006AA97F /* WaterRequirement.swift */; };
+		A698687E2C79F4D800F3AC6B /* SensorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698687D2C79F4D800F3AC6B /* SensorSelector.swift */; };
+		A69868802C79F59200F3AC6B /* SensorIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698687F2C79F59200F3AC6B /* SensorIdentifier.swift */; };
+		A69868822C79FCAF00F3AC6B /* BBSensorPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */; };
+		A69868852C7A525800F3AC6B /* SensorDetailAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868842C7A525800F3AC6B /* SensorDetailAdd.swift */; };
+		A69868872C7A560E00F3AC6B /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868862C7A560E00F3AC6B /* SensorList.swift */; };
 		A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
 		A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */; };
@@ -141,6 +146,11 @@
 		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
 		A689F7DF2C4860C1006AA97F /* GrowthStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthStage.swift; sourceTree = "<group>"; };
 		A689F7E12C4860F7006AA97F /* WaterRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirement.swift; sourceTree = "<group>"; };
+		A698687D2C79F4D800F3AC6B /* SensorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorSelector.swift; sourceTree = "<group>"; };
+		A698687F2C79F59200F3AC6B /* SensorIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorIdentifier.swift; sourceTree = "<group>"; };
+		A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSensorPickerButton.swift; sourceTree = "<group>"; };
+		A69868842C7A525800F3AC6B /* SensorDetailAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailAdd.swift; sourceTree = "<group>"; };
+		A69868862C7A560E00F3AC6B /* SensorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorList.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* BloomBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyApp.swift; sourceTree = "<group>"; };
 		A6DFF8102C43E445002FD86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -240,6 +250,7 @@
 		4F3AD4E32C4E8FD8005BB774 /* Plants */ = {
 			isa = PBXGroup;
 			children = (
+				A69868832C7A524700F3AC6B /* Sensor */,
 				4F557AC42C4FA85E00C744F1 /* Detail */,
 				4F3AD4E12C4E8FD4005BB774 /* PlantsScreen.swift */,
 				4F3AD4E42C4E8FE2005BB774 /* PlantRow.swift */,
@@ -258,6 +269,7 @@
 				4F557AC52C4FA87500C744F1 /* WaterRequirementButtons.swift */,
 				A6660FAA2C5401B100816CD9 /* CameraVM.swift */,
 				A6660FAC2C5401F900816CD9 /* CameraView.swift */,
+				A698687D2C79F4D800F3AC6B /* SensorSelector.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -367,8 +379,19 @@
 				A67CDA222C722A73005CFCA2 /* ErrorObj.swift */,
 				A630A89F2C750933009171D7 /* BloomBuddyJWT.swift */,
 				A6058A342C76217600A7D0C3 /* Sensor.swift */,
+				A698687F2C79F59200F3AC6B /* SensorIdentifier.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		A69868832C7A524700F3AC6B /* Sensor */ = {
+			isa = PBXGroup;
+			children = (
+				A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */,
+				A69868842C7A525800F3AC6B /* SensorDetailAdd.swift */,
+				A69868862C7A560E00F3AC6B /* SensorList.swift */,
+			);
+			path = Sensor;
 			sourceTree = "<group>";
 		};
 		A6DFF8002C43E443002FD86A = {
@@ -519,8 +542,10 @@
 				A630A89C2C74FCC2009171D7 /* View.swift in Sources */,
 				A6660FA32C53EB8300816CD9 /* Image.swift in Sources */,
 				A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */,
+				A69868802C79F59200F3AC6B /* SensorIdentifier.swift in Sources */,
 				A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */,
 				A630A8A32C753256009171D7 /* BloomBuddyController.swift in Sources */,
+				A698687E2C79F4D800F3AC6B /* SensorSelector.swift in Sources */,
 				A6058A302C761DAC00A7D0C3 /* SensorManager.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
@@ -528,12 +553,15 @@
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
 				4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
+				A69868822C79FCAF00F3AC6B /* BBSensorPickerButton.swift in Sources */,
 				A6F1D79E2C74D61600B2BA08 /* LoginView.swift in Sources */,
 				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
 				A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */,
 				A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */,
+				A69868872C7A560E00F3AC6B /* SensorList.swift in Sources */,
 				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
+				A69868852C7A525800F3AC6B /* SensorDetailAdd.swift in Sources */,
 				A6058A352C76217600A7D0C3 /* Sensor.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */,
@@ -698,6 +726,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = BloomBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kameranutzung um deine Gartenpflanze zu fotografieren.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Fotozugriff um Fotos der Pflanze in der App zu nutzen.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -746,6 +775,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = BloomBuddy;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kameranutzung um deine Gartenpflanze zu fotografieren.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Standortabfrage damit Wetterdaten angezeigt werden können.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Fotozugriff um Fotos der Pflanze in der App zu nutzen.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

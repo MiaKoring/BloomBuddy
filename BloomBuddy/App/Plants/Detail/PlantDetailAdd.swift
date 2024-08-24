@@ -17,6 +17,7 @@ struct PlantDetailAdd: View {
     @State var watering: WaterRequirement = .small
     @State var image: Data? = nil
     @State var showImageButtons = false
+    @State var selectedSensor: SensorIdentifier? = nil
     
     var edit: Bool = false
     var plant: Plant? = nil
@@ -68,7 +69,9 @@ struct PlantDetailAdd: View {
                     VStack(spacing: 20.0) {
                         BBTextField("Name der Pflanze", text: $name)
                         BBNumberField("Größe in cm", value: $size)
+                        SensorSelector(selected: $selectedSensor)
                         WaterRequirementButtons(selected: $watering)
+                        
                         
                         Spacer()
                         
@@ -101,7 +104,7 @@ struct PlantDetailAdd: View {
     }
     
     private func create() {
-        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering, image: image))
+        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering, image: image, sensor: selectedSensor?.id))
         dismiss()
     }
     

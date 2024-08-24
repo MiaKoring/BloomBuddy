@@ -9,6 +9,7 @@ import Foundation
 
 struct Sensor: Codable {
     let id: UUID?
-    let latest: Double
-    let updated: Int
+    let name: String
+    let latest: Double?
+    let updated: Int?
 }
