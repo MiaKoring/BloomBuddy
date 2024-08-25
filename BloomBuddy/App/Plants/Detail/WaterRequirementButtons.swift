@@ -11,7 +11,6 @@ struct WaterRequirementButtons: View {
 
     // MARK: - Properties
     @Binding var selected: WaterRequirement
-    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5.0) {
@@ -19,37 +18,18 @@ struct WaterRequirementButtons: View {
                 .font(.Bold.regularSmall)
                 .foregroundStyle(.gray)
                 .padding(.horizontal)
-
-            HStack(spacing: 15.0) {
-                ForEach(WaterRequirement.allCases, id: \.self) { water in
-                    VStack(spacing: 5) {
-                        HStack(spacing: 2) {
-                            ForEach(0..<water.amount, id: \.self) { watering in
-                                Image(systemName: water.image)
-                                    .symbolEffect(.bounce, value: selected.is(water))
-                                    .font(.Regular.title3)
-                            }
-                        }
-                        .foregroundStyle(selected.is(water) ? .white: .blue.lighter().opacity(0.25))
-                        .frame(maxWidth: .infinity)
-
-                        Text(water.title)
-                            .font(.Bold.regular)
-                            .opacity(0.8)
-                            .foregroundStyle(selected.is(water) ? .white: colorScheme == .dark ? .white.opacity(0.3) : .black.opacity(0.25))
-                    }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .fill(selected.is(water) ? .blue.lighter(): .clear)
-                            .stroke(selected.is(water) ? .blue.lighter(): .black.opacity(0.25), lineWidth: 2)
-                    )
-                    .button {
-                        withAnimation(.easeInOut) {
-                            selected = water
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 15.0) {
+                    ForEach(WaterRequirement.allCases, id: \.self) { water in
+                        if water.title != WaterRequirement.custom(0).title {
+                            WaterRequirementButton(selected: $selected, water: water)
+                        } else {
+                            WaterRequirementButton(selected: $selected, water: selected.title == WaterRequirement.custom(0).title ? selected: .custom(0), editable: true)
                         }
                     }
                 }
+                .padding(2)
             }
         }
     }

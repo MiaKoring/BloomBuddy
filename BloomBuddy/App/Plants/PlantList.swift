@@ -16,6 +16,7 @@ struct PlantList: View {
     let onDelete: (Plant) -> Void
     let onEdit: (Plant) -> Void
     @State var resetFlip: Bool = false
+    @Environment(SensorManager.self) var sensorManager
     
     init(_ plants: [Plant], onDelete: @escaping (Plant) -> Void, onEdit: @escaping (Plant) -> Void) {
         self.plants = plants
@@ -54,6 +55,14 @@ struct PlantList: View {
     }
     
     func calcWatering(for plant: Plant) -> Color {
+        if let sensorID = plant.sensor {
+            guard let double = sensorManager.sensordata?.first(where: {$0.id == sensorID})?.latest else {
+                return .gray
+            }
+            if Int(double) <= plant.waterRequirement - 20 { return .red }
+            if ((plant.waterRequirement - 19)...(plant.waterRequirement - 10)).contains(Int(double)) { return .yellow }
+            return .green
+        }
         guard let weather = Zapdos.shared.weather else {
             return .gray
         }

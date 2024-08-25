@@ -18,6 +18,11 @@ struct PlantDetailAdd: View {
     @State var image: Data? = nil
     @State var showImageButtons = false
     @State var selectedSensor: SensorIdentifier? = nil
+    @State var loading: Bool = true
+    @State var sensors: [SensorIdentifier] = []
+    @State var fetching: Bool = true
+    @State var showLogin: Bool = false
+    @State var unexpectedError: BloomBuddyApiError? = nil
     
     var edit: Bool = false
     var plant: Plant? = nil
@@ -69,8 +74,12 @@ struct PlantDetailAdd: View {
                     VStack(spacing: 20.0) {
                         BBTextField("Name der Pflanze", text: $name)
                         BBNumberField("Größe in cm", value: $size)
-                        SensorSelector(selected: $selectedSensor)
-                        WaterRequirementButtons(selected: $watering)
+                        SensorSelector(selected: $selectedSensor, sensors: $sensors, fetching: $fetching)
+                        if !loading {
+                            WaterRequirementButtons(selected: $watering)
+                        } else {
+                            ProgressView().progressViewStyle(.circular)
+                        }
                         
                         
                         Spacer()
@@ -94,12 +103,27 @@ struct PlantDetailAdd: View {
             .scrollIndicators(.hidden)
         }
         .task {
+            await fetchSensors()
             if edit, let plant {
                 self.name = plant.name
                 self.size = plant.size
+                self.selectedSensor = sensors.first(where: {$0.id == plant.sensor})
                 self.watering = WaterRequirement(percent: plant.waterRequirement)
                 self.image = plant.image
             }
+            loading = false
+        }
+        .sheet(isPresented: $showLogin) {
+            LoginView() { dismiss in
+                Task {
+                    await fetchSensors()
+                }
+                dismiss()
+            }
+            .interactiveDismissDisabled()
+        }
+        .alert(item: $unexpectedError) { item in
+            Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(item.localizedDescription))
         }
     }
     
@@ -112,9 +136,32 @@ struct PlantDetailAdd: View {
         guard let plant = collection.plants.first(where: {$0.id == plant?.id}) else { return }
         plant.name = name
         plant.waterRequirement = watering.percent
+        plant.sensor = selectedSensor?.id
         plant.size = size
         plant.image = image
         
         dismiss()
+    }
+    
+    private func fetchSensors() async {
+        fetching = true
+        let jwtRes = await BBAuthManager.jwt()
+        switch jwtRes {
+        case .success(let token):
+            await sensorRequest(token)
+        case .failure(let failure):
+            BBController.handleUnauthorized(failure, showLogin: $showLogin, unexpectedError: $unexpectedError)
+        }
+        fetching = false
+    }
+    
+    private func sensorRequest(_ token: String) async {
+        let res = await BBController.request(.sensors(token), expected: [SensorIdentifier].self)
+        switch res {
+        case .success(let sensors):
+            self.sensors = sensors
+        case .failure(let failure):
+            BBController.handleUnauthorized(failure, showLogin: $showLogin, unexpectedError: $unexpectedError)
+        }
     }
 }

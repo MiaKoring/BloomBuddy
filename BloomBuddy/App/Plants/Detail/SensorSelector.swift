@@ -10,10 +10,10 @@ import SwiftUI
 
 struct SensorSelector: View {
     @Binding var selected: SensorIdentifier?
-    @State var sensors: [SensorIdentifier] = []
+    @Binding var sensors: [SensorIdentifier]
     @State var showLogin: Bool = false
     @State var unexpectedError: BloomBuddyApiError? = nil
-    @State var fetching: Bool = true
+    @Binding var fetching: Bool
     
     var body: some View {
         VStack {
@@ -67,4 +67,5 @@ struct SensorSelector: View {
             BBController.handleUnauthorized(failure, showLogin: $showLogin, unexpectedError: $unexpectedError)
         }
     }
+    
 }

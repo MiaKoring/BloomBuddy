@@ -76,6 +76,9 @@
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
 		A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */; };
 		A6ECBC112C7B6C650083AB39 /* PlantMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECBC102C7B6C600083AB39 /* PlantMigration.swift */; };
+		A6ECBC132C7B75620083AB39 /* WaterRequirementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECBC122C7B755C0083AB39 /* WaterRequirementButton.swift */; };
+		A6ECBC152C7B7B310083AB39 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECBC142C7B7B300083AB39 /* Int.swift */; };
+		A6ECBC172C7B7BDE0083AB39 /* CustomWaterRequirementSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECBC162C7B7BD40083AB39 /* CustomWaterRequirementSheet.swift */; };
 		A6F1D79E2C74D61600B2BA08 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F1D79D2C74D61600B2BA08 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +161,9 @@
 		A6DFF8122C43E445002FD86A /* BloomBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloomBuddy.entitlements; sourceTree = "<group>"; };
 		A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A6ECBC102C7B6C600083AB39 /* PlantMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMigration.swift; sourceTree = "<group>"; };
+		A6ECBC122C7B755C0083AB39 /* WaterRequirementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirementButton.swift; sourceTree = "<group>"; };
+		A6ECBC142C7B7B300083AB39 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		A6ECBC162C7B7BD40083AB39 /* CustomWaterRequirementSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaterRequirementSheet.swift; sourceTree = "<group>"; };
 		A6F1D79D2C74D61600B2BA08 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +273,8 @@
 		4F557AC42C4FA85E00C744F1 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				A6ECBC162C7B7BD40083AB39 /* CustomWaterRequirementSheet.swift */,
+				A6ECBC122C7B755C0083AB39 /* WaterRequirementButton.swift */,
 				4F75873C2C4F0D6D00474424 /* PlantDetailAdd.swift */,
 				4F557AC52C4FA87500C744F1 /* WaterRequirementButtons.swift */,
 				A6660FAA2C5401B100816CD9 /* CameraVM.swift */,
@@ -326,6 +334,7 @@
 		4F69B9362C452D61005F544E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A6ECBC142C7B7B300083AB39 /* Int.swift */,
 				4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */,
 				A6660FA22C53EB8300816CD9 /* Image.swift */,
 				A6660FA62C5400BD00816CD9 /* CMSampleBuffer.swift */,
@@ -541,6 +550,7 @@
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
 				4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */,
 				A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */,
+				A6ECBC172C7B7BDE0083AB39 /* CustomWaterRequirementSheet.swift in Sources */,
 				A6660FAD2C5401F900816CD9 /* CameraView.swift in Sources */,
 				A630A89C2C74FCC2009171D7 /* View.swift in Sources */,
 				A6660FA32C53EB8300816CD9 /* Image.swift in Sources */,
@@ -553,6 +563,7 @@
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
 				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
 				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
+				A6ECBC152C7B7B310083AB39 /* Int.swift in Sources */,
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
 				4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
@@ -560,6 +571,7 @@
 				A6F1D79E2C74D61600B2BA08 /* LoginView.swift in Sources */,
 				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
+				A6ECBC132C7B75620083AB39 /* WaterRequirementButton.swift in Sources */,
 				A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */,
 				A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */,
 				A69868872C7A560E00F3AC6B /* SensorList.swift in Sources */,

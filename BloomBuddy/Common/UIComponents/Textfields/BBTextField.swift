@@ -26,6 +26,7 @@ struct BBTextField: View {
 
             TextField("", text: $text)
                 .textFieldStyle(BBTextfieldStyle())
+                .textInputAutocapitalization(.never)
         }
     }
 }
