@@ -29,10 +29,12 @@ struct PlantRowFront: View {
                         .font(.Regular.regularSmall)
                         .foregroundStyle(.blue.lighter())
                         .frame(width: 20, height: 15)
-
-                    Text(plant?.waterRequirement ?? "")
-                        .foregroundStyle(.gray)
-                        .font(.Bold.small)
+                    
+                    if let plant {
+                        Text(WaterRequirement(percent: plant.waterRequirement).title)
+                            .foregroundStyle(.gray)
+                            .font(.Bold.small)
+                    }
                 }
                 .frame(maxWidth: .infinity)
 

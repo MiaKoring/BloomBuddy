@@ -15,7 +15,7 @@ enum WaterRequirementV1: String, CaseIterable {
     case big = "Viel"
 }
 
-enum WaterRequirementV2: CaseIterable {
+enum WaterRequirementV2: CaseIterable, Hashable {
     typealias RawValue = String
     
     static var allCases: [WaterRequirement] {
@@ -48,7 +48,7 @@ extension WaterRequirement {
         case .small: "Trocken"
         case .medium: "Feucht"
         case .big: "Nass"
-        case .custom(let int): "Custom"
+        case .custom: "Custom"
         }
     }
     

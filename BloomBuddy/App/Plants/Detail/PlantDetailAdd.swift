@@ -97,21 +97,21 @@ struct PlantDetailAdd: View {
             if edit, let plant {
                 self.name = plant.name
                 self.size = plant.size
-                self.watering = WaterRequirement(rawValue: plant.waterRequirement) ?? .small
+                self.watering = WaterRequirement(percent: plant.waterRequirement)
                 self.image = plant.image
             }
         }
     }
     
     private func create() {
-        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering, image: image, sensor: selectedSensor?.id))
+        collection.plants.append(Plant(name: name, size: size, waterRequirement: watering.percent, image: image, sensor: selectedSensor?.id))
         dismiss()
     }
     
     private func save() {
         guard let plant = collection.plants.first(where: {$0.id == plant?.id}) else { return }
         plant.name = name
-        plant.waterRequirement = watering.rawValue
+        plant.waterRequirement = watering.percent
         plant.size = size
         plant.image = image
         
