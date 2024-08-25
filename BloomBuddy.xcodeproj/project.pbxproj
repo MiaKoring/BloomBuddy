@@ -75,6 +75,7 @@
 		A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
 		A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */; };
+		A6ECBC112C7B6C650083AB39 /* PlantMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ECBC102C7B6C600083AB39 /* PlantMigration.swift */; };
 		A6F1D79E2C74D61600B2BA08 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F1D79D2C74D61600B2BA08 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +157,7 @@
 		A6DFF8102C43E445002FD86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6DFF8122C43E445002FD86A /* BloomBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BloomBuddy.entitlements; sourceTree = "<group>"; };
 		A6DFF8142C43E445002FD86A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A6ECBC102C7B6C600083AB39 /* PlantMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMigration.swift; sourceTree = "<group>"; };
 		A6F1D79D2C74D61600B2BA08 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +338,7 @@
 		A62540A22C52D7790010C299 /* SwiftData */ = {
 			isa = PBXGroup;
 			children = (
+				A6ECBC102C7B6C600083AB39 /* PlantMigration.swift */,
 				A62540A32C52D7900010C299 /* Plant.swift */,
 				A62540A52C52D9810010C299 /* PlantCollection.swift */,
 			);
@@ -573,6 +576,7 @@
 				4F3AD4D32C4E854B005BB774 /* WeatherScrollHeader.swift in Sources */,
 				A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */,
 				4F557AC62C4FA87500C744F1 /* WaterRequirementButtons.swift in Sources */,
+				A6ECBC112C7B6C650083AB39 /* PlantMigration.swift in Sources */,
 				A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */,
 				4F557AC82C4FA98900C744F1 /* PlantImage.swift in Sources */,
 				A67CDA202C722A50005CFCA2 /* BloomBuddyAPI.swift in Sources */,

@@ -15,7 +15,7 @@ struct WaterRequirementButtons: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5.0) {
-            Text("Wasserbedarf")
+            Text("Gewünschte Bodenfeuchte")
                 .font(.Bold.regularSmall)
                 .foregroundStyle(.gray)
                 .padding(.horizontal)
@@ -33,7 +33,7 @@ struct WaterRequirementButtons: View {
                         .foregroundStyle(selected.is(water) ? .white: .blue.lighter().opacity(0.25))
                         .frame(maxWidth: .infinity)
 
-                        Text(water.rawValue)
+                        Text(water.title)
                             .font(.Bold.regular)
                             .opacity(0.8)
                             .foregroundStyle(selected.is(water) ? .white: colorScheme == .dark ? .white.opacity(0.3) : .black.opacity(0.25))
