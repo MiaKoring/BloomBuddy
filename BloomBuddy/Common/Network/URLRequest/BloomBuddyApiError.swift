@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BloomBuddyApiError: Error {
+enum BloomBuddyApiError: Error, Equatable {
     case nameUsed
     case unauthorized
     case internalServer(String)

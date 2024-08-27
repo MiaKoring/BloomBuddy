@@ -15,6 +15,7 @@ struct SensorDetailAdd: View {
     @State var setup: Bool = true
     @State var showLogin: Bool = false
     @State var unexpectedError: BloomBuddyApiError? = nil
+    @State var showNameUsed: Bool = false
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -31,6 +32,12 @@ struct SensorDetailAdd: View {
                 }
             }
             .padding(.horizontal)
+            if showNameUsed {
+                Text("Du hast bereits einen Sensor mit diesem Namen")
+                    .font(.Regular.regularSmall)
+                    .foregroundStyle(.red)
+                    .padding(.horizontal)
+            }
             Text("Erstellen")
                 .bigButton(valid: !name.isEmpty && name.count <= 32) {
                     Task {
@@ -40,9 +47,14 @@ struct SensorDetailAdd: View {
                             let res = await BBController.request(.createSensor(name, token), expected: String.self)
                             switch res {
                             case .success(_):
+                                showNameUsed = false
                                 dismiss()
                                 //TODO: add sensor setup
                             case .failure(let failure):
+                                if failure == .nameUsed {
+                                    showNameUsed = true
+                                    return
+                                }
                                 BBController.handleUnauthorized(failure, showLogin: $showLogin, unexpectedError: $unexpectedError)
                             }
                         case .failure(let failure):
