@@ -49,6 +49,10 @@ struct MainScreen: View {
                     if !collections.isEmpty, let selected = collections.first(where: { $0.name == collection }) {
                         PlantsScreen(collection: selected) {
                             viewContext.refreshAllObjects()
+                        } refreshSensors: {
+                            Task {
+                                await fetchSensors()
+                            }
                         }
                     }
                 }
@@ -80,22 +84,7 @@ struct MainScreen: View {
             fetchWeather(.init(latitude: location.latitude, longitude: location.longitude))
         }
         .task {
-            if !UDKey.isSetup.boolValue {
-                KeyChainManager.setValue(nil, for: .basicAuth)
-                KeyChainManager.setValue(nil, for: .jwtAuth)
-            }
-            let res = await sensorManager.fetch()
-            switch res {
-            case .success:
-                break
-            case .failure(let failure):
-                switch failure {
-                case .unauthorized:
-                    showLogin = true
-                default:
-                    unexpectedError = failure
-                }
-            }
+            await fetchSensors()
         }
         .alert(item: $unexpectedError) { error in
             Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(error.localizedDescription)) //TODO: Add error reporting to server
@@ -129,6 +118,25 @@ struct MainScreen: View {
             let defaultCollectionName = "Garten"
             context.insert(PlantCollection(name: defaultCollectionName))
             self.collection = defaultCollectionName
+        }
+    }
+    
+    private func fetchSensors () async {
+        if !UDKey.isSetup.boolValue {
+            KeyChainManager.setValue(nil, for: .basicAuth)
+            KeyChainManager.setValue(nil, for: .jwtAuth)
+        }
+        let res = await sensorManager.fetch()
+        switch res {
+        case .success:
+            break
+        case .failure(let failure):
+            switch failure {
+            case .unauthorized:
+                showLogin = true
+            default:
+                unexpectedError = failure
+            }
         }
     }
 }

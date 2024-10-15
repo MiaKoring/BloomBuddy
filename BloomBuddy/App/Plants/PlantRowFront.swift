@@ -26,7 +26,7 @@ struct PlantRowFront: View {
             PlantImage(80, "plantBg", color: .constant(cardColor), data: .constant(plant?.image), showButtons: .constant(false))
                 .overlay(alignment: .bottomTrailing) {
                     if let plant, let sensorID = plant.sensor {
-                        if let sensor = sensorManager.sensordata?.first(where: {$0.id == sensorID}), let updated = sensor.updated?.double, Date.now.timeIntervalSince1970 - updated >= 10800 {
+                        if let sensor = sensorManager.sensordata?.first(where: {$0.id == sensorID}), let updated = sensor.updated?.double, Date.now.timeIntervalSinceReferenceDate - updated >= 10800 {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .symbolRenderingMode(.palette)
                                 .foregroundStyle(.white, .orange)

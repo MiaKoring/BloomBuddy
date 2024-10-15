@@ -42,8 +42,19 @@
 		A6058A302C761DAC00A7D0C3 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A2F2C761DAC00A7D0C3 /* SensorManager.swift */; };
 		A6058A352C76217600A7D0C3 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A342C76217600A7D0C3 /* Sensor.swift */; };
 		A6058A372C76233200A7D0C3 /* BBAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6058A362C76233200A7D0C3 /* BBAuthManager.swift */; };
+		A60E56202C7DEDCC0035B182 /* FAQNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E561F2C7DEDC70035B182 /* FAQNavigation.swift */; };
+		A60E56242C7DEEA90035B182 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56232C7DEEA40035B182 /* FAQ.swift */; };
+		A60E56272C7DF07A0035B182 /* FAQComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56262C7DF0560035B182 /* FAQComponent.swift */; };
+		A60E56292C7DF0F20035B182 /* FAQDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56282C7DF0ED0035B182 /* FAQDestination.swift */; };
+		A60E562C2C7E02160035B182 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A60E562B2C7E02160035B182 /* Kingfisher */; };
+		A60E562E2C7E04330035B182 /* FAQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E562D2C7E042F0035B182 /* FAQImage.swift */; };
+		A60E56302C7E05B90035B182 /* FAQImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E562F2C7E05B60035B182 /* FAQImageView.swift */; };
+		A60E56322C7E090B0035B182 /* ShimmeringSkeletonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56312C7E09010035B182 /* ShimmeringSkeletonModifier.swift */; };
+		A60E56342C7E145B0035B182 /* ZoomableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56332C7E14570035B182 /* ZoomableView.swift */; };
 		A62540A42C52D7900010C299 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A32C52D7900010C299 /* Plant.swift */; };
 		A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A52C52D9810010C299 /* PlantCollection.swift */; };
+		A62714A92CBED30E000059A1 /* SensorConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62714A82CBED308000059A1 /* SensorConfigView.swift */; };
+		A62714AC2CBED768000059A1 /* AccessoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62714AB2CBED763000059A1 /* AccessoryData.swift */; };
 		A630A89C2C74FCC2009171D7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89B2C74FCC2009171D7 /* View.swift */; };
 		A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89D2C74FCE5009171D7 /* LoginField.swift */; };
 		A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A89F2C750933009171D7 /* BloomBuddyJWT.swift */; };
@@ -128,8 +139,18 @@
 		A6058A2F2C761DAC00A7D0C3 /* SensorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		A6058A342C76217600A7D0C3 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		A6058A362C76233200A7D0C3 /* BBAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBAuthManager.swift; sourceTree = "<group>"; };
+		A60E561F2C7DEDC70035B182 /* FAQNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQNavigation.swift; sourceTree = "<group>"; };
+		A60E56232C7DEEA40035B182 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		A60E56262C7DF0560035B182 /* FAQComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQComponent.swift; sourceTree = "<group>"; };
+		A60E56282C7DF0ED0035B182 /* FAQDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDestination.swift; sourceTree = "<group>"; };
+		A60E562D2C7E042F0035B182 /* FAQImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQImage.swift; sourceTree = "<group>"; };
+		A60E562F2C7E05B60035B182 /* FAQImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQImageView.swift; sourceTree = "<group>"; };
+		A60E56312C7E09010035B182 /* ShimmeringSkeletonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringSkeletonModifier.swift; sourceTree = "<group>"; };
+		A60E56332C7E14570035B182 /* ZoomableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableView.swift; sourceTree = "<group>"; };
 		A62540A32C52D7900010C299 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		A62540A52C52D9810010C299 /* PlantCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollection.swift; sourceTree = "<group>"; };
+		A62714A82CBED308000059A1 /* SensorConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorConfigView.swift; sourceTree = "<group>"; };
+		A62714AB2CBED763000059A1 /* AccessoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryData.swift; sourceTree = "<group>"; };
 		A630A89B2C74FCC2009171D7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		A630A89D2C74FCE5009171D7 /* LoginField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginField.swift; sourceTree = "<group>"; };
 		A630A89F2C750933009171D7 /* BloomBuddyJWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyJWT.swift; sourceTree = "<group>"; };
@@ -174,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60E562C2C7E02160035B182 /* Kingfisher in Frameworks */,
 				A6660FA12C53E9B800816CD9 /* SwiftyCrop in Frameworks */,
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
 				4F3AD4ED2C4E9AD6005BB774 /* ZapdosKit in Frameworks */,
@@ -200,6 +222,7 @@
 		4F3AD4C52C4E8269005BB774 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A60E561E2C7DEDAF0035B182 /* FAQ */,
 				A6F1D79C2C74D60B00B2BA08 /* User */,
 				4F3AD4E32C4E8FD8005BB774 /* Plants */,
 				4F3AD4DC2C4E87BF005BB774 /* Tip */,
@@ -308,6 +331,8 @@
 		4F61ED222C43E68100092522 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A62714B22CBEFC28000059A1 /* Bluetooth */,
+				A60E56252C7DF04D0035B182 /* Structures */,
 				A630A8A82C753780009171D7 /* Protocols */,
 				A67CDA1A2C7229C5005CFCA2 /* Network */,
 				A62540A22C52D7790010C299 /* SwiftData */,
@@ -324,11 +349,13 @@
 		4F61ED342C43EF1800092522 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
+				A60E56232C7DEEA40035B182 /* FAQ.swift */,
 				A689F7DF2C4860C1006AA97F /* GrowthStage.swift */,
 				A689F7E12C4860F7006AA97F /* WaterRequirement.swift */,
 				4F3AD4C72C4E82CF005BB774 /* UDKey.swift */,
 				A630A89D2C74FCE5009171D7 /* LoginField.swift */,
 				A6058A2D2C75F8F500A7D0C3 /* KeychainKey.swift */,
+				A62714AA2CBED756000059A1 /* Accessories */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -347,6 +374,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A60E561E2C7DEDAF0035B182 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				A60E56332C7E14570035B182 /* ZoomableView.swift */,
+				A60E56312C7E09010035B182 /* ShimmeringSkeletonModifier.swift */,
+				A60E562F2C7E05B60035B182 /* FAQImageView.swift */,
+				A60E56282C7DF0ED0035B182 /* FAQDestination.swift */,
+				A60E561F2C7DEDC70035B182 /* FAQNavigation.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		A60E56252C7DF04D0035B182 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				A60E562D2C7E042F0035B182 /* FAQImage.swift */,
+				A60E56262C7DF0560035B182 /* FAQComponent.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		A62540A22C52D7790010C299 /* SwiftData */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +403,21 @@
 				A62540A52C52D9810010C299 /* PlantCollection.swift */,
 			);
 			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		A62714AA2CBED756000059A1 /* Accessories */ = {
+			isa = PBXGroup;
+			children = (
+				A62714AB2CBED763000059A1 /* AccessoryData.swift */,
+			);
+			path = Accessories;
+			sourceTree = "<group>";
+		};
+		A62714B22CBEFC28000059A1 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 		A630A8A12C75323D009171D7 /* URLRequest */ = {
@@ -405,6 +468,7 @@
 				A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */,
 				A69868842C7A525800F3AC6B /* SensorDetailAdd.swift */,
 				A69868862C7A560E00F3AC6B /* SensorList.swift */,
+				A62714A82CBED308000059A1 /* SensorConfigView.swift */,
 			);
 			path = Sensor;
 			sourceTree = "<group>";
@@ -476,6 +540,7 @@
 				4F3AD4EC2C4E9AD6005BB774 /* ZapdosKit */,
 				A6660FA02C53E9B800816CD9 /* SwiftyCrop */,
 				A6058A292C75F50600A7D0C3 /* KeychainAccess */,
+				A60E562B2C7E02160035B182 /* Kingfisher */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -512,6 +577,7 @@
 				4F3AD4EB2C4E9AD6005BB774 /* XCRemoteSwiftPackageReference "ZapdosKit" */,
 				A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 				A6058A282C75F50600A7D0C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				A60E562A2C7E02160035B182 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -547,6 +613,7 @@
 				A67CDA232C722A73005CFCA2 /* ErrorObj.swift in Sources */,
 				4F3AD4C82C4E82CF005BB774 /* UDKey.swift in Sources */,
 				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
+				A60E56322C7E090B0035B182 /* ShimmeringSkeletonModifier.swift in Sources */,
 				4F3AD4CF2C4E8531005BB774 /* WeatherExtraInfo.swift in Sources */,
 				A6058A2C2C75F69E00A7D0C3 /* KeyChainManager.swift in Sources */,
 				4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */,
@@ -569,10 +636,14 @@
 				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
 				A6ECBC152C7B7B310083AB39 /* Int.swift in Sources */,
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
+				A60E562E2C7E04330035B182 /* FAQImage.swift in Sources */,
 				4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
 				A69868822C79FCAF00F3AC6B /* BBSensorPickerButton.swift in Sources */,
 				A6F1D79E2C74D61600B2BA08 /* LoginView.swift in Sources */,
+				A62714A92CBED30E000059A1 /* SensorConfigView.swift in Sources */,
+				A60E56302C7E05B90035B182 /* FAQImageView.swift in Sources */,
+				A62714AC2CBED768000059A1 /* AccessoryData.swift in Sources */,
 				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
 				A6ECBC132C7B75620083AB39 /* WaterRequirementButton.swift in Sources */,
@@ -585,7 +656,9 @@
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
+				A60E56272C7DF07A0035B182 /* FAQComponent.swift in Sources */,
 				A630A8AF2C75419F009171D7 /* BloomBuddyApiError.swift in Sources */,
+				A60E56342C7E145B0035B182 /* ZoomableView.swift in Sources */,
 				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
 				A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */,
 				4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */,
@@ -593,18 +666,21 @@
 				A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */,
 				4F557AC62C4FA87500C744F1 /* WaterRequirementButtons.swift in Sources */,
 				A6ECBC112C7B6C650083AB39 /* PlantMigration.swift in Sources */,
+				A60E56202C7DEDCC0035B182 /* FAQNavigation.swift in Sources */,
 				A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */,
 				4F557AC82C4FA98900C744F1 /* PlantImage.swift in Sources */,
 				A67CDA202C722A50005CFCA2 /* BloomBuddyAPI.swift in Sources */,
 				A67CDA1E2C722A38005CFCA2 /* NetworkEnv.swift in Sources */,
 				4F3AD4CD2C4E84F7005BB774 /* WeatherCardForecast.swift in Sources */,
 				A6058A2E2C75F8F500A7D0C3 /* KeychainKey.swift in Sources */,
+				A60E56242C7DEEA90035B182 /* FAQ.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
 				A630A8A62C7534F2009171D7 /* NetworkError.swift in Sources */,
 				A62540A42C52D7900010C299 /* Plant.swift in Sources */,
 				4F3AD4D12C4E8539005BB774 /* WeatherScreen.swift in Sources */,
 				A6058A372C76233200A7D0C3 /* BBAuthManager.swift in Sources */,
 				4F3AD4E22C4E8FD4005BB774 /* PlantsScreen.swift in Sources */,
+				A60E56292C7DF0F20035B182 /* FAQDestination.swift in Sources */,
 				A630A8AD2C753C1D009171D7 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -882,6 +958,14 @@
 				kind = branch;
 			};
 		};
+		A60E562A2C7E02160035B182 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 		A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop.git";
@@ -920,6 +1004,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A6058A282C75F50600A7D0C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		A60E562B2C7E02160035B182 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A60E562A2C7E02160035B182 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		A6660FA02C53E9B800816CD9 /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;

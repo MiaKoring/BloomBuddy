@@ -47,4 +47,8 @@ extension View {
                 clicked()
             }
     }
+    
+    func shimmering() -> some View {
+        modifier(ShimmeringSkeletonModifier())
+    }
 }

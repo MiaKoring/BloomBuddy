@@ -12,8 +12,10 @@ struct PlantsScreen: View {
     @Bindable var collection: PlantCollection
     @State private var showAdd: Bool = false
     @State var editPlant: Plant? = nil
+    @State var showSettings: Bool = false
     
     let refresh: () -> Void
+    let refreshSensors: () -> Void
 
     var body: some View {
         VStack {
@@ -25,6 +27,18 @@ struct PlantsScreen: View {
 //                Image(systemName: "chevron.down")
 //                    .font(.Bold.regular)
                 Spacer()
+                Image(systemName: "arrow.counterclockwise")
+                    .foregroundStyle(.plantGreen)
+                    .font(.Bold.title2)
+                    .button {
+                        refreshSensors()
+                    }
+                Image(systemName: "gear")
+                    .foregroundStyle(.plantGreen)
+                    .font(.Bold.title2)
+                    .button {
+                        showSettings.setTrue()
+                    }
                 Image(systemName: "plus")
                     .foregroundStyle(.plantGreen)
                     .font(.Bold.title2)
@@ -81,6 +95,9 @@ struct PlantsScreen: View {
         }
         .sheet(item: $editPlant, onDismiss: refresh) {plant in
             PlantDetailAdd(collection: collection, edit: true, plant: plant)
+        }
+        .sheet(isPresented: $showSettings) {
+            FAQNavigation()
         }
     }
 }

@@ -12,7 +12,7 @@ extension Date {
         let difference = Date.now.timeIntervalSinceReferenceDate - date.timeIntervalSinceReferenceDate
         switch difference {
         case 0...59:
-            return "\(difference)s"
+            return "\(difference.roundedInt)s"
         case 60...3589:
             let minutes = (difference / 60.0).roundedInt
             return "\(minutes)m"

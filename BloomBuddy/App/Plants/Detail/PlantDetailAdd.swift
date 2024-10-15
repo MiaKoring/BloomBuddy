@@ -23,6 +23,7 @@ struct PlantDetailAdd: View {
     @State var fetching: Bool = true
     @State var showLogin: Bool = false
     @State var unexpectedError: BloomBuddyApiError? = nil
+    @State var showSensorConfig: Bool = false
     
     var edit: Bool = false
     var plant: Plant? = nil
@@ -75,6 +76,13 @@ struct PlantDetailAdd: View {
                         BBTextField("Name der Pflanze", text: $name)
                         BBNumberField("Größe in cm", value: $size)
                         SensorSelector(selected: $selectedSensor, sensors: $sensors, fetching: $fetching)
+                        if selectedSensor != nil {
+                            Text("Sensor konfigurieren")
+                                .bigButton {
+                                    showSensorConfig = true
+                                }
+                        }
+                        
                         if !loading {
                             WaterRequirementButtons(selected: $watering)
                         } else {
@@ -121,6 +129,11 @@ struct PlantDetailAdd: View {
                 dismiss()
             }
             .interactiveDismissDisabled()
+        }
+        .sheet(isPresented: $showSensorConfig) {
+            if #available(iOS 18.0, *) {
+                SensorConfig()
+            }
         }
         .alert(item: $unexpectedError) { item in
             Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(item.localizedDescription))

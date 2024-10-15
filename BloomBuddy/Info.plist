@@ -4,9 +4,17 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSAccessorySetupBluetoothCompanyIdentifiers</key>
+	<array>
+		<string>0002</string>
+	</array>
+	<key>NSAccessorySetupBluetoothNames</key>
+	<array>
+		<string>BBSensor Pro 1</string>
+	</array>
 	<key>NSAccessorySetupBluetoothServices</key>
 	<array>
-		<string>abc</string>
+		<string>87B8170E-5ABF-4B23-A3C6-983BF8E964A9</string>
 	</array>
 	<key>NSAccessorySetupKitSupports</key>
 	<array>

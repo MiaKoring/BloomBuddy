@@ -14,6 +14,7 @@ struct SensorSelector: View {
     @State var showLogin: Bool = false
     @State var unexpectedError: BloomBuddyApiError? = nil
     @Binding var fetching: Bool
+    @State var showSensorDetailAdd: Bool = false
     
     var body: some View {
         VStack {
@@ -26,7 +27,15 @@ struct SensorSelector: View {
             } else if fetching {
                 ProgressView().progressViewStyle(.circular)
             } else {
-                //TODO: Sensor creation button
+                VStack {
+                    Text("Sensor hinzufügen")
+                        .bigButton {
+                            showSensorDetailAdd = true
+                        }
+                    Text("Nur erforderlich wenn sie einen Bodenfeuchte Sensor von uns gekauft haben und nutzen möchten")
+                        .font(.caption)
+                }
+                
             }
         }
         .task {
@@ -40,6 +49,12 @@ struct SensorSelector: View {
                 dismiss()
             }
             .interactiveDismissDisabled()
+        }
+        .sheet(isPresented: $showSensorDetailAdd, onDismiss: refreshSensors) {
+            SensorDetailAdd()
+                .padding(20)
+                .presentationDetents([.height(250)])
+                .presentationDragIndicator(.visible)
         }
         .alert(item: $unexpectedError) { item in
             Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(item.localizedDescription))
@@ -61,10 +76,16 @@ struct SensorSelector: View {
     private func sensorRequest(_ token: String) async {
         let res = await BBController.request(.sensors(token), expected: [SensorIdentifier].self)
         switch res {
-        case .success(let sensors):
-            self.sensors = sensors
+        case .success(let res):
+            sensors = res
         case .failure(let failure):
             BBController.handleUnauthorized(failure, showLogin: $showLogin, unexpectedError: $unexpectedError)
+        }
+    }
+    
+    private func refreshSensors() {
+        Task {
+            await fetchSensors()
         }
     }
     
