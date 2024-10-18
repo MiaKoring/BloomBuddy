@@ -33,7 +33,7 @@ extension AccessoryData {
         case .sensorProV1:
             return ASPickerDisplayItem(
                 name: "Sensor Pro 1",
-                productImage: UIImage(systemName: "sensor") ?? UIImage(systemName: "sensor.fill")!, //TODO: Add real rendering of sensor
+                productImage: UIImage(named: "sensorPreassembledV1") ?? UIImage(systemName: "sensor")!, //TODO: Add real rendering of sensor
                 descriptor: self.descriptor
             )
         }

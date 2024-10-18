@@ -83,6 +83,9 @@
 		A69868822C79FCAF00F3AC6B /* BBSensorPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */; };
 		A69868852C7A525800F3AC6B /* SensorDetailAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868842C7A525800F3AC6B /* SensorDetailAdd.swift */; };
 		A69868872C7A560E00F3AC6B /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868862C7A560E00F3AC6B /* SensorList.swift */; };
+		A69C84A12CC27AFD002FD5EE /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */; };
+		A69C84A32CC2BD57002FD5EE /* BTPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */; };
+		A69C84A72CC2C964002FD5EE /* AnyEquatableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */; };
 		A6DE5BE12C7DD86200C39F54 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE5BE02C7DD86100C39F54 /* Date.swift */; };
 		A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
@@ -177,6 +180,9 @@
 		A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSensorPickerButton.swift; sourceTree = "<group>"; };
 		A69868842C7A525800F3AC6B /* SensorDetailAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailAdd.swift; sourceTree = "<group>"; };
 		A69868862C7A560E00F3AC6B /* SensorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorList.swift; sourceTree = "<group>"; };
+		A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTPeripheral.swift; sourceTree = "<group>"; };
+		A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEquatableError.swift; sourceTree = "<group>"; };
 		A6DE5BE02C7DD86100C39F54 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* BloomBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyApp.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 		4F2EFCA12C45256B000FEBFD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */,
 				4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */,
 				A6660FA42C53FE8800816CD9 /* CameraManager.swift */,
 				A6058A2B2C75F69E00A7D0C3 /* KeyChainManager.swift */,
@@ -331,7 +338,6 @@
 		4F61ED222C43E68100092522 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A62714B22CBEFC28000059A1 /* Bluetooth */,
 				A60E56252C7DF04D0035B182 /* Structures */,
 				A630A8A82C753780009171D7 /* Protocols */,
 				A67CDA1A2C7229C5005CFCA2 /* Network */,
@@ -389,6 +395,8 @@
 		A60E56252C7DF04D0035B182 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */,
+				A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */,
 				A60E562D2C7E042F0035B182 /* FAQImage.swift */,
 				A60E56262C7DF0560035B182 /* FAQComponent.swift */,
 			);
@@ -411,13 +419,6 @@
 				A62714AB2CBED763000059A1 /* AccessoryData.swift */,
 			);
 			path = Accessories;
-			sourceTree = "<group>";
-		};
-		A62714B22CBEFC28000059A1 /* Bluetooth */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 		A630A8A12C75323D009171D7 /* URLRequest */ = {
@@ -629,6 +630,7 @@
 				A69868802C79F59200F3AC6B /* SensorIdentifier.swift in Sources */,
 				A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */,
 				A630A8A32C753256009171D7 /* BloomBuddyController.swift in Sources */,
+				A69C84A12CC27AFD002FD5EE /* BluetoothManager.swift in Sources */,
 				A698687E2C79F4D800F3AC6B /* SensorSelector.swift in Sources */,
 				A6058A302C761DAC00A7D0C3 /* SensorManager.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
@@ -647,6 +649,7 @@
 				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
 				A6ECBC132C7B75620083AB39 /* WaterRequirementButton.swift in Sources */,
+				A69C84A32CC2BD57002FD5EE /* BTPeripheral.swift in Sources */,
 				A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */,
 				A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */,
 				A69868872C7A560E00F3AC6B /* SensorList.swift in Sources */,
@@ -659,6 +662,7 @@
 				A60E56272C7DF07A0035B182 /* FAQComponent.swift in Sources */,
 				A630A8AF2C75419F009171D7 /* BloomBuddyApiError.swift in Sources */,
 				A60E56342C7E145B0035B182 /* ZoomableView.swift in Sources */,
+				A69C84A72CC2C964002FD5EE /* AnyEquatableError.swift in Sources */,
 				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
 				A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */,
 				4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */,
@@ -729,7 +733,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = "-Onone";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",

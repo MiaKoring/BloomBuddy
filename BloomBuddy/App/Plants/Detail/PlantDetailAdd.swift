@@ -76,7 +76,7 @@ struct PlantDetailAdd: View {
                         BBTextField("Name der Pflanze", text: $name)
                         BBNumberField("Größe in cm", value: $size)
                         SensorSelector(selected: $selectedSensor, sensors: $sensors, fetching: $fetching)
-                        if selectedSensor != nil {
+                        if selectedSensor != nil, #available(iOS 18.0, *) {
                             Text("Sensor konfigurieren")
                                 .bigButton {
                                     showSensorConfig = true
@@ -131,8 +131,14 @@ struct PlantDetailAdd: View {
             .interactiveDismissDisabled()
         }
         .sheet(isPresented: $showSensorConfig) {
-            if #available(iOS 18.0, *) {
-                SensorConfig()
+            if #available(iOS 18.0, *), let sensor = selectedSensor {
+                SensorConfig(sensor: sensor)
+                    .interactiveDismissDisabled()
+                    .padding()
+            } else if #available(iOS 18.0, *){
+                Text("Ein Problem ist aufgetreten")
+            } else {
+                Text("Nicht verfügbar auf iOS 17")
             }
         }
         .alert(item: $unexpectedError) { item in
