@@ -134,7 +134,6 @@ struct PlantDetailAdd: View {
             if #available(iOS 18.0, *), let sensor = selectedSensor {
                 SensorConfig(sensor: sensor)
                     .interactiveDismissDisabled()
-                    .padding()
             } else if #available(iOS 18.0, *){
                 Text("Ein Problem ist aufgetreten")
             } else {
@@ -182,5 +181,15 @@ struct PlantDetailAdd: View {
         case .failure(let failure):
             BBController.handleUnauthorized(failure, showLogin: $showLogin, unexpectedError: $unexpectedError)
         }
+    }
+}
+
+#Preview {
+    VStack {
+        
+    }
+    .sheet(isPresented: .constant(true)) {
+        PlantDetailAdd(collection: PlantCollection(name: "default"))
+            .interactiveDismissDisabled()
     }
 }

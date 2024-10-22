@@ -42,11 +42,21 @@ struct PlantImage: View {
         ZStack {
             VStack {
                 if let data, let uiImage = UIImage(data: data) {
-                    Image(uiImage: uiImage)
-                        .plantImage(size: size, color: color, lineWidth: lineWidth)
+                    if editable {
+                        Image(uiImage: uiImage)
+                            .editPlantImage(size: size, color: color, lineWidth: lineWidth)
+                    } else {
+                        Image(uiImage: uiImage)
+                            .plantImage()
+                    }
                 } else {
-                    Image(imageName)
-                        .plantImage(size: size, color: color, lineWidth: lineWidth)
+                    if editable {
+                        Image(imageName)
+                            .editPlantImage(size: size, color: color, lineWidth: lineWidth)
+                    } else {
+                        Image(imageName)
+                            .plantImage()
+                    }
                 }
             }
             .overlay(alignment: .bottomTrailing) {

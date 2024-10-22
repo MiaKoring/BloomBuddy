@@ -9,16 +9,23 @@ import Foundation
 import SwiftUI
 
 extension Image {
-    func plantImage(size: CGFloat, color: Color, lineWidth: CGFloat) -> some View {
+    func plantImage() -> some View {
         self
             .resizable()
             .scaledToFill()
-            .frame(width: size, height: size)
-            .clipShape(.circle)
-            .background(
-                Circle()
-                    .fill(color.gradient)
-                    .frame(width: size + lineWidth, height: size + lineWidth)
-            )
     }
+    
+    func editPlantImage(size: CGFloat, color: Color, lineWidth: CGFloat) -> some View {
+            self
+                .resizable()
+                .scaledToFill()
+                .frame(width: size, height: size)
+                .clipShape(.circle)
+                .background(
+                    Circle()
+                        .fill(color.gradient)
+                        .frame(width: size + lineWidth, height: size + lineWidth)
+                )
+        }
 }
+

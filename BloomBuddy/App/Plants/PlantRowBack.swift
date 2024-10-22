@@ -47,3 +47,31 @@ struct PlantRowBack: View {
         .clipShape(.rect(cornerRadius: 15.0))
     }
 }
+
+#Preview {
+    LazyVGrid(columns: [.init(), .init()],
+              spacing: 10.0,
+              content: {
+        ZStack {
+            PlantRow(cardColor: .green, plant: Plant(name: "Plume", size: 22, waterRequirement: 40, image: nil, sensor: nil), resetFlip: .constant(false)) {
+                print("edit")
+            } onEdit: {
+                print("edited")
+            }
+            .environment(SensorManager())
+        
+        }
+        ZStack {
+            PlantRow(cardColor: .yellow, plant: Plant(name: "Rose", size: 22, waterRequirement: 40, image: nil, sensor: nil), resetFlip: .constant(false)) {
+                print("edit")
+            } onEdit: {
+                print("edited")
+            }
+            .environment(SensorManager())
+        
+        }
+    })
+    .padding()
+    
+        
+}

@@ -8,6 +8,6 @@
 import Foundation
 
 struct SensorIdentifier: Codable, Identifiable {
-    let id: UUID?
+    let id: UUID
     let name: String
 }

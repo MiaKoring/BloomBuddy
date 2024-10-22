@@ -63,6 +63,11 @@
 		A630A8AA2C75378F009171D7 /* URLReqEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8A92C75378F009171D7 /* URLReqEndpoint.swift */; };
 		A630A8AD2C753C1D009171D7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */; };
 		A630A8AF2C75419F009171D7 /* BloomBuddyApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A630A8AE2C75419F009171D7 /* BloomBuddyApiError.swift */; };
+		A642AB762CC3CF0700539FE5 /* ConfigStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642AB752CC3CF0000539FE5 /* ConfigStage.swift */; };
+		A642AB782CC3D55500539FE5 /* SensorSetupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642AB772CC3D55100539FE5 /* SensorSetupData.swift */; };
+		A642AB7B2CC3D6F100539FE5 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642AB7A2CC3D6EC00539FE5 /* JWT.swift */; };
+		A642AB7D2CC3DFD100539FE5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642AB7C2CC3DFCF00539FE5 /* Data.swift */; };
+		A642AB7F2CC3EEDB00539FE5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A642AB7E2CC3EEDB00539FE5 /* DetailView.swift */; };
 		A6660FA12C53E9B800816CD9 /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = A6660FA02C53E9B800816CD9 /* SwiftyCrop */; };
 		A6660FA32C53EB8300816CD9 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA22C53EB8300816CD9 /* Image.swift */; };
 		A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA42C53FE8800816CD9 /* CameraManager.swift */; };
@@ -162,6 +167,11 @@
 		A630A8A92C75378F009171D7 /* URLReqEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLReqEndpoint.swift; sourceTree = "<group>"; };
 		A630A8AC2C753C1D009171D7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		A630A8AE2C75419F009171D7 /* BloomBuddyApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyApiError.swift; sourceTree = "<group>"; };
+		A642AB752CC3CF0000539FE5 /* ConfigStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigStage.swift; sourceTree = "<group>"; };
+		A642AB772CC3D55100539FE5 /* SensorSetupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorSetupData.swift; sourceTree = "<group>"; };
+		A642AB7A2CC3D6EC00539FE5 /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		A642AB7C2CC3DFCF00539FE5 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A642AB7E2CC3EEDB00539FE5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A6660FA22C53EB8300816CD9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A6660FA42C53FE8800816CD9 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A6660FA62C5400BD00816CD9 /* CMSampleBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMSampleBuffer.swift; sourceTree = "<group>"; };
@@ -263,6 +273,7 @@
 		4F3AD4D42C4E8594005BB774 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A642AB7E2CC3EEDB00539FE5 /* DetailView.swift */,
 				4F557ACF2C4FCE9800C744F1 /* Textfields */,
 				4F3AD4D82C4E85C7005BB774 /* BackgroundView.swift */,
 				4F557AE02C51AA9800C744F1 /* FlipView.swift */,
@@ -355,6 +366,7 @@
 		4F61ED342C43EF1800092522 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
+				A642AB752CC3CF0000539FE5 /* ConfigStage.swift */,
 				A60E56232C7DEEA40035B182 /* FAQ.swift */,
 				A689F7DF2C4860C1006AA97F /* GrowthStage.swift */,
 				A689F7E12C4860F7006AA97F /* WaterRequirement.swift */,
@@ -369,6 +381,7 @@
 		4F69B9362C452D61005F544E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A642AB7C2CC3DFCF00539FE5 /* Data.swift */,
 				A6DE5BE02C7DD86100C39F54 /* Date.swift */,
 				A6ECBC142C7B7B300083AB39 /* Int.swift */,
 				4F69B9372C452D6E005F544E /* CLLocationCoordinate2D.swift */,
@@ -395,6 +408,8 @@
 		A60E56252C7DF04D0035B182 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				A642AB7A2CC3D6EC00539FE5 /* JWT.swift */,
+				A642AB772CC3D55100539FE5 /* SensorSetupData.swift */,
 				A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */,
 				A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */,
 				A60E562D2C7E042F0035B182 /* FAQImage.swift */,
@@ -613,18 +628,22 @@
 				4F3AD4E02C4E87D0005BB774 /* TipDetail.swift in Sources */,
 				A67CDA232C722A73005CFCA2 /* ErrorObj.swift in Sources */,
 				4F3AD4C82C4E82CF005BB774 /* UDKey.swift in Sources */,
+				A642AB782CC3D55500539FE5 /* SensorSetupData.swift in Sources */,
+				A642AB762CC3CF0700539FE5 /* ConfigStage.swift in Sources */,
 				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
 				A60E56322C7E090B0035B182 /* ShimmeringSkeletonModifier.swift in Sources */,
 				4F3AD4CF2C4E8531005BB774 /* WeatherExtraInfo.swift in Sources */,
 				A6058A2C2C75F69E00A7D0C3 /* KeyChainManager.swift in Sources */,
 				4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */,
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
+				A642AB7D2CC3DFD100539FE5 /* Data.swift in Sources */,
 				4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */,
 				A6DE5BE12C7DD86200C39F54 /* Date.swift in Sources */,
 				A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */,
 				A6ECBC172C7B7BDE0083AB39 /* CustomWaterRequirementSheet.swift in Sources */,
 				A6660FAD2C5401F900816CD9 /* CameraView.swift in Sources */,
 				A630A89C2C74FCC2009171D7 /* View.swift in Sources */,
+				A642AB7F2CC3EEDB00539FE5 /* DetailView.swift in Sources */,
 				A6660FA32C53EB8300816CD9 /* Image.swift in Sources */,
 				A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */,
 				A69868802C79F59200F3AC6B /* SensorIdentifier.swift in Sources */,
@@ -680,6 +699,7 @@
 				A60E56242C7DEEA90035B182 /* FAQ.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
 				A630A8A62C7534F2009171D7 /* NetworkError.swift in Sources */,
+				A642AB7B2CC3D6F100539FE5 /* JWT.swift in Sources */,
 				A62540A42C52D7900010C299 /* Plant.swift in Sources */,
 				4F3AD4D12C4E8539005BB774 /* WeatherScreen.swift in Sources */,
 				A6058A372C76233200A7D0C3 /* BBAuthManager.swift in Sources */,
