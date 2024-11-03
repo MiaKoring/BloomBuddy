@@ -48,6 +48,26 @@ extension View {
             }
     }
     
+    func bigSecondaryButton(valid: Bool? = nil, invalidBg: Color = .gray.opacity(0.4), clicked: @escaping () -> Void) -> some View {
+        self
+            .font(.Bold.title)
+            .padding()
+            .frame(maxWidth: .infinity, idealHeight: 60.0)
+            .foregroundStyle(.white)
+            .background {
+                if let valid {
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(valid ? .gray.opacity(0.7): invalidBg)
+                } else {
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(.gray.opacity(0.7))
+                }
+            }
+            .button {
+                clicked()
+            }
+    }
+    
     func shimmering() -> some View {
         modifier(ShimmeringSkeletonModifier())
     }

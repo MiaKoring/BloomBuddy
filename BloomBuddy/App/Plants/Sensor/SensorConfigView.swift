@@ -28,6 +28,9 @@ struct SensorConfig: View {
     @State var showMeasuringErrorAlert: Bool = false
     @Environment(\.dismiss) var dismiss
     @State var isLoading = false
+    @State var timer: Timer? = nil
+    @State var showConnectionError = false
+    @State var showConnectionDataSendError = false
     
     var body: some View {
         VStack {
@@ -57,6 +60,10 @@ struct SensorConfig: View {
                             }
                         } message: {
                             Text("\(btManager.failedToConnect?.error?.localizedDescription ?? "Keine Fehlerinformationen verfügbar")")
+                        }
+                    Text("Abbrechen")
+                        .bigSecondaryButton {
+                            dismiss()
                         }
                 }
             case .wifi:
@@ -213,6 +220,14 @@ struct SensorConfig: View {
             }
             .interactiveDismissDisabled()
         }
+        .alert("Verbindungsaufbau fehlgeschagen", isPresented: $showConnectionError) {
+            Button(role: .cancel, action: {}, label: {Text("OK")})
+        }
+        .alert("Sensor hat zu lange nicht geantwortet", isPresented: $showConnectionDataSendError) {
+            Button(role: .cancel, action: {}, label: {Text("OK")})
+        } message: {
+            Text("Bitte überprüfe deine Login Daten")
+        }
         .alert("Beim Messen ist ein Fehler aufgetreten", isPresented: $showMeasuringErrorAlert) {
             Button("Erneut versuchen") {
                 Task {
@@ -264,6 +279,15 @@ struct SensorConfig: View {
     }
     
     func sendConnectionData() async {
+        timer = Timer(timeInterval: 60, repeats: false) { timer in
+            Task {
+                await MainActor.run {
+                    isLoading = false
+                    showConnectionDataSendError = true
+                }
+                timer.invalidate()
+            }
+        }
         guard let connectedPeripheral, let connectedAccessoryServiceUUID else { return }
         let basic = KeyChainManager.getValue(for: .jwtAuth)
         guard let payload = basic?.split(separator: ".") else {
@@ -284,8 +308,10 @@ struct SensorConfig: View {
             print("couldn't encode data")
             return //TODO: add error handling
         }
-        let response = await btManager.writeValueWithResponse(to: connectedPeripheral, serviceUUID: connectedAccessoryServiceUUID, value: data)
-        //TODO: errorhandling
+        if let timer, timer.isValid {
+            let response = await btManager.writeValueWithResponse(to: connectedPeripheral, serviceUUID: connectedAccessoryServiceUUID, value: data)
+            //TODO: errorhandling
+        }
     }
     
     func showASKSheet() async {
@@ -313,13 +339,23 @@ struct SensorConfig: View {
             self.pickedAccessory = accessory
         case .pickerDidDismiss:
             guard let accessory = pickedAccessory else {
+                isLoading = false
                 return
             }
             self.pickedAccessory = nil
+            self.timer = Timer(timeInterval: 20, repeats: false) { timer in
+                isLoading = false
+                //TODO: add error message
+                timer.invalidate()
+            }
             Task {
                 self.connectedPeripheral = await self.handleAccessoryAdded(accessory)
-                self.state = .wifi
-                isLoading = false
+                if let timer, timer.isValid {
+                    self.timer?.invalidate()
+                    self.timer = nil
+                    self.state = .wifi
+                    isLoading = false
+                }
             }
         default:
             print("Recieved event type: \(event.description)")
