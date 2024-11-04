@@ -31,6 +31,7 @@ struct SensorConfig: View {
     @State var timer: Timer? = nil
     @State var showConnectionError = false
     @State var showConnectionDataSendError = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
@@ -86,7 +87,7 @@ struct SensorConfig: View {
                     }
                     DetailView(title: Text("Information zur Nutzung")) {
                         VStack(alignment: .leading) {
-                            Text("Der Sensor verbindet sich über dein WLAN-Netzwerk mit dem Server, um die Feuchtigkeitswerte zu senden.")
+                            Text("Der Sensor sendet die Feuchtigkeitswerte über dein WLAN an den Server.")
                                 .font(.footnote)
                             Text("Die Zugangsdaten werden nicht an uns gesendet und bleiben auf dem Sensor.")
                                 .font(.footnote)
@@ -111,10 +112,10 @@ struct SensorConfig: View {
                     Spacer()
                     Text("Schritt 1:")
                         .font(.headline)
-                    Text("Verbinde den Sensor, falls noch nicht geschehen mit dem Controller.")
+                    Text("Falls nötig, Sensor mit Controller verbinden.")
                     Text("Schritt 2:")
                         .font(.headline)
-                    Text("Halte den Sensor während er trocken und sauber ist einfach an die Luft und drücke wenn du soweit bist auf \"Messen und weiter\"")
+                    Text("Halte den sauberen, trockenen Sensor in die Luft und drücke „Messen und weiter“.")
                         .padding(.bottom)
                     Text("Du kannst die Kalibrierung jederzeit wiederholen.")
                     Text("Messen und weiter")
@@ -130,7 +131,7 @@ struct SensorConfig: View {
                     Text("Kalibrierung im Wasser")
                         .font(.title2)
                         .bold()
-                        .foregroundStyle(.plantGreen.darker(by: 0.3))
+                        .foregroundStyle(colorScheme == .dark ?  .plantGreen.lighter(by: 0.5): .plantGreen)
                     Spacer()
                     Image("SensorPreassembledV1Water")
                         .resizable()
@@ -140,10 +141,10 @@ struct SensorConfig: View {
                     Spacer()
                     Text("Schritt 1:")
                         .font(.headline)
-                    Text("Verbinde den Sensor, falls noch nicht geschehen mit dem Controller.")
+                    Text("Falls nötig, Sensor mit Controller verbinden.")
                     Text("Schritt 2:")
                         .font(.headline)
-                    Text("Tauche die Sensorspitze bis etwa zur im Bild gezeigten Linie ins Wasser und drücke dann auf \"Messen und abschließen\" während er sich noch im Wasser befindet.")
+                    Text("Tauche die Sensorspitze, wie gezeigt, ins Wasser und drücke „Messen“.")
                         .padding(.bottom)
                     Text("Messen und abschließen")
                         .bigButton {
@@ -393,7 +394,7 @@ struct SensorConfig: View {
     if #available(iOS 18.0, *) {
         Text("")
             .sheet(isPresented: .constant(true)) {
-                SensorConfig(sensor: SensorIdentifier(id: UUID(), name: "lol"), state: .water)
+                SensorConfig(sensor: SensorIdentifier(id: UUID(), name: "lol"), state: .wifi)
                     .interactiveDismissDisabled()
             }
     } else {
