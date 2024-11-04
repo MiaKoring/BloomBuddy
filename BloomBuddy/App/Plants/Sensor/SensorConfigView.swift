@@ -132,12 +132,11 @@ struct SensorConfig: View {
                         .bold()
                         .foregroundStyle(.plantGreen.darker(by: 0.3))
                     Spacer()
-                    Image("sensorPreassembledV1marked")
+                    Image("SensorPreassembledV1Water")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .overlay {
-                           //TODO: replace image with image with water
-                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 25))
+                        .shadow(radius: 3, x: 3, y: 3)
                     Spacer()
                     Text("Schritt 1:")
                         .font(.headline)
@@ -243,7 +242,9 @@ struct SensorConfig: View {
         .padding()
         .if(state == .water) { view in
             view
-            .background(Color.blue.tertiary)
+                .background (
+                    Color.blue.gradient.opacity(0.3)
+                )
         }
     }
     
