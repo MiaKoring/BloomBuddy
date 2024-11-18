@@ -10,6 +10,7 @@ import ZapdosKit
 import WeatherKit
 import CoreLocation
 import SwiftData
+import UserNotifications
 
 struct MainScreen: View {
 
@@ -85,6 +86,8 @@ struct MainScreen: View {
         }
         .task {
             await fetchSensors()
+            
+            
         }
         .alert(item: $unexpectedError) { error in
             Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(error.localizedDescription)) //TODO: Add error reporting to server
@@ -92,6 +95,7 @@ struct MainScreen: View {
         .sheet(isPresented: $showLogin) {
             LoginView() { dismiss in
                 Task {
+                    try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
                     let res = await sensorManager.fetch()
                     switch res {
                     case .success:

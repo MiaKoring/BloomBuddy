@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 @Observable
 class SensorManager: NSObject {
@@ -22,7 +23,9 @@ class SensorManager: NSObject {
         }
         
         let res = await BloomBuddyController.request(.allSensorData(token), expected: [Sensor].self)
-        
+        Task {
+            try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
+        }
         switch res {
         case .success(let success):
             sensordata = success

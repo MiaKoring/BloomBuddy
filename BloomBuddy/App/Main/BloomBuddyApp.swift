@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct BloomBuddyApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var locationManager: LocationManager = .init()
     @State private var sensorManager: SensorManager = .init()
     let container: ModelContainer

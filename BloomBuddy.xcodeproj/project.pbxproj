@@ -75,6 +75,10 @@
 		A6660FA92C5400F900816CD9 /* CoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FA82C5400F900816CD9 /* CoreImage.swift */; };
 		A6660FAB2C5401B200816CD9 /* CameraVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FAA2C5401B100816CD9 /* CameraVM.swift */; };
 		A6660FAD2C5401F900816CD9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6660FAC2C5401F900816CD9 /* CameraView.swift */; };
+		A67A3AEE2CEBA10B00610A0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AED2CEBA10800610A0D /* AppDelegate.swift */; };
+		A67A3AF02CEBA25200610A0D /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AEF2CEBA25000610A0D /* SensorData.swift */; };
+		A67A3AF22CEBA39600610A0D /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AF12CEBA39100610A0D /* SwiftDataManager.swift */; };
+		A67A3AF62CEBA91300610A0D /* SensorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AF52CEBA91100610A0D /* SensorModel.swift */; };
 		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CDA1B2C722A1F005CFCA2 /* Network.swift */; };
 		A67CDA1E2C722A38005CFCA2 /* NetworkEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CDA1D2C722A38005CFCA2 /* NetworkEnv.swift */; };
@@ -178,6 +182,10 @@
 		A6660FA82C5400F900816CD9 /* CoreImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImage.swift; sourceTree = "<group>"; };
 		A6660FAA2C5401B100816CD9 /* CameraVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVM.swift; sourceTree = "<group>"; };
 		A6660FAC2C5401F900816CD9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		A67A3AED2CEBA10800610A0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A67A3AEF2CEBA25000610A0D /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
+		A67A3AF12CEBA39100610A0D /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
+		A67A3AF52CEBA91100610A0D /* SensorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorModel.swift; sourceTree = "<group>"; };
 		A67CDA1B2C722A1F005CFCA2 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A67CDA1D2C722A38005CFCA2 /* NetworkEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnv.swift; sourceTree = "<group>"; };
 		A67CDA1F2C722A50005CFCA2 /* BloomBuddyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyAPI.swift; sourceTree = "<group>"; };
@@ -226,6 +234,8 @@
 		4F2EFCA12C45256B000FEBFD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A67A3AF12CEBA39100610A0D /* SwiftDataManager.swift */,
+				A67A3AED2CEBA10800610A0D /* AppDelegate.swift */,
 				A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */,
 				4F2EFCA22C452B0B000FEBFD /* LocationManager.swift */,
 				A6660FA42C53FE8800816CD9 /* CameraManager.swift */,
@@ -366,6 +376,7 @@
 		4F61ED342C43EF1800092522 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
+				A67A3AF52CEBA91100610A0D /* SensorModel.swift */,
 				A642AB752CC3CF0000539FE5 /* ConfigStage.swift */,
 				A60E56232C7DEEA40035B182 /* FAQ.swift */,
 				A689F7DF2C4860C1006AA97F /* GrowthStage.swift */,
@@ -408,6 +419,7 @@
 		A60E56252C7DF04D0035B182 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				A67A3AEF2CEBA25000610A0D /* SensorData.swift */,
 				A642AB7A2CC3D6EC00539FE5 /* JWT.swift */,
 				A642AB772CC3D55100539FE5 /* SensorSetupData.swift */,
 				A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */,
@@ -626,6 +638,7 @@
 				4F557AE12C51AA9800C744F1 /* FlipView.swift in Sources */,
 				A6660FAB2C5401B200816CD9 /* CameraVM.swift in Sources */,
 				4F3AD4E02C4E87D0005BB774 /* TipDetail.swift in Sources */,
+				A67A3AF02CEBA25200610A0D /* SensorData.swift in Sources */,
 				A67CDA232C722A73005CFCA2 /* ErrorObj.swift in Sources */,
 				4F3AD4C82C4E82CF005BB774 /* UDKey.swift in Sources */,
 				A642AB782CC3D55500539FE5 /* SensorSetupData.swift in Sources */,
@@ -675,6 +688,7 @@
 				4F557ACE2C4FCE9400C744F1 /* BBNumberField.swift in Sources */,
 				A69868852C7A525800F3AC6B /* SensorDetailAdd.swift in Sources */,
 				A6058A352C76217600A7D0C3 /* Sensor.swift in Sources */,
+				A67A3AF22CEBA39600610A0D /* SwiftDataManager.swift in Sources */,
 				4F3AD4DB2C4E86AA005BB774 /* MainScreen.swift in Sources */,
 				A630A89E2C74FCE5009171D7 /* LoginField.swift in Sources */,
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
@@ -683,6 +697,8 @@
 				A60E56342C7E145B0035B182 /* ZoomableView.swift in Sources */,
 				A69C84A72CC2C964002FD5EE /* AnyEquatableError.swift in Sources */,
 				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
+				A67A3AEE2CEBA10B00610A0D /* AppDelegate.swift in Sources */,
+				A67A3AF62CEBA91300610A0D /* SensorModel.swift in Sources */,
 				A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */,
 				4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */,
 				4F3AD4D32C4E854B005BB774 /* WeatherScrollHeader.swift in Sources */,
