@@ -118,7 +118,7 @@ struct PlantImage: View {
             if let image {
                 SwiftyCropView(
                     imageToCrop: image,
-                    maskShape: .circle,
+                    maskShape: .square,
                     configuration: configuration
                 ) { croppedImage in
                     data = croppedImage?.pngData()
