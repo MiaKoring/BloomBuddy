@@ -13,6 +13,9 @@ enum UDKey: String {
     case collection = "currentCollection"
     case jwtExpiration
     case isSetup
+    case lastWeirdPush
+    case lastWaterNotification
+    case lastBatteryNotification
 }
 extension UDKey {
     var key: String {

@@ -20,12 +20,11 @@ struct PlantRowFront: View {
             PlantImage(120, "plantBg", color: .constant(cardColor), data: .constant(plant?.image), showButtons: .constant(false))
                 .overlay(alignment: .bottomTrailing) {
                     if let plant, let sensorID = plant.sensor {
-                        if let sensor = sensorManager.sensordata?.first(where: {$0.id == sensorID}), let updated = sensor.updated?.double, Date.now.timeIntervalSinceReferenceDate - updated >= 10800 {
+                        if let sensor = sensorManager.sensordata?.first(where: {$0.id == sensorID}), let updated = sensor.updated?.double, Date.now.timeIntervalSinceReferenceDate - updated >= 10800 || sensor.latest ?? 0 > 103 || sensor.latest ?? 0 < -3 {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .symbolRenderingMode(.palette)
                                 .foregroundStyle(.white, .orange)
                                 .font(.title)
-                                //.offset(x: 0)
                                 .onTapGesture {
                                     showHelp = true
                                 }
@@ -106,32 +105,103 @@ struct PlantRowFront: View {
     }
 }
 
-
+/*
 
 #Preview {
     LazyVGrid(columns: [.init(), .init()],
               spacing: 10.0,
               content: {
-        ZStack {
             PlantRow(cardColor: .green, plant: Plant(name: "Plume", size: 22, waterRequirement: 40, image: nil, sensor: nil), resetFlip: .constant(false)) {
                 print("edit")
             } onEdit: {
                 print("edited")
             }
             .environment(SensorManager())
-        
-        }
-        ZStack {
             PlantRow(cardColor: .yellow, plant: Plant(name: "Rose", size: 22, waterRequirement: 40, image: nil, sensor: nil), resetFlip: .constant(false)) {
                 print("edit")
             } onEdit: {
                 print("edited")
             }
             .environment(SensorManager())
-        
-        }
     })
     .padding()
     
         
+}
+*/
+#Preview {
+    VStack {
+        HStack(spacing: 20.0) {
+            Text("Garten")
+                .font(.Bold.title2)
+            
+            // TODO: - Next Feature, different PlantCollections
+            //                Image(systemName: "chevron.down")
+            //                    .font(.Bold.regular)
+            Spacer()
+            Image(systemName: "arrow.counterclockwise")
+                .foregroundStyle(.plantGreen)
+                .font(.Bold.title2)
+                .button {
+                    //refreshSensors()
+                }
+            Image(systemName: "gear")
+                .foregroundStyle(.plantGreen)
+                .font(.Bold.title2)
+                .button {
+                    //showSettings.setTrue()
+                }
+            Image(systemName: "plus")
+                .foregroundStyle(.plantGreen)
+                .font(.Bold.title2)
+                .button {
+                    //showAdd.setTrue()
+                }
+        }
+        
+        VStack(alignment: .leading) {
+            Text("Bewässerung")
+                .font(.Bold.verySmall)
+                .foregroundStyle(.plantGreen)
+            
+            HStack {
+                Text("keine")
+                    .padding(.vertical, 5.0)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Color.plantGreen.opacity(0.15)
+                    )
+                    .clipShape(.rect(cornerRadius: 5.0))
+                
+                Text("möglich")
+                    .padding(.vertical, 5.0)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Color.yellow.opacity(0.15)
+                    )
+                    .clipShape(.rect(cornerRadius: 5.0))
+                
+                Text("notwendig")
+                    .padding(.vertical, 5.0)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Color.red.opacity(0.15)
+                    )
+                    .clipShape(.rect(cornerRadius: 5.0))
+            }
+            .font(.Bold.verySmall)
+            .foregroundStyle(.gray)
+        }
+        .padding(.vertical, 10.0)
+        
+        PlantList([Plant(name: "abc", size: 12, waterRequirement: 40, image: nil, sensor: UUID()), Plant(name: "def", size: 12, waterRequirement: 40, image: nil, sensor: UUID())]) { plant in
+            withAnimation {
+                //collection.plants.removeAll(where: {$0.id == plant.id})
+            }
+        } onEdit: { plant in
+            //editPlant = plant
+        }
+    }
+    .environment(SensorManager())
+    .padding(10)
 }

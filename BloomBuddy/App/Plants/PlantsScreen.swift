@@ -89,6 +89,8 @@ struct PlantsScreen: View {
             } onEdit: { plant in
                 editPlant = plant
             }
+            //NEW
+            .environment(collection)
         }
         .sheet(isPresented: $showAdd) {
             PlantDetailAdd(collection: collection)

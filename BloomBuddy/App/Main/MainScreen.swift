@@ -86,8 +86,6 @@ struct MainScreen: View {
         }
         .task {
             await fetchSensors()
-            
-            
         }
         .alert(item: $unexpectedError) { error in
             Alert(title: Text("Ein unerwarteter Fehler ist aufgetreten"), message: Text(error.localizedDescription)) //TODO: Add error reporting to server

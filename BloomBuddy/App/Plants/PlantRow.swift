@@ -15,6 +15,8 @@ struct PlantRow: View {
     let onDelete: () -> Void
 	let onEdit: () -> Void
 	@State var showBack: Bool = false
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(PlantCollection.self) var collection
 	var body: some View {
         FlipView(
             frontView: PlantRowFront(
@@ -30,6 +32,14 @@ struct PlantRow: View {
                         showBack = false
                     }
                     onEdit()
+                },
+                onWater: {
+                    guard let plant = collection.plants.first(where: {$0.id == plant?.id}) else { return }
+                    plant.lastWatered = Date().timeIntervalSinceReferenceDate
+                    viewContext.refreshAllObjects()
+                    withAnimation(.linear(duration: 0.2)) {
+                        showBack = false
+                    }
                 }
             ),
             showBack: $showBack,

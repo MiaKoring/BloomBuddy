@@ -11,5 +11,7 @@ struct Sensor: Codable {
     let id: UUID?
     let name: String
     let latest: Double?
+    let battery: Battery?
+    let model: SensorModel
     let updated: Int?
 }

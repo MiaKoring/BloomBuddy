@@ -8,7 +8,37 @@
 import Foundation
 import SwiftData
 
-typealias Plant = PlantSchemaV2.Plant
+typealias Plant = PlantSchemaV2_1.Plant
+
+enum PlantSchemaV2_1: VersionedSchema {
+    static var versionIdentifier = Schema.Version(2, 1, 0)
+    static var models: [any PersistentModel.Type] {
+        [Plant.self]
+    }
+    
+    @Model
+    final class Plant {
+        var id: UUID
+        var name: String
+        var size: Double
+        var waterRequirement: Int
+        var image: Data?
+        var sensor: UUID?
+        var lastWatered: Double?
+        var collection: PlantCollection?
+        
+        init(id: UUID = UUID(), name: String, size: Double, waterRequirement: Int, image: Data?, sensor: UUID?, lastWatered: Double = 0.0) {
+            self.id = id
+            self.name = name
+            self.size = size
+            self.waterRequirement = waterRequirement
+            self.image = image
+            self.sensor = sensor
+            self.lastWatered = lastWatered
+        }
+        
+    }
+}
 
 enum PlantSchemaV2: VersionedSchema {
     static var versionIdentifier = Schema.Version(2, 0, 0)
