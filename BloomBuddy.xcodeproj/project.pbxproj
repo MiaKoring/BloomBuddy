@@ -47,10 +47,8 @@
 		A60E56272C7DF07A0035B182 /* FAQComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56262C7DF0560035B182 /* FAQComponent.swift */; };
 		A60E56292C7DF0F20035B182 /* FAQDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56282C7DF0ED0035B182 /* FAQDestination.swift */; };
 		A60E562C2C7E02160035B182 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A60E562B2C7E02160035B182 /* Kingfisher */; };
-		A60E562E2C7E04330035B182 /* FAQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E562D2C7E042F0035B182 /* FAQImage.swift */; };
-		A60E56302C7E05B90035B182 /* FAQImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E562F2C7E05B60035B182 /* FAQImageView.swift */; };
 		A60E56322C7E090B0035B182 /* ShimmeringSkeletonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56312C7E09010035B182 /* ShimmeringSkeletonModifier.swift */; };
-		A60E56342C7E145B0035B182 /* ZoomableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56332C7E14570035B182 /* ZoomableView.swift */; };
+		A60E56342C7E145B0035B182 /* SwiftUIImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E56332C7E14570035B182 /* SwiftUIImageViewer.swift */; };
 		A62540A42C52D7900010C299 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A32C52D7900010C299 /* Plant.swift */; };
 		A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62540A52C52D9810010C299 /* PlantCollection.swift */; };
 		A625745F2CECB0CA00AAB1A5 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A625745E2CECB0C200AAB1A5 /* Battery.swift */; };
@@ -80,14 +78,14 @@
 		A67A3AF02CEBA25200610A0D /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AEF2CEBA25000610A0D /* SensorData.swift */; };
 		A67A3AF22CEBA39600610A0D /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AF12CEBA39100610A0D /* SwiftDataManager.swift */; };
 		A67A3AF62CEBA91300610A0D /* SensorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67A3AF52CEBA91100610A0D /* SensorModel.swift */; };
-		A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CDA1B2C722A1F005CFCA2 /* Network.swift */; };
 		A67CDA1E2C722A38005CFCA2 /* NetworkEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CDA1D2C722A38005CFCA2 /* NetworkEnv.swift */; };
 		A67CDA202C722A50005CFCA2 /* BloomBuddyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CDA1F2C722A50005CFCA2 /* BloomBuddyAPI.swift */; };
 		A67CDA232C722A73005CFCA2 /* ErrorObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CDA222C722A73005CFCA2 /* ErrorObj.swift */; };
-		A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */ = {isa = PBXBuildFile; fileRef = A689F7D62C485D08006AA97F /* ExistingPlants.json */; };
 		A689F7E02C4860C1006AA97F /* GrowthStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7DF2C4860C1006AA97F /* GrowthStage.swift */; };
 		A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689F7E12C4860F7006AA97F /* WaterRequirement.swift */; };
+		A696911D2CEE3593002EAFAB /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696911C2CEE358E002EAFAB /* TopBar.swift */; };
+		A69691202CEE3BCD002EAFAB /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = A696911F2CEE3BCD002EAFAB /* MarkdownUI */; };
 		A698687E2C79F4D800F3AC6B /* SensorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698687D2C79F4D800F3AC6B /* SensorSelector.swift */; };
 		A69868802C79F59200F3AC6B /* SensorIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698687F2C79F59200F3AC6B /* SensorIdentifier.swift */; };
 		A69868822C79FCAF00F3AC6B /* BBSensorPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */; };
@@ -156,10 +154,8 @@
 		A60E56232C7DEEA40035B182 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		A60E56262C7DF0560035B182 /* FAQComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQComponent.swift; sourceTree = "<group>"; };
 		A60E56282C7DF0ED0035B182 /* FAQDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDestination.swift; sourceTree = "<group>"; };
-		A60E562D2C7E042F0035B182 /* FAQImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQImage.swift; sourceTree = "<group>"; };
-		A60E562F2C7E05B60035B182 /* FAQImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQImageView.swift; sourceTree = "<group>"; };
 		A60E56312C7E09010035B182 /* ShimmeringSkeletonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmeringSkeletonModifier.swift; sourceTree = "<group>"; };
-		A60E56332C7E14570035B182 /* ZoomableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableView.swift; sourceTree = "<group>"; };
+		A60E56332C7E14570035B182 /* SwiftUIImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIImageViewer.swift; sourceTree = "<group>"; };
 		A62540A32C52D7900010C299 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		A62540A52C52D9810010C299 /* PlantCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCollection.swift; sourceTree = "<group>"; };
 		A625745E2CECB0C200AAB1A5 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
@@ -192,9 +188,9 @@
 		A67CDA1D2C722A38005CFCA2 /* NetworkEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnv.swift; sourceTree = "<group>"; };
 		A67CDA1F2C722A50005CFCA2 /* BloomBuddyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyAPI.swift; sourceTree = "<group>"; };
 		A67CDA222C722A73005CFCA2 /* ErrorObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorObj.swift; sourceTree = "<group>"; };
-		A689F7D62C485D08006AA97F /* ExistingPlants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ExistingPlants.json; sourceTree = "<group>"; };
 		A689F7DF2C4860C1006AA97F /* GrowthStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthStage.swift; sourceTree = "<group>"; };
 		A689F7E12C4860F7006AA97F /* WaterRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequirement.swift; sourceTree = "<group>"; };
+		A696911C2CEE358E002EAFAB /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		A698687D2C79F4D800F3AC6B /* SensorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorSelector.swift; sourceTree = "<group>"; };
 		A698687F2C79F59200F3AC6B /* SensorIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorIdentifier.swift; sourceTree = "<group>"; };
 		A69868812C79FCAF00F3AC6B /* BBSensorPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSensorPickerButton.swift; sourceTree = "<group>"; };
@@ -222,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60E562C2C7E02160035B182 /* Kingfisher in Frameworks */,
+				A69691202CEE3BCD002EAFAB /* MarkdownUI in Frameworks */,
 				A6660FA12C53E9B800816CD9 /* SwiftyCrop in Frameworks */,
 				4F90F8542C44752200B57F3D /* Mammut in Frameworks */,
 				4F3AD4ED2C4E9AD6005BB774 /* ZapdosKit in Frameworks */,
@@ -264,6 +261,7 @@
 		4F3AD4C62C4E8276005BB774 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A696911C2CEE358E002EAFAB /* TopBar.swift */,
 				A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */,
 				4F3AD4DA2C4E86AA005BB774 /* MainScreen.swift */,
 			);
@@ -353,7 +351,6 @@
 			isa = PBXGroup;
 			children = (
 				A6DFF8102C43E445002FD86A /* Assets.xcassets */,
-				A689F7D62C485D08006AA97F /* ExistingPlants.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -410,9 +407,8 @@
 		A60E561E2C7DEDAF0035B182 /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
-				A60E56332C7E14570035B182 /* ZoomableView.swift */,
+				A60E56332C7E14570035B182 /* SwiftUIImageViewer.swift */,
 				A60E56312C7E09010035B182 /* ShimmeringSkeletonModifier.swift */,
-				A60E562F2C7E05B60035B182 /* FAQImageView.swift */,
 				A60E56282C7DF0ED0035B182 /* FAQDestination.swift */,
 				A60E561F2C7DEDC70035B182 /* FAQNavigation.swift */,
 			);
@@ -427,7 +423,6 @@
 				A642AB772CC3D55100539FE5 /* SensorSetupData.swift */,
 				A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */,
 				A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */,
-				A60E562D2C7E042F0035B182 /* FAQImage.swift */,
 				A60E56262C7DF0560035B182 /* FAQComponent.swift */,
 			);
 			path = Structures;
@@ -572,6 +567,7 @@
 				A6660FA02C53E9B800816CD9 /* SwiftyCrop */,
 				A6058A292C75F50600A7D0C3 /* KeychainAccess */,
 				A60E562B2C7E02160035B182 /* Kingfisher */,
+				A696911F2CEE3BCD002EAFAB /* MarkdownUI */,
 			);
 			productName = HackathonProject1;
 			productReference = A6DFF8092C43E443002FD86A /* BloomBuddy.app */;
@@ -609,6 +605,7 @@
 				A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 				A6058A282C75F50600A7D0C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				A60E562A2C7E02160035B182 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A696911E2CEE3BCD002EAFAB /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = A6DFF80A2C43E443002FD86A /* Products */;
 			projectDirPath = "";
@@ -624,7 +621,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A67CA1EB2C4877F3005F3856 /* ExistingPlants.json in Resources */,
 				4F69B93E2C454126005F544E /* Launch Screen.storyboard in Resources */,
 				A6DFF8152C43E445002FD86A /* Preview Assets.xcassets in Resources */,
 				A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */,
@@ -644,6 +640,7 @@
 				A67A3AF02CEBA25200610A0D /* SensorData.swift in Sources */,
 				A67CDA232C722A73005CFCA2 /* ErrorObj.swift in Sources */,
 				4F3AD4C82C4E82CF005BB774 /* UDKey.swift in Sources */,
+				A696911D2CEE3593002EAFAB /* TopBar.swift in Sources */,
 				A642AB782CC3D55500539FE5 /* SensorSetupData.swift in Sources */,
 				A642AB762CC3CF0700539FE5 /* ConfigStage.swift in Sources */,
 				A689F7E22C4860F7006AA97F /* WaterRequirement.swift in Sources */,
@@ -669,17 +666,14 @@
 				A698687E2C79F4D800F3AC6B /* SensorSelector.swift in Sources */,
 				A6058A302C761DAC00A7D0C3 /* SensorManager.swift in Sources */,
 				4F3AD4D92C4E85C7005BB774 /* BackgroundView.swift in Sources */,
-				A689F7D72C485D08006AA97F /* ExistingPlants.json in Sources */,
 				4F75873D2C4F0D6D00474424 /* PlantDetailAdd.swift in Sources */,
 				A6ECBC152C7B7B310083AB39 /* Int.swift in Sources */,
 				4F3AD4DE2C4E87C6005BB774 /* TipCard.swift in Sources */,
-				A60E562E2C7E04330035B182 /* FAQImage.swift in Sources */,
 				4F557ACA2C4FC99500C744F1 /* BBTextfieldStyle.swift in Sources */,
 				4F3AD4CB2C4E84DE005BB774 /* WeatherCard.swift in Sources */,
 				A69868822C79FCAF00F3AC6B /* BBSensorPickerButton.swift in Sources */,
 				A6F1D79E2C74D61600B2BA08 /* LoginView.swift in Sources */,
 				A62714A92CBED30E000059A1 /* SensorConfigView.swift in Sources */,
-				A60E56302C7E05B90035B182 /* FAQImageView.swift in Sources */,
 				A62714AC2CBED768000059A1 /* AccessoryData.swift in Sources */,
 				A6660FA72C5400BD00816CD9 /* CMSampleBuffer.swift in Sources */,
 				4F2EFCA32C452B0B000FEBFD /* LocationManager.swift in Sources */,
@@ -697,7 +691,7 @@
 				4F3AD4D72C4E85AB005BB774 /* ScrollOffsetKey.swift in Sources */,
 				A60E56272C7DF07A0035B182 /* FAQComponent.swift in Sources */,
 				A630A8AF2C75419F009171D7 /* BloomBuddyApiError.swift in Sources */,
-				A60E56342C7E145B0035B182 /* ZoomableView.swift in Sources */,
+				A60E56342C7E145B0035B182 /* SwiftUIImageViewer.swift in Sources */,
 				A69C84A72CC2C964002FD5EE /* AnyEquatableError.swift in Sources */,
 				4F557ACC2C4FCB3800C744F1 /* BBTextField.swift in Sources */,
 				A67A3AEE2CEBA10B00610A0D /* AppDelegate.swift in Sources */,
@@ -1026,6 +1020,14 @@
 				minimumVersion = 0.55.1;
 			};
 		};
+		A696911E2CEE3BCD002EAFAB /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1058,6 +1060,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A6660F9F2C53E9B800816CD9 /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
 			productName = SwiftyCrop;
+		};
+		A696911F2CEE3BCD002EAFAB /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A696911E2CEE3BCD002EAFAB /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

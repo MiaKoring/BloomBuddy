@@ -62,7 +62,7 @@ struct PlantList: View {
             guard let double = sensorManager.sensordata?.first(where: {$0.id == sensorID})?.latest else {
                 return .gray
             }
-            if diff <= 3600 {
+            if diff <= 7200 {
                 return.green
             }
             if Int(double) <= plant.waterRequirement - 20 { return .red }

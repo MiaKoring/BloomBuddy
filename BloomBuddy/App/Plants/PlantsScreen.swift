@@ -12,7 +12,6 @@ struct PlantsScreen: View {
     @Bindable var collection: PlantCollection
     @State private var showAdd: Bool = false
     @State var editPlant: Plant? = nil
-    @State var showSettings: Bool = false
     
     let refresh: () -> Void
     let refreshSensors: () -> Void
@@ -20,7 +19,7 @@ struct PlantsScreen: View {
     var body: some View {
         VStack {
             HStack(spacing: 20.0) {
-                Text(collection.name)
+                Text(collection.name == "Garten" ? "Pflanzen": collection.name)
                     .font(.Bold.title2)
 
                 // TODO: - Next Feature, different PlantCollections
@@ -32,12 +31,6 @@ struct PlantsScreen: View {
                     .font(.Bold.title2)
                     .button {
                         refreshSensors()
-                    }
-                Image(systemName: "gear")
-                    .foregroundStyle(.plantGreen)
-                    .font(.Bold.title2)
-                    .button {
-                        showSettings.setTrue()
                     }
                 Image(systemName: "plus")
                     .foregroundStyle(.plantGreen)
@@ -97,9 +90,6 @@ struct PlantsScreen: View {
         }
         .sheet(item: $editPlant, onDismiss: refresh) {plant in
             PlantDetailAdd(collection: collection, edit: true, plant: plant)
-        }
-        .sheet(isPresented: $showSettings) {
-            FAQNavigation()
         }
     }
 }

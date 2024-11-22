@@ -6,7 +6,6 @@
 //
 
 struct FAQComponent: Codable, Hashable {
-    let title: String
-    let paragraph: String
-    let image: FAQImage?
+    let md: String?
+    //let image: FAQImage?
 }

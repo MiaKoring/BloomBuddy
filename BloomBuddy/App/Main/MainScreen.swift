@@ -36,6 +36,7 @@ struct MainScreen: View {
         BackgroundView(.plantGreen.opacity(0.15)) {
             ScrollView {
                 VStack(spacing: 20) {
+                    TopBar()
                     if let weather {
                         WeatherScreen(weather: weather)
                     } else {
@@ -83,6 +84,9 @@ struct MainScreen: View {
         .onChange(of: scenePhase) { _, newPhase in
             guard newPhase == .active, let location = locationManager.location else { return }
             fetchWeather(.init(latitude: location.latitude, longitude: location.longitude))
+            Task {
+                await fetchSensors()
+            }
         }
         .task {
             await fetchSensors()

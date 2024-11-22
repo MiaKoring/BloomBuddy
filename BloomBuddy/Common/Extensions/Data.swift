@@ -42,3 +42,9 @@ extension Data {
         self = data
     }
 }
+
+extension Data: @retroactive Identifiable {
+    public var id: Int {
+        self.hashValue
+    }
+}
