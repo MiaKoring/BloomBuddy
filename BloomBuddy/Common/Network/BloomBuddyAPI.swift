@@ -37,7 +37,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .changeSensorName(let id, _, _): "/users/sensors/\(id)"
         case .changeSensorModel(let id, _, _): "/users/sensorModel/\(id)"
         case .registerDevice, .getDevices: "/users/device"
-        case .deleteDevice(let id, _): "/users/device/id"
+        case .deleteDevice(let id, _): "/users/device/\(id)"
         }
     }
 

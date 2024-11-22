@@ -13,6 +13,7 @@ struct BloomBuddyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var locationManager: LocationManager = .init()
     @State private var sensorManager: SensorManager = .init()
+    @State private var userManager: UserManager = .init()
     let container: ModelContainer
     
     init() {
@@ -33,6 +34,7 @@ struct BloomBuddyApp: App {
                 .modelContainer(container)
                 .environment(locationManager)
                 .environment(sensorManager)
+                .environment(userManager)
         }
     }
 }

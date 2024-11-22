@@ -94,6 +94,15 @@
 		A69C84A12CC27AFD002FD5EE /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */; };
 		A69C84A32CC2BD57002FD5EE /* BTPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */; };
 		A69C84A72CC2C964002FD5EE /* AnyEquatableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */; };
+		A6A4384C2CF0B4D4009EE6E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4384B2CF0B4CF009EE6E3 /* User.swift */; };
+		A6A4384E2CF0BD41009EE6E3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4384D2CF0BD3E009EE6E3 /* Settings.swift */; };
+		A6A438502CF0BE18009EE6E3 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4384F2CF0BE0E009EE6E3 /* Navigation.swift */; };
+		A6A438522CF0C04C009EE6E3 /* SettingsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A438512CF0C042009EE6E3 /* SettingsGroup.swift */; };
+		A6A438542CF0C13E009EE6E3 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A438532CF0C13C009EE6E3 /* NavigationView.swift */; };
+		A6A438572CF0C1E5009EE6E3 /* NavigationGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A438562CF0C1DC009EE6E3 /* NavigationGroups.swift */; };
+		A6A4385B2CF0DA24009EE6E3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4385A2CF0DA1F009EE6E3 /* NavigationButton.swift */; };
+		A6A4385D2CF0EF93009EE6E3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4385C2CF0EF57009EE6E3 /* AccountView.swift */; };
+		A6A4385F2CF0F29D009EE6E3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A4385E2CF0F29A009EE6E3 /* UserManager.swift */; };
 		A6DE5BE12C7DD86200C39F54 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE5BE02C7DD86100C39F54 /* Date.swift */; };
 		A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */; };
 		A6DFF8112C43E445002FD86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DFF8102C43E445002FD86A /* Assets.xcassets */; };
@@ -199,6 +208,15 @@
 		A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		A69C84A22CC2BD51002FD5EE /* BTPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTPeripheral.swift; sourceTree = "<group>"; };
 		A69C84A62CC2C95E002FD5EE /* AnyEquatableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEquatableError.swift; sourceTree = "<group>"; };
+		A6A4384B2CF0B4CF009EE6E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A6A4384D2CF0BD3E009EE6E3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A6A4384F2CF0BE0E009EE6E3 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		A6A438512CF0C042009EE6E3 /* SettingsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGroup.swift; sourceTree = "<group>"; };
+		A6A438532CF0C13C009EE6E3 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		A6A438562CF0C1DC009EE6E3 /* NavigationGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGroups.swift; sourceTree = "<group>"; };
+		A6A4385A2CF0DA1F009EE6E3 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		A6A4385C2CF0EF57009EE6E3 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		A6A4385E2CF0F29A009EE6E3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A6DE5BE02C7DD86100C39F54 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A6DFF8092C43E443002FD86A /* BloomBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BloomBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFF80C2C43E443002FD86A /* BloomBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomBuddyApp.swift; sourceTree = "<group>"; };
@@ -233,6 +251,7 @@
 		4F2EFCA12C45256B000FEBFD /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A6A4385E2CF0F29A009EE6E3 /* UserManager.swift */,
 				A67A3AF12CEBA39100610A0D /* SwiftDataManager.swift */,
 				A67A3AED2CEBA10800610A0D /* AppDelegate.swift */,
 				A69C84A02CC27AF8002FD5EE /* BluetoothManager.swift */,
@@ -248,6 +267,7 @@
 		4F3AD4C52C4E8269005BB774 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A6A438482CF0B1FA009EE6E3 /* Settings */,
 				A60E561E2C7DEDAF0035B182 /* FAQ */,
 				A6F1D79C2C74D60B00B2BA08 /* User */,
 				4F3AD4E32C4E8FD8005BB774 /* Plants */,
@@ -283,9 +303,10 @@
 		4F3AD4D42C4E8594005BB774 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				A642AB7E2CC3EEDB00539FE5 /* DetailView.swift */,
+				A6A438552CF0C140009EE6E3 /* NavigationEnum */,
 				4F557ACF2C4FCE9800C744F1 /* Textfields */,
 				4F3AD4D82C4E85C7005BB774 /* BackgroundView.swift */,
+				A642AB7E2CC3EEDB00539FE5 /* DetailView.swift */,
 				4F557AE02C51AA9800C744F1 /* FlipView.swift */,
 			);
 			path = UIComponents;
@@ -375,6 +396,8 @@
 		4F61ED342C43EF1800092522 /* Enumerations */ = {
 			isa = PBXGroup;
 			children = (
+				A6A438512CF0C042009EE6E3 /* SettingsGroup.swift */,
+				A6A4384D2CF0BD3E009EE6E3 /* Settings.swift */,
 				A625745E2CECB0C200AAB1A5 /* Battery.swift */,
 				A67A3AF52CEBA91100610A0D /* SensorModel.swift */,
 				A642AB752CC3CF0000539FE5 /* ConfigStage.swift */,
@@ -418,6 +441,7 @@
 		A60E56252C7DF04D0035B182 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				A6A4384B2CF0B4CF009EE6E3 /* User.swift */,
 				A67A3AEF2CEBA25000610A0D /* SensorData.swift */,
 				A642AB7A2CC3D6EC00539FE5 /* JWT.swift */,
 				A642AB772CC3D55100539FE5 /* SensorSetupData.swift */,
@@ -459,6 +483,8 @@
 		A630A8A82C753780009171D7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A6A438562CF0C1DC009EE6E3 /* NavigationGroups.swift */,
+				A6A4384F2CF0BE0E009EE6E3 /* Navigation.swift */,
 				A630A8A92C75378F009171D7 /* URLReqEndpoint.swift */,
 			);
 			path = Protocols;
@@ -497,6 +523,23 @@
 				A62714A82CBED308000059A1 /* SensorConfigView.swift */,
 			);
 			path = Sensor;
+			sourceTree = "<group>";
+		};
+		A6A438482CF0B1FA009EE6E3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A6A4385C2CF0EF57009EE6E3 /* AccountView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A6A438552CF0C140009EE6E3 /* NavigationEnum */ = {
+			isa = PBXGroup;
+			children = (
+				A6A4385A2CF0DA1F009EE6E3 /* NavigationButton.swift */,
+				A6A438532CF0C13C009EE6E3 /* NavigationView.swift */,
+			);
+			path = NavigationEnum;
 			sourceTree = "<group>";
 		};
 		A6DFF8002C43E443002FD86A = {
@@ -581,7 +624,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					A6DFF8082C43E443002FD86A = {
 						CreatedOnToolsVersion = 15.4;
@@ -649,18 +692,21 @@
 				A6058A2C2C75F69E00A7D0C3 /* KeyChainManager.swift in Sources */,
 				4F557AD12C4FD32400C744F1 /* PlantList.swift in Sources */,
 				4F3AD4E52C4E8FE2005BB774 /* PlantRow.swift in Sources */,
+				A6A438502CF0BE18009EE6E3 /* Navigation.swift in Sources */,
 				A642AB7D2CC3DFD100539FE5 /* Data.swift in Sources */,
 				4F557AE52C51ABD700C744F1 /* PlantRowBack.swift in Sources */,
 				A6DE5BE12C7DD86200C39F54 /* Date.swift in Sources */,
 				A62540A62C52D9810010C299 /* PlantCollection.swift in Sources */,
 				A6ECBC172C7B7BDE0083AB39 /* CustomWaterRequirementSheet.swift in Sources */,
 				A6660FAD2C5401F900816CD9 /* CameraView.swift in Sources */,
+				A6A438522CF0C04C009EE6E3 /* SettingsGroup.swift in Sources */,
 				A630A89C2C74FCC2009171D7 /* View.swift in Sources */,
 				A642AB7F2CC3EEDB00539FE5 /* DetailView.swift in Sources */,
 				A6660FA32C53EB8300816CD9 /* Image.swift in Sources */,
 				A67CDA1C2C722A1F005CFCA2 /* Network.swift in Sources */,
 				A69868802C79F59200F3AC6B /* SensorIdentifier.swift in Sources */,
 				A6660FA52C53FE8800816CD9 /* CameraManager.swift in Sources */,
+				A6A438572CF0C1E5009EE6E3 /* NavigationGroups.swift in Sources */,
 				A630A8A32C753256009171D7 /* BloomBuddyController.swift in Sources */,
 				A69C84A12CC27AFD002FD5EE /* BluetoothManager.swift in Sources */,
 				A698687E2C79F4D800F3AC6B /* SensorSelector.swift in Sources */,
@@ -699,6 +745,7 @@
 				A630A8A02C750933009171D7 /* BloomBuddyJWT.swift in Sources */,
 				4F557AE32C51AAE000C744F1 /* PlantRowFront.swift in Sources */,
 				4F3AD4D32C4E854B005BB774 /* WeatherScrollHeader.swift in Sources */,
+				A6A4385D2CF0EF93009EE6E3 /* AccountView.swift in Sources */,
 				A6DFF80D2C43E443002FD86A /* BloomBuddyApp.swift in Sources */,
 				4F557AC62C4FA87500C744F1 /* WaterRequirementButtons.swift in Sources */,
 				A6ECBC112C7B6C650083AB39 /* PlantMigration.swift in Sources */,
@@ -707,15 +754,20 @@
 				4F557AC82C4FA98900C744F1 /* PlantImage.swift in Sources */,
 				A67CDA202C722A50005CFCA2 /* BloomBuddyAPI.swift in Sources */,
 				A67CDA1E2C722A38005CFCA2 /* NetworkEnv.swift in Sources */,
+				A6A4385B2CF0DA24009EE6E3 /* NavigationButton.swift in Sources */,
+				A6A4385F2CF0F29D009EE6E3 /* UserManager.swift in Sources */,
 				4F3AD4CD2C4E84F7005BB774 /* WeatherCardForecast.swift in Sources */,
 				A6058A2E2C75F8F500A7D0C3 /* KeychainKey.swift in Sources */,
+				A6A4384C2CF0B4D4009EE6E3 /* User.swift in Sources */,
 				A60E56242C7DEEA90035B182 /* FAQ.swift in Sources */,
 				4F69B9382C452D6E005F544E /* CLLocationCoordinate2D.swift in Sources */,
 				A630A8A62C7534F2009171D7 /* NetworkError.swift in Sources */,
+				A6A438542CF0C13E009EE6E3 /* NavigationView.swift in Sources */,
 				A642AB7B2CC3D6F100539FE5 /* JWT.swift in Sources */,
 				A62540A42C52D7900010C299 /* Plant.swift in Sources */,
 				4F3AD4D12C4E8539005BB774 /* WeatherScreen.swift in Sources */,
 				A625745F2CECB0CA00AAB1A5 /* Battery.swift in Sources */,
+				A6A4384E2CF0BD41009EE6E3 /* Settings.swift in Sources */,
 				A6058A372C76233200A7D0C3 /* BBAuthManager.swift in Sources */,
 				4F3AD4E22C4E8FD4005BB774 /* PlantsScreen.swift in Sources */,
 				A60E56292C7DF0F20035B182 /* FAQDestination.swift in Sources */,
@@ -760,6 +812,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -822,6 +875,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -851,6 +905,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 13;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -900,6 +955,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 13;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "BloomBuddy/Preview\\ Content/Preview\\ Assets.xcassets";
 				DEVELOPMENT_TEAM = 68YWPYV749;
 				ENABLE_HARDENED_RUNTIME = YES;

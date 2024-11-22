@@ -301,7 +301,7 @@ struct SensorConfig: View {
             print("Could not base64decode JWT")
             return //TODO: add error handling
         }
-        print(String(data: data, encoding: .utf8))
+        //print(String(data: data, encoding: .utf8))
         guard let jwt = try? JSONDecoder().decode(JWT.self, from: data) else {
             print("could not decode JWT")
             return //TODO: add error handling
@@ -315,7 +315,6 @@ struct SensorConfig: View {
             //TODO: errorhandling
         }
     }
-    
     func showASKSheet() async {
         await removeAllAccessoryConnections()
         session.showPicker(for: AccessoryData.allDisplayItems) { error in
@@ -381,10 +380,10 @@ struct SensorConfig: View {
     
     func removeAllAccessoryConnections() async {
         for accessory in session.accessories {
-            do {
-                try await session.removeAccessory(accessory)
-            } catch {
-                print("Error removing accessory: \(error)")
+            session.removeAccessory(accessory) { error in
+                if let error {
+                    print("Error removing accessory: \(error)")
+                }
             }
         }
     }

@@ -29,7 +29,9 @@ struct TopBar: View {
         }
         .padding(.bottom, 14)
         .fullScreenCover(isPresented: $showSettings) {
-            FAQNavigation()
+            NavigationView<SettingsGroup, Text>() {
+                Text("Einstellungen")
+            }
         }
     }
 }
