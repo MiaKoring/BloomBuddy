@@ -46,7 +46,30 @@ extension Settings: Navigation {
     
     @ViewBuilder
     func destinationView() -> some View {
-        Text("test")
+        switch self {
+        case .account:
+            AccountView()
+        case .sensors:
+            Text("test")
+        case .notifications:
+            Text("test")
+        case .subscriptions:
+            Text("test")
+        case .devices:
+            Text("test")
+        case .faq:
+            Text("test")
+        case .privacy:
+            Text("test")
+        case .agb:
+            Text("test")
+        case .collectedData:
+            Text("test")
+        case .eula:
+            Text("test")
+        case .licenses:
+            Text("test")
+        }
     }
     
     @ViewBuilder
@@ -86,7 +109,7 @@ extension Settings: Navigation {
         case .notifications:
             "Benachrichtigungen"
         case .subscriptions:
-            "Abonement"
+            "Abonnement"
         case .devices:
             "Geräte"
         case .faq:
