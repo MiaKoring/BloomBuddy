@@ -9,22 +9,44 @@ import Foundation
 import SwiftUI
 
 extension View {
-    func loginTextFieldStyle(focusedField: LoginField?, appearance: ColorScheme, expected: LoginField, valid: Bool) -> some View {
+    @ViewBuilder
+    func loginTextFieldStyle(focusedField: LoginField?, appearance: ColorScheme, expected: LoginField, valid: Bool, hidden: Binding<Bool>? = nil) -> some View {
         self
             .textInputAutocapitalization(.never)
             .padding(5)
             .background(appearance == .light ? .white : .black)
             .cornerRadius(5)
             .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(
-                        valid ? 
+                ZStack {
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(
+                            valid ? 
                             (focusedField == expected ?
-                                Color.blue:
+                             Color.blue:
                                 Color.gray.opacity(0.5)):
-                            Color.red
-                        , lineWidth: 0.5
-                    )
+                                Color.red
+                            , lineWidth: 0.5
+                        )
+                    if let hidden {
+                        HStack {
+                            Spacer()
+                            Image(systemName: hidden.wrappedValue ? "eye": "eye.slash")
+                                .padding(.trailing)
+                                .if(true) { view in
+                                    if #available(iOS 18.0, *) {
+                                        view.contentTransition(.symbolEffect(.replace.magic(fallback: .replace.downUp)))
+                                    } else {
+                                        view.contentTransition(.symbolEffect(.replace.downUp))
+                                    }
+                                }
+                                .button {
+                                    withAnimation(.linear(duration: 0.2)) {
+                                        hidden.wrappedValue.toggle()
+                                    }
+                                }
+                        }
+                    }
+                }
             )
     }
     

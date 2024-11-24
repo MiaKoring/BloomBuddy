@@ -23,6 +23,8 @@ enum BloomBuddyAPI {
     case registerDevice(String, String)
     case getDevices(String)
     case deleteDevice(String, String)
+    case changeUsername(String, String)
+    case changePassword(String, String, String)
 }
 
 extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
@@ -38,6 +40,8 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .changeSensorModel(let id, _, _): "/users/sensorModel/\(id)"
         case .registerDevice, .getDevices: "/users/device"
         case .deleteDevice(let id, _): "/users/device/\(id)"
+        case .changeUsername: "/users/name"
+        case .changePassword: "/users/password"
         }
     }
 
@@ -45,7 +49,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         switch self {
         case .login, .loginBasic, .createSensor, .createUser, .registerDevice: .post
         case .sensors, .sensorData, .allSensorData, .info, .getDevices: .get
-        case .changeSensorName, .changeSensorModel: .patch
+        case .changeSensorName, .changeSensorModel, .changeUsername, .changePassword: .patch
         case .delete, .deleteDevice: .delete
         }
     }
@@ -56,7 +60,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .loginBasic(let basic): [
             .authorization(.basic(basic)) ]
         case .createUser: []
-        case .delete(let token), .info(let token), .createSensor(_, let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token), .changeSensorName(_, _, let token), .changeSensorModel(_, _, let token), .registerDevice(_, let token), .getDevices(let token), .deleteDevice(_, let token): [.authorization(.bearer(token))]
+        case .delete(let token), .info(let token), .createSensor(_, let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token), .changeSensorName(_, _, let token), .changeSensorModel(_, _, let token), .registerDevice(_, let token), .getDevices(let token), .deleteDevice(_, let token), .changeUsername(_, let token), .changePassword(_, _, let token): [.authorization(.bearer(token))]
         }
     }
     
@@ -65,7 +69,7 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .createUser: [:]
         case .login(let username, let password): ["Authorization": "Basic \("\(username):\(password)".data(using: .utf8)?.base64EncodedString() ?? "")"]
         case .loginBasic(let basic): ["Authorization": "Basic \(basic)"]
-        case .delete(let token), .info(let token), .createSensor(_, let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token), .changeSensorName(_, _, let token), .changeSensorModel(_, _, let token), .registerDevice(_, let token), .getDevices(let token), .deleteDevice(_, let token): ["Authorization": "Bearer \(token)"]
+        case .delete(let token), .info(let token), .createSensor(_, let token), .sensors(let token), .sensorData(_, let token), .allSensorData(let token), .changeSensorName(_, _, let token), .changeSensorModel(_, _, let token), .registerDevice(_, let token), .getDevices(let token), .deleteDevice(_, let token), .changeUsername(_, let token), .changePassword(_, _, let token): ["Authorization": "Bearer \(token)"]
         }
     }
 
@@ -75,6 +79,8 @@ extension BloomBuddyAPI: Endpoint, URLReqEndpoint {
         case .createSensor(let name, _), .changeSensorName(_, let name, _): ["name": name]
         case .registerDevice(let dt, _): ["dt": dt]
         case .changeSensorModel(_, let model, _): ["model": model]
+        case .changeUsername(let name, _): ["name": name]
+        case .changePassword(let old, let new, _): ["old": old, "new": new]
         default: [:]
         }
     }

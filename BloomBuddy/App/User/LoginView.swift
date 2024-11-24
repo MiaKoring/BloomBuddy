@@ -22,6 +22,8 @@ struct LoginView: View {
     @State var disclaimerNoticed: Bool = false
     @State var fieldErrorMessage: String? = nil
     @State var unexpectedError: BloomBuddyApiError? = nil
+    @State var hidePassword: Bool = true
+    @State var hideNewPassword: Bool = true
     var completion: (DismissAction) -> Void = { dismiss in dismiss() }
     
     @FocusState private var focusedField: LoginField?
@@ -40,17 +42,45 @@ struct LoginView: View {
                             .focused($focusedField, equals: .name)
                             .frame(height: 40)
                             .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .name, valid: nameValid)
-                        TextField("Passwort", text: $pwd)
-                            .textContentType(login ? .password: .newPassword)
-                            .focused($focusedField, equals: .pwd)
-                            .frame(height: 40)
-                            .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwd, valid: pwdValid)
-                        if !login {
-                            TextField("Passwort bestätigen", text: $pwdConfirm)
-                                .textContentType(.newPassword)
+                        ZStack {
+                            TextField("Passwort", text: $pwd)
+                                .textContentType(login ? .password: .newPassword)
+                                .focused($focusedField, equals: .pwd)
+                                .frame(height: 40)
+                                .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwd, valid: pwdValid, hidden: $hidePassword)
+                                .if(hidePassword) { view in
+                                    view.hidden()
+                                }
+                            SecureField("Passwort", text: $pwd)
+                                .textContentType(login ? .password: .newPassword)
                                 .focused($focusedField, equals: .pwdConfirm)
                                 .frame(height: 40)
-                                .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwdConfirm, valid: pwdValid)
+                                .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwdConfirm, valid: pwdValid, hidden: $hidePassword)
+                                .if(!hidePassword) { view in
+                                    view.hidden()
+                                }
+                        }
+                        
+                           
+                        if !login {
+                            ZStack {
+                                TextField("Passwort bestätigen", text: $pwdConfirm)
+                                    .textContentType(.newPassword)
+                                    .focused($focusedField, equals: .pwdConfirm)
+                                    .frame(height: 40)
+                                    .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwdConfirm, valid: pwdValid, hidden: $hideNewPassword)
+                                    .if(hideNewPassword) { view in
+                                        view.hidden()
+                                    }
+                                SecureField("Passwort bestätigen", text: $pwdConfirm)
+                                    .textContentType(.newPassword)
+                                    .focused($focusedField, equals: .pwdConfirm)
+                                    .frame(height: 40)
+                                    .loginTextFieldStyle(focusedField: focusedField, appearance: appearance, expected: .pwdConfirm, valid: pwdValid, hidden: $hideNewPassword)
+                                    .if(!hideNewPassword) { view in
+                                        view.hidden()
+                                    }
+                            }
                         }
                         if let fieldErrorMessage {
                             Text(fieldErrorMessage)
@@ -111,8 +141,9 @@ struct LoginView: View {
             .presentationDetents([.height(250)])
         }
         .onChange(of: name) {
-            nameValid = !name.isEmpty
-            if !nameValid {
+            name = name.filter { $0.isLetter || $0.isNumber }
+            nameValid = name.isEmpty
+            if name.isEmpty {
                 fieldErrorMessage = "Name darf nicht leer sein"
             } else if pwdValid {
                 fieldErrorMessage = nil

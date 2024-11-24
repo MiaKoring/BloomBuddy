@@ -12,7 +12,8 @@ struct TopBar: View {
     var body: some View {
         HStack {
             Text("BloomBuddy")
-                .font(.Bold.title)
+                .font(.title2)
+                .bold()
             Spacer()
             Circle()
                 .fill(.plantGreen.opacity(0.2))
@@ -24,10 +25,11 @@ struct TopBar: View {
                         .allowsHitTesting(false)
                 }
                 .button {
+                    print("test")
                     showSettings.setTrue()
                 }
         }
-        .padding(.bottom, 14)
+        .padding(.bottom, 20)
         .fullScreenCover(isPresented: $showSettings) {
             NavigationView<SettingsGroup, Text>() {
                 Text("Einstellungen")
